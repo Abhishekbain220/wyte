@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import AboutUsCom from './AboutUsCom';
 
 const Home = () => {
     const [banner, setBanner] = useState({
@@ -53,7 +54,7 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="min-h-screen w-full">
+        <div className="min-h-screen overflow-hidden w-full">
             {/* Background gradient section (no animation) */}
             {/* Page 1 */}
             <div
@@ -110,7 +111,7 @@ const Home = () => {
             </div>
 
             {/* page 2 */}
-            
+            <AboutUsCom/>
         </div>
     );
 };
