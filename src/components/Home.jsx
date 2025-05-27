@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import AboutUsCom from './AboutUsCom';
+import ProductCom from './ProductCom';
 
 const Home = () => {
     const [banner, setBanner] = useState({
@@ -52,6 +53,54 @@ const Home = () => {
         }, 5000);
         return () => clearInterval(interval);
     }, []);
+
+
+    // Product Array and Function
+    let products=[
+        {
+            id:1,
+            name:"Printable Wallpapers",
+            image:"product1.jpg"
+        },
+        {
+            id:2,
+            name:"Fabrics",
+            image:"product2.jpg"
+        },
+        {
+            id:3,
+            name:"Canvas",
+            image:"product3.jpg"
+        },
+        {
+            id:4,
+            name:"Vinyl",
+            image:"product4.jpg"
+        },
+        {
+            id:5,
+            name:"Glass Films",
+            image:"product5.jpg"
+        },
+        {
+            id:6,
+            name:"Photopapers",
+            image:"product6.jpg"
+        },
+        {
+            id:7,
+            name:"Translites",
+            image:"product7.jpg"
+        },
+        {
+            id:8,
+            name:"Reflective Vinyls",
+            image:"product8.jpg"
+        }
+    ]
+
+    const [product, setProduct] = useState(products)
+    console.log(product)
 
     return (
         <div className="min-h-screen overflow-hidden w-full">
@@ -112,6 +161,14 @@ const Home = () => {
 
             {/* page 2 */}
             <AboutUsCom/>
+            {/* Page 3 */}
+            <div className='pl-[11vw] flex flex-wrap gap-5 mt-[12vh] pt-[8vh] bg-[#5C2AA5] '>
+                {
+                    product.map((p,i)=>(
+                        <ProductCom name={p.name} image={p.image}/>
+                    ))
+                }
+            </div>
         </div>
     );
 };
