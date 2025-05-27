@@ -162,7 +162,7 @@ const Home = () => {
             {/* page 2 */}
             <AboutUsCom/>
             {/* Page 3 */}
-            <div className='pl-[11vw] flex flex-wrap gap-5 mt-[12vh] pt-[8vh] bg-[#5C2AA5] '>
+            <div className='pl-[11vw] flex  flex-wrap gap-5 mt-[12vh] pt-[8vh] bg-[#5C2AA5] '>
                 {
                     product.map((p,i)=>(
                         <ProductCom name={p.name} image={p.image}/>
