@@ -56,46 +56,46 @@ const Home = () => {
 
 
     // Product Array and Function
-    let products=[
+    let products = [
         {
-            id:1,
-            name:"Printable Wallpapers",
-            image:"product1.jpg"
+            id: 1,
+            name: "Printable Wallpapers",
+            image: "product1.jpg"
         },
         {
-            id:2,
-            name:"Fabrics",
-            image:"product2.jpg"
+            id: 2,
+            name: "Fabrics",
+            image: "product2.jpg"
         },
         {
-            id:3,
-            name:"Canvas",
-            image:"product3.jpg"
+            id: 3,
+            name: "Canvas",
+            image: "product3.jpg"
         },
         {
-            id:4,
-            name:"Vinyl",
-            image:"product4.jpg"
+            id: 4,
+            name: "Vinyl",
+            image: "product4.jpg"
         },
         {
-            id:5,
-            name:"Glass Films",
-            image:"product5.jpg"
+            id: 5,
+            name: "Glass Films",
+            image: "product5.jpg"
         },
         {
-            id:6,
-            name:"Photopapers",
-            image:"product6.jpg"
+            id: 6,
+            name: "Photopapers",
+            image: "product6.jpg"
         },
         {
-            id:7,
-            name:"Translites",
-            image:"product7.jpg"
+            id: 7,
+            name: "Translites",
+            image: "product7.jpg"
         },
         {
-            id:8,
-            name:"Reflective Vinyls",
-            image:"product8.jpg"
+            id: 8,
+            name: "Reflective Vinyls",
+            image: "product8.jpg"
         }
     ]
 
@@ -145,7 +145,7 @@ const Home = () => {
                             {banner.title}
                         </h1>
 
-                        <p className="mt-6 md:mt-[6vh] text-white text-base sm:text-lg md:text-xl leading-relaxed md:leading-10 ml-0 md:ml-[2vh] max-w-3xl">
+                        <p className="mt-6  md:mt-[6vh] text-white text-base sm:text-lg md:text-xl leading-relaxed md:leading-10 ml-0 md:ml-[2vh] max-w-3xl">
                             {banner.para}
                         </p>
 
@@ -160,15 +160,27 @@ const Home = () => {
             </div>
 
             {/* page 2 */}
-            <AboutUsCom/>
+            <AboutUsCom />
             {/* Page 3 */}
-            <div className='pl-[11vw] flex  flex-wrap gap-5 mt-[12vh] pt-[8vh] bg-[#5C2AA5] '>
+            <div className='px-4 sm:px-8 md:px-[8vw] lg:pl-[11vw] flex flex-wrap gap-4 sm:gap-6 mt-[6vh] sm:mt-[10vh] lg:mt-[12vh] pt-[6vh] sm:pt-[8vh] bg-[#5C2AA5] '>
                 {
-                    product.map((p,i)=>(
-                        <ProductCom name={p.name} image={p.image}/>
+                    product.map((p, i) => (
+                        <ProductCom name={p.name} image={p.image} />
                     ))
                 }
             </div>
+            {/* page 4 */}
+            <div className="px-4 sm:px-8 md:px-[8vw] lg:pl-[11vw] flex flex-wrap gap-4 sm:gap-6 mt-[6vh] sm:mt-[10vh] lg:mt-[12vh] pt-[6vh] sm:pt-[8vh] bg-[#5C2AA5]">
+                <h1 className="w-full text-white text-2xl sm:text-3xl lg:text-4xl text-center font-semibold mb-4">
+                    Our Categories
+                </h1>
+                {
+                    product.map((p, i) => (
+                        <ProductCom key={i} name={p.name} image={p.image} />
+                    ))
+                }
+            </div>
+
         </div>
     );
 };

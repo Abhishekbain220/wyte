@@ -7,16 +7,18 @@ const Nav = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <div className='w-full flex items-center justify-between px-6 py-4 h-[13vh] md:px-[23vh]'>
+    <div className='w-full flex items-center justify-between px-6 py-4 h-[13vh] md:px-[4vw] lg:px-[6vw] xl:px-[23vh]'>
+
+      {/* Logo */}
       <img className='h-[8vh]' src="/logo.png" alt="Logo" />
 
-      {/* Desktop Menu */}
-      <div className='hidden md:flex gap-8 uppercase font-bold tracking-wide text-base'>
+      {/* Desktop + Tablet Menu */}
+      <div className='hidden md:flex ml-auto gap-8 md:gap-10 lg:gap-14 uppercase font-bold tracking-wide text-sm md:text-base'>
         <NavLink className={({ isActive }) => isActive ? "text-red-400" : "text-black"} to={"/"}>Home</NavLink>
         <NavLink className={({ isActive }) => isActive ? "text-red-400" : "text-black"} to={"/about-us"}>Profile</NavLink>
       </div>
 
-      {/* Hamburger Menu Button */}
+      {/* Hamburger Button (Mobile Only) */}
       <div className='md:hidden'>
         <button onClick={toggleMenu}>
           {menuOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}

@@ -3,29 +3,29 @@ import { motion } from 'framer-motion';
 
 const AboutUsCom = () => {
   return (
-    <div className='w-full pt-8 pl-4 pr-4 lg:pl-[11vw] h-auto lg:h-screen flex flex-col lg:flex-row'>
+    <div className="w-full px-4 pt-8 pb-8 lg:pt-16 lg:pl-[11vw] flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
 
-      {/* Image Section with scroll-triggered animation */}
+      {/* Image Section */}
       <motion.img
         src="aboutImg.jpg"
         alt="About Us"
-        className='h-auto lg:h-[87vh] object-cover'
+        className="w-full max-w-[600px] h-auto lg:h-[87vh] object-cover rounded-lg"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true, amount: 0.5 }}
       />
 
-      {/* Text Content with scroll-triggered animation */}
+      {/* Text Section */}
       <motion.div
-        className='w-full h-auto lg:h-full flex flex-col gap-4 pt-4 lg:pt-5 pl-2 lg:pl-7'
+        className="w-full max-w-3xl flex flex-col gap-4"
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true, amount: 0.4 }}
       >
         <motion.h1
-          className='text-3xl lg:text-5xl font-bold'
+          className="text-3xl md:text-4xl lg:text-5xl font-bold"
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.1 }}
@@ -35,7 +35,7 @@ const AboutUsCom = () => {
         </motion.h1>
 
         <motion.h2
-          className='text-base lg:text-[3vh] font-semibold italic'
+          className="text-base md:text-lg lg:text-[3vh] font-semibold italic text-gray-700"
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3 }}
@@ -45,7 +45,7 @@ const AboutUsCom = () => {
         </motion.h2>
 
         <motion.p
-          className='w-full lg:w-[38vw] text-sm lg:text-base text-justify leading-relaxed'
+          className="text-sm md:text-base text-justify text-gray-800 leading-relaxed"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
@@ -67,8 +67,7 @@ const AboutUsCom = () => {
           programs to develop new products and customer’ delight driven approach.
           <br /><br />
           WYTE is spreading wings by introducing value addition products to Corporates, brands and event companies. So far
-          elite Brands such as Reliance, Samsung, HUL, Bata, Blackberry, Varun Beverages(Pepsi), TimesOOH, Fybros, Pathkind
-          labs,
+          elite Brands such as Reliance, Samsung, HUL, Bata, Blackberry, Varun Beverages(Pepsi), TimesOOH, Fybros, Pathkind labs,
         </motion.p>
       </motion.div>
     </div>
