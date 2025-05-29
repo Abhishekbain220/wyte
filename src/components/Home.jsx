@@ -108,7 +108,7 @@ const Home = () => {
             {/* Page 1 */}
             <div
                 style={{ background: banner.gradient }}
-                className="relative pb-10 pt-16 px-6 md:px-16 lg:px-24 h-auto md:h-[87vh] w-full"
+                className="relative pb-10 pt-16 px-6 md:px-16 lg:px-24  bg-red-400 h-[110vmax] md:h-[87vh] w-full"
             >
                 {/* Overlay */}
                 <div className="bg-black opacity-50 md:h-[73vh] md:w-[90vw] md:left-24 md:top-16 absolute inset-0 z-10"></div>
