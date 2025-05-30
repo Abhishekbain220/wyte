@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import AboutUsCom from './AboutUsCom';
 import ProductCom from './ProductCom';
+import Footer from './Footer';
 
 const Home = () => {
     const [banner, setBanner] = useState({
@@ -108,10 +109,10 @@ const Home = () => {
             {/* Page 1 */}
             <div
                 style={{ background: banner.gradient }}
-                className="relative pb-10 pt-16 px-6 md:px-16 lg:px-24  bg-red-400 h-[110vmax] md:h-[87vh] w-full"
+                className="relative pb-10 pt-16 px-6 md:px-16 lg:px-24   h-[115vmax] md:h-[87vh] w-full"
             >
                 {/* Overlay */}
-                <div className="bg-black opacity-50 md:h-[73vh] md:w-[90vw] md:left-24 md:top-16 absolute inset-0 z-10"></div>
+                <div className="bg-black opacity-50 md:h-[73vh] md:w-[90vw] md:left-24 md:mt-0 mt-[4vh] md:top-16 absolute inset-0 z-10"></div>
 
                 {/* Content with animation */}
                 <motion.div
@@ -119,7 +120,7 @@ const Home = () => {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="relative z-20 flex flex-col md:flex-row items-center gap-8 h-full md:w-[90vw]"
+                    className="relative z-20 flex md:mt-0 mt-[9vh] flex-col md:flex-row items-center gap-8 h-full md:w-[90vw]"
                 >
                     <motion.img
                         key={banner.image + "_img"}
@@ -162,7 +163,7 @@ const Home = () => {
             {/* page 2 */}
             <AboutUsCom />
             {/* Page 3 */}
-            <div className='px-4 sm:px-8 md:px-[8vw] lg:pl-[11vw] flex flex-wrap gap-4 sm:gap-6 mt-[6vh] sm:mt-[10vh] lg:mt-[12vh] pt-[6vh] sm:pt-[8vh] bg-[#5C2AA5] '>
+            <div className='px-4 sm:px-8 md:px-[8vw] lg:pl-[11vw] flex flex-wrap gap-4 sm:gap-6 mt-[6vh] sm:mt-[10vh] lg:mt-[12vh] pt-[6vh] sm:pt-[8vh]  '>
                 {
                     product.map((p, i) => (
                         <ProductCom name={p.name} image={p.image} />
@@ -170,8 +171,8 @@ const Home = () => {
                 }
             </div>
             {/* page 4 */}
-            <div className="px-4 sm:px-8 md:px-[8vw] lg:pl-[11vw] flex flex-wrap gap-4 sm:gap-6 mt-[6vh] sm:mt-[10vh] lg:mt-[12vh] pt-[6vh] sm:pt-[8vh] bg-[#5C2AA5]">
-                <h1 className="w-full text-white text-2xl sm:text-3xl lg:text-4xl text-center font-semibold mb-4">
+            <div className="px-4 sm:px-8 md:px-[8vw] lg:pl-[11vw] flex flex-wrap gap-4 sm:gap-6 mt-[6vh] sm:mt-[10vh] lg:mt-[12vh] pt-[6vh] sm:pt-[8vh] ">
+                <h1 className="w-full text-black text-2xl sm:text-3xl lg:text-4xl text-center font-semibold mb-4">
                     Our Categories
                 </h1>
                 {
@@ -181,7 +182,27 @@ const Home = () => {
                 }
             </div>
 
-        </div>
+            {/* page 5 */}
+            <div
+                style={{ backgroundImage: `url(/poster.jpg)` }}
+                className="relative z-0 w-full h-[40vh] bg-cover bg-center bg-no-repeat
+             after:content-[''] after:absolute after:inset-0 after:bg-black/50 after:z-10
+             flex justify-center items-center px-4 sm:px-8 md:px-12"
+            >
+                <h1
+                    className="relative z-20 text-center text-white text-base sm:text-lg md:text-2xl 
+               font-semibold max-w-[90vw] sm:max-w-[80vw] animate-fade-in"
+                >
+                    Wyte is a panoply of Advertising substrates with more than 200 printable materials
+                    for U.V., Inkjet, Latex, and Eco solvent machines.
+                </h1>
+            </div>
+
+            {/* Footer */}
+            <Footer/>
+
+
+        </div >
     );
 };
 

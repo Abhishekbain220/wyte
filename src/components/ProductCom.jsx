@@ -27,7 +27,7 @@ const ProductCom = ({ name, image }) => {
       <div className="card-inner relative w-full h-full rounded-xl">
         {/* Front Side */}
         <div className="
-          card-face absolute w-full h-full bg-[#5B2DA7] rounded-xl overflow-hidden
+          card-face absolute w-full h-full  rounded-xl overflow-hidden
           flex flex-col items-center justify-center px-4 py-4
         ">
           <div className="relative w-full aspect-[3/2] overflow-hidden rounded-lg">
@@ -39,7 +39,7 @@ const ProductCom = ({ name, image }) => {
             />
           </div>
           <h1 className="
-            mt-3 text-center font-semibold text-white 
+            mt-3 text-center font-semibold text-black 
             text-base sm:text-lg md:text-xl
           ">
             {name}
