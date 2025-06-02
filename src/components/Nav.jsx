@@ -30,18 +30,19 @@ const Nav = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full bg-white z-50 shadow-md transition-transform duration-300 ease-in-out
+      className={`fixed  top-0 left-0 w-full bg-white z-50 shadow-md transition-transform duration-300 ease-in-out
         ${showNav ? 'translate-y-0' : '-translate-y-full'}`}
     >
       <div className='w-full flex items-center justify-between px-6 py-4 h-[13vh] md:px-[4vw] lg:px-[6vw] xl:px-[23vh]'>
 
         {/* Logo */}
-        <img className='h-[8vh]' src="/logo.png" alt="Logo" />
+        <img className='h-[15vh]' src="/logo.png" alt="Logo" />
 
         {/* Desktop + Tablet Menu */}
         <div className='hidden md:flex ml-auto gap-8 md:gap-10 lg:gap-14 uppercase font-bold tracking-wide text-sm md:text-base'>
           <NavLink className={({ isActive }) => isActive ? "text-red-400" : "text-black"} to={"/"}>Home</NavLink>
           <NavLink className={({ isActive }) => isActive ? "text-red-400" : "text-black"} to={"/about-us"}>Profile</NavLink>
+          <NavLink className={({ isActive }) => isActive ? "text-red-400" : "text-black"} to={"/products"}>Products</NavLink>
         </div>
 
         {/* Hamburger Button (Mobile Only) */}
@@ -60,6 +61,7 @@ const Nav = () => {
       >
         <NavLink onClick={toggleMenu} className={({ isActive }) => isActive ? "text-red-400" : "text-black"} to={"/"}>Home</NavLink>
         <NavLink onClick={toggleMenu} className={({ isActive }) => isActive ? "text-red-400" : "text-black"} to={"/about-us"}>Profile</NavLink>
+        <NavLink onClick={toggleMenu} className={({ isActive }) => isActive ? "text-red-400" : "text-black"} to={"/products"}>Products</NavLink>
       </div>
     </div>
   );

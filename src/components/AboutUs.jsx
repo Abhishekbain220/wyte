@@ -3,11 +3,14 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import ProductCom from './ProductCom';
 import Footer from './Footer';
+import AboutUsCom from './AboutUsCom';
 
 
 const AboutUs = () => {
   return (
-   <div></div>
+   <div className='pt-20'>
+    <AboutUsCom/>
+   </div>
   )
 }
 

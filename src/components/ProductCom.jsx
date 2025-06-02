@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ProductContext } from '../utils/ProductContext';
+import { useNavigate } from 'react-router-dom';
 
-const ProductCom = ({ name, image }) => {
+const ProductCom = ({ name, image ,id }) => {
+  let navigate=useNavigate()
   return (
-    <div className="
+    <div onClick={()=>navigate(`/product/${id}`) } className="
       w-full sm:w-[80vw] md:w-[28vw] lg:w-[24vw]
       h-[400px] sm:h-[440px] md:h-[420px]
       perspective-[1000px] cursor-pointer group mx-auto
