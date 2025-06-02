@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 import { ProductContext } from '../utils/ProductContext';
 import { useNavigate } from 'react-router-dom';
 
-const ProductCom = ({ name, image ,id }) => {
-  let navigate=useNavigate()
+const ProductCom = ({ name, image, id }) => {
+  let navigate = useNavigate()
   return (
-    <div onClick={()=>navigate(`/product/${id}`) } className="
+    <div onClick={() => navigate(`/product/${id}`)} className="
       w-full sm:w-[80vw] md:w-[28vw] lg:w-[24vw]
       h-[400px] sm:h-[440px] md:h-[420px]
       perspective-[1000px] cursor-pointer group mx-auto
@@ -72,12 +72,14 @@ const ProductCom = ({ name, image ,id }) => {
               High-quality printable wallpapers for your home or office.
             </p>
             <button className="
-              px-6 py-2 sm:px-8 sm:py-3 bg-white text-[#FF9900] font-semibold rounded-md 
-              hover:bg-[#fff3e0] transition
-              text-sm sm:text-base
-            ">
-              View
+  relative px-6 py-2 sm:px-8 sm:py-3 font-semibold rounded-md overflow-hidden
+  bg-white text-black transition-all duration-500 ease-in-out
+  hover:text-white group/button text-sm sm:text-base
+">
+              <span className="absolute inset-0 bg-[#7AC943] transform scale-x-0 group-hover/button:scale-x-100 transition-transform duration-500 ease-in-out origin-left z-0 rounded-md"></span>
+              <span className="relative z-10">View</span>
             </button>
+
           </div>
         </div>
       </div>

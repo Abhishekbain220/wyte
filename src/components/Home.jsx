@@ -75,7 +75,7 @@ const Home = () => {
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-between font-semibold text-base sm:text-lg md:text-xl mt-8 md:mt-[10vh] px-0 md:px-[6vh] text-white gap-4 sm:gap-0">
-                            <img className="h-16 sm:h-20" src="logo.png" alt="Logo" />
+                            <img className="h-16 bg-white sm:h-20 rounded-full p-2" src="logo.png" alt="Logo" />
                             <h2 className="text-center sm:text-right sm:mr-[4vh] sm:w-auto">
                                 {banner.name}
                             </h2>
@@ -96,9 +96,19 @@ const Home = () => {
             </div>
             {/* page 4 */}
             <div className="px-4 sm:px-8 md:px-[8vw] lg:pl-[11vw] flex flex-wrap gap-4 sm:gap-6 mt-[6vh] sm:mt-[10vh] lg:mt-[12vh] pt-[6vh] sm:pt-[8vh] ">
-                <h1 className="w-full text-black text-2xl sm:text-3xl lg:text-4xl text-center font-semibold mb-4">
-                    Our Categories
-                </h1>
+                <motion.div
+                        className="w-full bg-gradient-to-r from-[#76bc21]/10 via-white to-[#1d1b41]/10 py-10 sm:py-14 shadow-md"
+                        initial={{ opacity: 0, y: -30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7 }}
+                      >
+                        <div className="max-w-2xl sm:max-w-4xl mx-auto px-4 text-center">
+                          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1d1b41] tracking-tight leading-snug">
+                             Our <span className="text-[#76bc21]">Categories</span>
+                          </h1>
+                          
+                        </div>
+                      </motion.div>
                 {
                     product.map((p, i) => (
                         <ProductCom id={p.id} name={p.name} image={p.image} />

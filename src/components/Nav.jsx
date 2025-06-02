@@ -14,11 +14,9 @@ const Nav = () => {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        // Scrolling down
-        setShowNav(false);
+        setShowNav(false); // Scroll down
       } else {
-        // Scrolling up
-        setShowNav(true);
+        setShowNav(true); // Scroll up
       }
 
       setLastScrollY(currentScrollY);
@@ -28,9 +26,22 @@ const Nav = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  const navLinks = [
+    { path: '/', label: 'Home' },
+    { path: '/about-us', label: 'Profile' },
+    { path: '/products', label: 'Products' },
+  ];
+
+  const navLinkClasses = ({ isActive }) =>
+    `${isActive ? 'text-[#7AC943]' : 'text-black'} 
+    hover:text-[#7AC943] transition-all duration-300 ease-in-out 
+    relative after:block after:h-[2px] after:bg-[#7AC943] 
+    after:scale-x-0 hover:after:scale-x-100 
+    after:transition-transform after:duration-300 after:origin-left`;
+
   return (
     <div
-      className={`fixed  top-0 left-0 w-full bg-white z-50 shadow-md transition-transform duration-300 ease-in-out
+      className={`fixed top-0 left-0 w-full bg-white z-50 shadow-md transition-transform duration-300 ease-in-out 
         ${showNav ? 'translate-y-0' : '-translate-y-full'}`}
     >
       <div className='w-full flex items-center justify-between px-6 py-4 h-[13vh] md:px-[4vw] lg:px-[6vw] xl:px-[23vh]'>
@@ -40,9 +51,11 @@ const Nav = () => {
 
         {/* Desktop + Tablet Menu */}
         <div className='hidden md:flex ml-auto gap-8 md:gap-10 lg:gap-14 uppercase font-bold tracking-wide text-sm md:text-base'>
-          <NavLink className={({ isActive }) => isActive ? "text-red-400" : "text-black"} to={"/"}>Home</NavLink>
-          <NavLink className={({ isActive }) => isActive ? "text-red-400" : "text-black"} to={"/about-us"}>Profile</NavLink>
-          <NavLink className={({ isActive }) => isActive ? "text-red-400" : "text-black"} to={"/products"}>Products</NavLink>
+          {navLinks.map(link => (
+            <NavLink key={link.path} to={link.path} className={navLinkClasses}>
+              {link.label}
+            </NavLink>
+          ))}
         </div>
 
         {/* Hamburger Button (Mobile Only) */}
@@ -59,9 +72,16 @@ const Nav = () => {
         transition-all duration-300 ease-in-out 
         ${menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}
       >
-        <NavLink onClick={toggleMenu} className={({ isActive }) => isActive ? "text-red-400" : "text-black"} to={"/"}>Home</NavLink>
-        <NavLink onClick={toggleMenu} className={({ isActive }) => isActive ? "text-red-400" : "text-black"} to={"/about-us"}>Profile</NavLink>
-        <NavLink onClick={toggleMenu} className={({ isActive }) => isActive ? "text-red-400" : "text-black"} to={"/products"}>Products</NavLink>
+        {navLinks.map(link => (
+          <NavLink
+            key={link.path}
+            to={link.path}
+            onClick={toggleMenu}
+            className={navLinkClasses}
+          >
+            {link.label}
+          </NavLink>
+        ))}
       </div>
     </div>
   );
