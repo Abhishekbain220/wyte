@@ -34,7 +34,7 @@ const Nav = () => {
 
   const navLinkClasses = ({ isActive }) =>
     `${isActive ? 'text-[#7AC943]' : 'text-black'} 
-    hover:text-[#7AC943] transition-all duration-300 ease-in-out 
+     transition-all duration-300 ease-in-out 
     relative after:block after:h-[2px] after:bg-[#7AC943] 
     after:scale-x-0 hover:after:scale-x-100 
     after:transition-transform after:duration-300 after:origin-left`;

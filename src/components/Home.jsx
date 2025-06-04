@@ -6,7 +6,7 @@ import { ProductContext } from '../utils/ProductContext';
 
 const Home = () => {
     
-    let {banners, banner,setBanner,products,product,setProduct}=useContext(ProductContext)
+    let {banners, banner,setBanner,products,product,setProduct,ProductCategory}=useContext(ProductContext)
     
 
     let counter = 0;
@@ -19,7 +19,7 @@ const Home = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             getBanner();
-        }, 5000);
+        }, 3000);
         return () => clearInterval(interval);
     }, []);
 
@@ -90,7 +90,7 @@ const Home = () => {
             <div className='px-4 sm:px-8 md:px-[8vw] lg:pl-[11vw] flex flex-wrap gap-4 sm:gap-6 mt-[6vh] sm:mt-[10vh] lg:mt-[12vh] pt-[6vh] sm:pt-[8vh]  '>
                 {
                     product.map((p, i) => (
-                        <ProductCom id={p.id} name={p.name} image={p.image} />
+                        <ProductCom id={p.id} name={p.name} image={p.image} navigation={`/product/${p.id}`} />
                     ))
                 }
             </div>
@@ -110,8 +110,8 @@ const Home = () => {
                         </div>
                       </motion.div>
                 {
-                    product.map((p, i) => (
-                        <ProductCom id={p.id} name={p.name} image={p.image} />
+                    ProductCategory.map((p, i) => (
+                        <ProductCom id={p.id} name={p.name} image={p.image} navigation={`/${p.name}`} />
                     ))
                 }
             </div>

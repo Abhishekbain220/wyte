@@ -1,88 +1,56 @@
-import React, { useContext } from 'react';
-import { ProductContext } from '../utils/ProductContext';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const ProductCom = ({ name, image, id }) => {
-  let navigate = useNavigate()
+const ProductCom = ({ name, image, id, navigation }) => {
+  const navigate = useNavigate();
+
   return (
-    <div onClick={() => navigate(`/product/${id}`)} className="
-      w-full sm:w-[80vw] md:w-[28vw] lg:w-[24vw]
-      h-[400px] sm:h-[440px] md:h-[420px]
-      perspective-[1000px] cursor-pointer group mx-auto
-    ">
-      <style>{`
-        .card-inner {
-          transition: transform 0.8s ease;
-          transform-style: preserve-3d;
-        }
-        .group:hover .card-inner {
-          transform: rotateY(180deg);
-        }
-        .card-face {
-          backface-visibility: hidden;
-          -webkit-backface-visibility: hidden;
-        }
-        .card-back {
-          transform: rotateY(180deg);
-        }
-      `}</style>
+    <div
+      onClick={() => navigate(`${navigation}`)}
+      className="
+        relative w-[260px] h-[320px] rounded-xl overflow-hidden 
+        shadow-lg cursor-pointer group mx-auto my-8
+      "
+    >
+      {/* Image */}
+      <img
+        src={image}
+        alt={name}
+        loading="lazy"
+        className="
+          w-full h-full object-cover 
+          transition-transform duration-500 
+          group-hover:scale-110
+          sm:group-hover:scale-110
+        "
+      />
 
-      <div className="card-inner relative w-full h-full rounded-xl">
-        {/* Front Side */}
-        <div className="
-          card-face absolute w-full h-full  rounded-xl overflow-hidden
-          flex flex-col items-center justify-center px-4 py-4
-        ">
-          <div className="relative w-full aspect-[3/2] overflow-hidden rounded-lg">
-            <img
-              className="w-full h-full object-cover rounded-lg"
-              src={image}
-              alt={name}
-              loading="lazy"
-            />
-          </div>
-          <h1 className="
-            mt-3 text-center font-semibold text-black 
-            text-base sm:text-lg md:text-xl
-          ">
-            {name}
-          </h1>
-        </div>
+      {/* Overlay Gradient (only on hover for sm and up) */}
+      <div className="
+        absolute inset-0 
+        bg-gradient-to-t from-black via-transparent to-transparent 
+        opacity-0 sm:group-hover:opacity-2100
+        transition-opacity duration-500
+      "></div>
 
-        {/* Back Side */}
-        <div
-          className="
-            card-face card-back absolute w-full h-full rounded-xl flex flex-col items-center justify-center
-            px-4 py-4 text-center
-          "
-          style={{
-            backgroundImage: `url(${image})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            color: 'white',
-          }}
-        >
-          <div className="absolute inset-0 bg-black opacity-60 rounded-xl z-0"></div>
-
-          <div className="relative z-10">
-            <h2 className="text-white font-bold mb-3 text-lg sm:text-xl md:text-2xl">
-              {name}
-            </h2>
-            <p className="text-white mb-5 text-sm sm:text-base md:text-lg max-w-xs sm:max-w-sm mx-auto">
-              High-quality printable wallpapers for your home or office.
-            </p>
-            <button className="
-  relative px-6 py-2 sm:px-8 sm:py-3 font-semibold rounded-md overflow-hidden
-  bg-white text-black transition-all duration-500 ease-in-out
-  hover:text-white group/button text-sm sm:text-base
+      {/* Text Info */}
+      <div className="
+  absolute bottom-0 left-0 w-full px-3 py-4 font-semibold text-white 
+  transition-all duration-500
+  sm:translate-y-8 sm:opacity-0 
+  sm:group-hover:translate-y-0 sm:group-hover:opacity-100
+  bg-[rgba(0,0,0,0.7)] 
 ">
-              <span className="absolute inset-0 bg-[#7AC943] transform scale-x-0 group-hover/button:scale-x-100 transition-transform duration-500 ease-in-out origin-left z-0 rounded-md"></span>
-              <span className="relative z-10">View</span>
-            </button>
+  <h3 className="text-base sm:text-xl font-semibold">{name}</h3>
+  <p className="text-xs sm:text-base text-gray-200 mt-1">Stylish printable wallpapers.</p>
+  <button className="
+    mt-3 px-3 py-1.5 bg-[#7AC943] text-white rounded-md 
+    hover:bg-green-600 transition duration-300 text-xs sm:text-sm
+  ">
+    View Product
+  </button>
+</div>
 
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

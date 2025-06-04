@@ -52,7 +52,8 @@ export let ProductProvider=(props)=>{
             Length : "30 mtrs.",
             Glue : "Water Base – Permanent",
             "Compatible with":"Eco Sol / Latex / U.V. Printers",
-            Description:"WP180GT is a PVC based and medium textured self-adhesive wallpaper is mostly resistant to grease and moisture than plain paper, and are good for most commercial & residential applications.Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images.It has a nice white satin surface that gives rich and enhanced color reproduction."
+            Description:"WP180GT is a PVC based and medium textured self-adhesive wallpaper is mostly resistant to grease and moisture than plain paper, and are good for most commercial & residential applications.Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images.It has a nice white satin surface that gives rich and enhanced color reproduction.",
+            Category:"WYTE INKJET PRINTABLE MEDIAS"
 
 
         },
@@ -68,7 +69,8 @@ export let ProductProvider=(props)=>{
             Length : "50 mtrs.",
             Glue : "Water Base – Permanent",
             "Compatible with":"Eco Sol / Latex / U.V. Printers",
-            Description:"WP200HR is a paper based, medium textured non-adhesive wallpaper with matte finish.It has a unique anti-scratch coating for longer life and it is layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption spray.It has a slight off-white textured matte surface that looks beautiful on any wall under general lights."
+            Description:"WP200HR is a paper based, medium textured non-adhesive wallpaper with matte finish.It has a unique anti-scratch coating for longer life and it is layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption spray.It has a slight off-white textured matte surface that looks beautiful on any wall under general lights.",
+            Category:"WYTE CARELIT ENVOIRNMENT FRIENDLY PRINTABLE MEDIAS"
         },
         {
             id: 3,
@@ -82,7 +84,8 @@ export let ProductProvider=(props)=>{
             Length : "30 mtrs.",
             Glue : "Water Base – Permanent",
             "Compatible with":"Eco Sol / Latex / U.V. Printers",
-            Description:"WP200AC is a paper based, medium textured non-adhesive wallpaper with heavy canvas like feel. It is best suitable for abstract art designs as wall murals.Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images.It has a slight off-white textured satin surface."
+            Description:"WP200AC is a paper based, medium textured non-adhesive wallpaper with heavy canvas like feel. It is best suitable for abstract art designs as wall murals.Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images.It has a slight off-white textured satin surface.",
+            Category:"WYTE COMMERCIAL PRINTABLE MEDIAS"
         },
         {
             id: 4,
@@ -96,7 +99,8 @@ export let ProductProvider=(props)=>{
             Length : "30 mtrs.",
             Glue : "Water Base – Permanent",
             "Compatible with":"Eco Sol / Latex / U.V. Printers",
-            Description:"WP2003D is a paper based, light textured non-adhesive wallpaper with virtual 3D brushed pattern.Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images.It has a slight off-white 3D satin surface which bounces off lights to give 3D appearance."
+            Description:"WP2003D is a paper based, light textured non-adhesive wallpaper with virtual 3D brushed pattern.Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images.It has a slight off-white 3D satin surface which bounces off lights to give 3D appearance.",
+            Category:"WYTE DECOR SERIES"
         },
         {
             id: 5,
@@ -110,7 +114,8 @@ export let ProductProvider=(props)=>{
             Length : "30 mtrs.",
             Glue : "Water Base – Permanent",
             "Compatible with":"Eco Sol / Latex / U.V. Printers",
-            Description:"WPNOWO180 is a non-woven paper based, non-adhesive wallpaper with smooth matte finish. It is the mostfavorite & widely used by architects and interior designers in both residential & commercial projects.Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images.It has a slight off-white plain matte surface."
+            Description:"WPNOWO180 is a non-woven paper based, non-adhesive wallpaper with smooth matte finish. It is the mostfavorite & widely used by architects and interior designers in both residential & commercial projects.Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images.It has a slight off-white plain matte surface.",
+            Category:"WYTE INKJET PRINTABLE MEDIAS"
         },
         {
             id: 6,
@@ -124,7 +129,8 @@ export let ProductProvider=(props)=>{
             Length : "30 mtrs.",
             Glue : "Water Base – Permanent",
             "Compatible with":"Eco Sol / Latex / U.V. Printers",
-            Description:"WP2003D is a paper based, light textured non-adhesive wallpaper with virtual 3D brushed pattern.Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images.It has a slight off-white 3D satin surface which bounces off lights to give 3D appearance."
+            Description:"WP2003D is a paper based, light textured non-adhesive wallpaper with virtual 3D brushed pattern.Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images.It has a slight off-white 3D satin surface which bounces off lights to give 3D appearance.",
+            Category:"WYTE CARELIT ENVOIRNMENT FRIENDLY PRINTABLE MEDIAS"
         },
         {
             id: 7,
@@ -138,7 +144,8 @@ export let ProductProvider=(props)=>{
             Length : "50 mtrs.",
             Glue : "Water Base – Permanent",
             "Compatible with":"Eco Sol / Latex / U.V. Printers",
-            Description:"WP200HR is a paper based, medium textured non-adhesive wallpaper with matte finish.It has a unique anti-scratch coating for longer life and it is layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption spray.It has a slight off-white textured matte surface that looks beautiful on any wall under general lights."
+            Description:"WP200HR is a paper based, medium textured non-adhesive wallpaper with matte finish.It has a unique anti-scratch coating for longer life and it is layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption spray.It has a slight off-white textured matte surface that looks beautiful on any wall under general lights.",
+            Category:"WYTE COMMERCIAL PRINTABLE MEDIAS"
         },
         {
             id: 8,
@@ -152,16 +159,42 @@ export let ProductProvider=(props)=>{
             Length : "30 mtrs.",
             Glue : "Water Base – Permanent",
             "Compatible with":"Eco Sol / Latex / U.V. Printers",
-            Description:"WP180GT is a PVC based and medium textured self-adhesive wallpaper is mostly resistant to grease and moisture than plain paper, and are good for most commercial & residential applications.Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images.It has a nice white satin surface that gives rich and enhanced color reproduction."
+            Description:"WP180GT is a PVC based and medium textured self-adhesive wallpaper is mostly resistant to grease and moisture than plain paper, and are good for most commercial & residential applications.Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images.It has a nice white satin surface that gives rich and enhanced color reproduction.",
+            Category:"WYTE DECOR SERIES"
         }
     ]
 
     const [product, setProduct] = useState(products)
 
+    // Categories
+    let ProductCategory=[
+        {
+            id:1,
+            name:"WYTE INKJET PRINTABLE MEDIAS",
+            image:"product1.jpg"
+        },
+        {
+            id:2,
+            name:"WYTE CARELIT ENVOIRNMENT FRIENDLY PRINTABLE MEDIAS",
+            image:"product2.jpg"
+        },
+        {
+            id:3,
+            name:"WYTE COMMERCIAL PRINTABLE MEDIAS",
+            image:"product3.jpg"
+        },
+        {
+            id:4,
+            name:"WYTE DECOR SERIES",
+            image:"product4.jpg"
+        },
+        
+    ]
+
     
 
     return(
-        <ProductContext.Provider value={{banners, banner,setBanner,products,product,setProduct}}>
+        <ProductContext.Provider value={{banners, banner,setBanner,products,product,setProduct,ProductCategory}}>
             {props.children}
         </ProductContext.Provider>
     )

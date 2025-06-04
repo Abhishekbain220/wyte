@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -23,18 +24,30 @@ const Footer = () => {
         {/* Right Column */}
         <div className="flex flex-col justify-between">
           <nav className="mb-8 flex space-x-8 font-semibold text-white">
-            {["Home", "About", "Services", "Contact"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="relative transition-colors duration-300 text-white hover:text-[#7AC943] 
+            <NavLink className="relative transition-colors duration-300 text-white hover:text-[#7AC943] 
                            before:content-[''] before:absolute before:-bottom-1 before:left-0 
                            before:w-0 before:h-[2px] before:bg-[#7AC943] before:transition-all before:duration-300 
-                           hover:before:w-full"
-              >
-                {item}
-              </a>
-            ))}
+                           hover:before:w-full" to={"/"}>
+                
+                Home
+              
+              </NavLink>
+            <NavLink className="relative transition-colors duration-300 text-white hover:text-[#7AC943] 
+                           before:content-[''] before:absolute before:-bottom-1 before:left-0 
+                           before:w-0 before:h-[2px] before:bg-[#7AC943] before:transition-all before:duration-300 
+                           hover:before:w-full" to={"/about-us"}>
+               
+                About
+             
+              </NavLink>
+            <NavLink className="relative transition-colors duration-300 text-white hover:text-[#7AC943] 
+                           before:content-[''] before:absolute before:-bottom-1 before:left-0 
+                           before:w-0 before:h-[2px] before:bg-[#7AC943] before:transition-all before:duration-300 
+                           hover:before:w-full" to={"/products"}>
+                
+                Products
+              
+              </NavLink>
           </nav>
 
           <div className="flex space-x-6 text-2xl text-white">
