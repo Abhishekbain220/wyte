@@ -22,16 +22,31 @@ const CategoryPage = () => {
   return (
     <div className="min-h-screen w-full pt-32 sm:pt-36 bg-gradient-to-br from-[#f1fcfc] via-[#eef7ff] to-[#eafff0]">
       {/* Category Heading Banner */}
-      <div className="w-full bg-gradient-to-r from-[#76bc21]/10 via-white to-[#1d1b41]/10 py-10 sm:py-14 shadow-md">
+      <motion.div
+        className="w-full bg-gradient-to-r from-[#76bc21]/10 via-white to-[#1d1b41]/10 py-10 sm:py-14 shadow-md"
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+      >
         <div className="max-w-2xl sm:max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1d1b41] tracking-tight leading-snug capitalize">
+          <motion.h1
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1d1b41] tracking-tight leading-snug capitalize"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
             <span className="text-[#76bc21]">{Category}</span>
-          </h1>
-          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600">
+          </motion.h1>
+          <motion.p
+            className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+          >
             Browse all products in the {Category} category.
-          </p>
+          </motion.p>
         </div>
-      </div>
+      </motion.div>
 
       {/* Filtered Product List */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16">
@@ -45,9 +60,13 @@ const CategoryPage = () => {
               <motion.div
                 key={p.id}
                 className="w-full sm:w-auto"
-                initial={{ scale: 0.8, opacity: 0 }}
+                initial={{ scale: 0.85, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: index * 0.1, duration: 0.4, ease: 'easeOut' }}
+                transition={{
+                  delay: index * 0.1,
+                  duration: 0.4,
+                  ease: 'easeOut',
+                }}
               >
                 <ProductCom
                   id={p.id}
