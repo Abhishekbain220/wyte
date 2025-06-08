@@ -26,35 +26,31 @@ const item = {
 };
 
 const SingleProduct = () => {
-  const { id } = useParams();
+  const { id,productName } = useParams();
   const { products } = useContext(ProductContext);
   const [productDetails, setProductDetails] = useState(null);
 
-  const [showMagnifier, setShowMagnifier] = useState(false);
-  const [magnifierPosition, setMagnifierPosition] = useState({ x: 0, y: 0 });
   const imgRef = useRef(null);
-
-  const magnifierSize = 160;
-  const zoomLevel = 2.5;
+  const [transformOrigin, setTransformOrigin] = useState('center center');
+  const [isZoomed, setIsZoomed] = useState(false);
 
   useEffect(() => {
-    const singleProduct = products.find((p) => String(p.id) === id);
-    setProductDetails(singleProduct);
-  }, [id, products]);
+    const product = products.find((p) => String(p.array) === productName);
 
-  if (!productDetails) return null;
+    let productItem=product.items.find((i)=>String(i.id)=== id)
+
+    setProductDetails(productItem);
+  }, [id, products]);
+  console.log(productDetails)
 
   const handleMouseMove = (e) => {
-    const { top, left, width, height } = imgRef.current.getBoundingClientRect();
-
-    const x = e.pageX - left - window.pageXOffset;
-    const y = e.pageY - top - window.pageYOffset;
-
-    const posX = Math.max(0, Math.min(x, width));
-    const posY = Math.max(0, Math.min(y, height));
-
-    setMagnifierPosition({ x: posX, y: posY });
+    const bounds = imgRef.current.getBoundingClientRect();
+    const x = ((e.clientX - bounds.left) / bounds.width) * 100;
+    const y = ((e.clientY - bounds.top) / bounds.height) * 100;
+    setTransformOrigin(`${x}% ${y}%`);
   };
+
+  if (!productDetails) return null;
 
   return (
     <motion.div
@@ -70,70 +66,50 @@ const SingleProduct = () => {
         {/* Image Section */}
         <motion.div className="flex justify-center items-center relative" variants={item}>
           <div
-            className="overflow-hidden rounded-2xl shadow-lg relative cursor-default"
-            onMouseEnter={() => setShowMagnifier(true)}
-            onMouseLeave={() => setShowMagnifier(false)}
+            className="overflow-hidden rounded-2xl shadow-lg relative group"
+            onMouseEnter={() => setIsZoomed(true)}
+            onMouseLeave={() => setIsZoomed(false)}
             onMouseMove={handleMouseMove}
           >
             <img
               ref={imgRef}
               src={`/${productDetails.image}`}
               alt={productDetails.name}
-              className="w-full max-w-md transform transition-transform duration-500 ease-in-out hover:scale-110"
-              style={{ display: 'block' }}
+              className={`w-full max-w-md transition-transform duration-300 ease-out ${
+                isZoomed ? 'scale-[2.5]' : 'scale-100'
+              }`}
+              style={{
+                transformOrigin: transformOrigin,
+              }}
             />
-
-            {/* Alternative Magnifier Lens */}
-            {showMagnifier && (
-              <div
-                style={{
-                  position: 'absolute',
-                  pointerEvents: 'none',
-                  top: magnifierPosition.y - magnifierSize / 2 - 30, // offset lens slightly up
-                  left: magnifierPosition.x - magnifierSize / 2 + 30, // offset lens slightly right
-                  width: magnifierSize,
-                  height: magnifierSize,
-                  borderRadius: '50%',
-                  overflow: 'hidden',
-                  boxShadow: '0 0 10px rgba(0,0,0,0.3)',
-                  animation: 'pulse 2s infinite',
-                  backgroundColor: 'rgba(0,0,0,0.15)',
-
-                  // background zoom effect
-                  backgroundImage: `url(/${productDetails.image})`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: `${imgRef.current.width * zoomLevel}px ${imgRef.current.height * zoomLevel}px`,
-                  backgroundPositionX: `-${magnifierPosition.x * zoomLevel - magnifierSize / 2}px`,
-                  backgroundPositionY: `-${magnifierPosition.y * zoomLevel - magnifierSize / 2}px`,
-                  filter: 'brightness(1.1)',
-                  border: 'none',
-                }}
-              />
-            )}
           </div>
         </motion.div>
 
         {/* Details Section */}
         <motion.div className="space-y-8 text-white" variants={item}>
           <div>
-            <h1 className="text-4xl font-bold tracking-tight text-white mb-2">{productDetails.name}</h1>
+            <h1 className="text-4xl font-bold tracking-tight text-white mb-2">{productDetails.Heading}</h1>
           </div>
 
-          {/* Feature Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base">
             {productDetails.Sizes && (
               <div>
-                <span className="font-semibold text-[#7AC943]">Size:</span> {productDetails.Sizes}
+                <span className="font-semibold text-[#7AC943]">Size (in Inches):</span> {productDetails.Sizes}
               </div>
             )}
-            {productDetails.Surface && (
+            {productDetails["Base Substrate"] && (
               <div>
-                <span className="font-semibold text-[#7AC943]">Surface:</span> {productDetails.Surface}
+                <span className="font-semibold text-[#7AC943]">Base Substrate:</span> {productDetails["Base Substrate"]}
               </div>
             )}
             {productDetails.Thickness && (
               <div>
                 <span className="font-semibold text-[#7AC943]">Thickness:</span> {productDetails.Thickness}
+              </div>
+            )}
+            {productDetails.Application && (
+              <div>
+                <span className="font-semibold text-[#7AC943]">Application:</span> {productDetails.Application}
               </div>
             )}
             {productDetails.Length && (
@@ -146,14 +122,24 @@ const SingleProduct = () => {
                 <span className="font-semibold text-[#7AC943]">Glue:</span> {productDetails.Glue}
               </div>
             )}
-            {productDetails.Application && (
+            {productDetails["Compatible with"] && (
               <div>
-                <span className="font-semibold text-[#7AC943]">Application:</span> {productDetails.Application}
+                <span className="font-semibold text-[#7AC943]">Compatible with:</span> {productDetails["Compatible with"]}
               </div>
             )}
+            {productDetails["Product Code"] && (
+              <div>
+                <span className="font-semibold text-[#7AC943]">Product Code:</span> {productDetails["Product Code"]}
+              </div>
+            )}
+            {productDetails.Category && (
+              <div>
+                <span className="font-semibold text-[#7AC943]">Category:</span> {productDetails.Category}
+              </div>
+            )}
+            
           </div>
 
-          {/* Description */}
           {productDetails.Description && (
             <motion.div variants={item}>
               <h2 className="text-xl font-semibold text-white mb-2">Product Description</h2>
@@ -161,22 +147,12 @@ const SingleProduct = () => {
             </motion.div>
           )}
 
-          {/* CTA */}
           <motion.div variants={item}>
             <button className="flex items-center gap-2 mt-6 px-6 py-3 bg-[#7AC943] text-white font-semibold rounded-full shadow-lg hover:scale-105 hover:bg-[#85D44A] transition duration-300">
               Contact for Details <ArrowRight className="w-4 h-4" />
             </button>
           </motion.div>
         </motion.div>
-
-        {/* CSS for pulse animation */}
-        <style>{`
-          @keyframes pulse {
-            0% { box-shadow: 0 0 10px rgba(0,0,0,0.3); }
-            50% { box-shadow: 0 0 20px rgba(0,0,0,0.5); }
-            100% { box-shadow: 0 0 10px rgba(0,0,0,0.3); }
-          }
-        `}</style>
       </motion.div>
     </motion.div>
   );

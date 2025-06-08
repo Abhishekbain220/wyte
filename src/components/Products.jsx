@@ -2,10 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import ProductCom from './ProductCom';
 import { ProductContext } from '../utils/ProductContext';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const Products = () => {
   const { products } = useContext(ProductContext);
   const [isMobile, setIsMobile] = useState(false);
+  let navigate=useNavigate()
 
   useEffect(() => {
     const checkScreen = () => setIsMobile(window.innerWidth < 640);
@@ -58,7 +60,7 @@ const Products = () => {
           viewport={!isMobile ? { once: true, amount: 0.2 } : undefined}
         >
           {products.map((p, i) => (
-            <motion.div key={i} variants={itemVariants} className="w-full sm:w-auto">
+            <motion.div onClick={()=> navigate(`/product/${p.id}`)} key={i} variants={itemVariants} className="w-full sm:w-auto">
               <ProductCom id={p.id} name={p.name} image={p.image} />
             </motion.div>
           ))}

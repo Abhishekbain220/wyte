@@ -90,7 +90,7 @@ const Home = () => {
             <div className='px-4 sm:px-8 md:px-[8vw] lg:pl-[11vw] flex flex-wrap gap-4 sm:gap-6 mt-[6vh] sm:mt-[10vh] lg:mt-[12vh] pt-[6vh] sm:pt-[8vh]  '>
                 {
                     product.map((p, i) => (
-                        <ProductCom id={p.id} name={p.name} image={p.image} navigation={`/product/${p.id}`} />
+                        <ProductCom id={p.id} name={p.name} image={p.image} navigation={`/${p.array}`} />
                     ))
                 }
             </div>
