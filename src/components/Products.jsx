@@ -60,8 +60,8 @@ const Products = () => {
           viewport={!isMobile ? { once: true, amount: 0.2 } : undefined}
         >
           {products.map((p, i) => (
-            <motion.div onClick={()=> navigate(`/product/${p.id}`)} key={i} variants={itemVariants} className="w-full sm:w-auto">
-              <ProductCom id={p.id} name={p.name} image={p.image} />
+            <motion.div  key={i} variants={itemVariants} className="w-full sm:w-auto">
+              <ProductCom id={p.id} name={p.name} image={p.image} navigation={`/${p.array}`} />
             </motion.div>
           ))}
         </motion.div>

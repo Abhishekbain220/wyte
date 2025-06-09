@@ -14,9 +14,9 @@ const Nav = () => {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setShowNav(false); // Scroll down
+        setShowNav(false);
       } else {
-        setShowNav(true); // Scroll up
+        setShowNav(true);
       }
 
       setLastScrollY(currentScrollY);
@@ -35,22 +35,24 @@ const Nav = () => {
   const navLinkClasses = ({ isActive }) =>
     `${isActive ? 'text-[#7AC943]' : 'text-black'} 
      transition-all duration-300 ease-in-out 
-    relative after:block after:h-[2px] after:bg-[#7AC943] 
-    after:scale-x-0 hover:after:scale-x-100 
-    after:transition-transform after:duration-300 after:origin-left`;
+     relative after:block after:h-[2px] after:bg-[#7AC943] 
+     after:scale-x-0 hover:after:scale-x-100 
+     after:transition-transform after:duration-300 after:origin-left`;
 
   return (
     <div
       className={`fixed top-0 left-0 w-full bg-white z-50 shadow-md transition-transform duration-300 ease-in-out 
         ${showNav ? 'translate-y-0' : '-translate-y-full'}`}
     >
-      <div className='w-full flex items-center justify-between px-6 py-4 h-[13vh] md:px-[4vw] lg:px-[6vw] xl:px-[23vh]'>
+      <div className='w-full px-6 py-4 h-[13vh] md:px-[4vw] lg:px-[6vw] xl:px-[20vh] flex items-center justify-between'>
 
-        {/* Logo */}
-        <img className='h-[15vh]' src="/logo.png" alt="Logo" />
+        {/* Left Logo */}
+        <div className="flex items-center">
+          <img className='h-[15vh] object-contain' src="/logo.png" alt="Main Logo" />
+        </div>
 
-        {/* Desktop + Tablet Menu */}
-        <div className='hidden md:flex ml-auto gap-8 md:gap-10 lg:gap-14 uppercase font-bold tracking-wide text-sm md:text-base'>
+        {/* Center Navigation (hidden on mobile) */}
+        <div className='hidden md:flex justify-center gap-8 md:gap-10 lg:gap-14 uppercase font-bold tracking-wide text-sm md:text-base'>
           {navLinks.map(link => (
             <NavLink key={link.path} to={link.path} className={navLinkClasses}>
               {link.label}
@@ -58,9 +60,17 @@ const Nav = () => {
           ))}
         </div>
 
-        {/* Hamburger Button (Mobile Only) */}
-        <div className='md:hidden'>
-          <button onClick={toggleMenu}>
+        {/* Right: Co-partner logo with tag (hidden on mobile) + Hamburger */}
+        <div className="flex items-center gap-4">
+          <div className="hidden md:flex flex-col items-center">
+            <img
+              src="/NEW-Logo-2023-1-1.png"
+              alt="Co-Partner Logo"
+              className="h-[7vh] w-auto object-contain drop-shadow-sm transition-transform duration-300 hover:scale-105"
+            />
+            <span className="text-xs font-semibold text-gray-500 mt-1">Co-Partner</span>
+          </div>
+          <button onClick={toggleMenu} className="md:hidden">
             {menuOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}
           </button>
         </div>

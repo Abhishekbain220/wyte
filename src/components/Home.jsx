@@ -111,7 +111,7 @@ const Home = () => {
                       </motion.div>
                 {
                     ProductCategory.map((p, i) => (
-                        <ProductCom id={p.id} name={p.name} image={p.image} navigation={`/${p.name}`} />
+                        <ProductCom id={p.id} name={p.name} image={p.image} navigation={`/Category/${p.name}`} />
                     ))
                 }
             </div>

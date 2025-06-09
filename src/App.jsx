@@ -8,6 +8,7 @@ import Products from './components/Products'
 import ScrollToTop from './utils/ScrollToTop'
 import SingleProduct from './components/SingleProduct'
 import CategoryPage from './components/CategoryPage'
+import ProductCategory from './components/ProductCategory'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path='/products' element={<Products/>}/>
         <Route path='/product/:productName/:id' element={<SingleProduct/>}/>
         <Route path='/:Category' element={<CategoryPage/>}/>
+        <Route path='/Category/:Category' element={<ProductCategory/>}/>
       </Routes>
       <Footer/>
     </div>
