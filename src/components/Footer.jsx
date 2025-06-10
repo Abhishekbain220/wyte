@@ -16,7 +16,10 @@ const Footer = () => {
 
           <address className="not-italic space-y-2 text-sm text-gray-400">
             <p>📍 Godown : 117/A, Rachna Nagar, Bhopal-462023 (M.P.)</p>
-            <p>📞 Mob: (+91) 88238 81287</p>
+            <p>
+  📞 <a href="tel:+918823881287" className="text-blue-600 hover:underline">Mob: (+91) 88238 81287</a>
+</p>
+
             <p>✉️ email : infodigitechindia@gmail.com</p>
           </address>
         </div>
