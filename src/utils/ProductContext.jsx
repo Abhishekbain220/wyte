@@ -13,37 +13,66 @@ export let ProductProvider = (props) => {
     });
 
     let banners = [
-        {
-            image: "ban2.jpg",
-            title: "CULTURE OF GROWTH @ ",
-            para: " Cultivate PASSION within and in your ecosystem. Live on that passion. Let you and team are full of that operating passion, head to toeTEAM & TIME-- - maneuvers us towards attaining long term objectives.Generate these two to draw the larger canvas.",
-            name: "PUNEET TANEJA  TEAM",
-            gradient: "linear-gradient(to right, #d63384, #6f42c1, #0dcaf0)",
-            textColor: "#34AADC"
-        },
-        {
-            image: "ban3.jpg",
-            title: "CULTURE OF GROWTH @ ",
-            para: " Coming together is a beginning, keeping together is progress. together is success. One can either have results or excuses, cannot both.",
-            name: " TEAM @ PAN INDIA",
-            gradient: "linear-gradient(to right, #00b4db, #56ab2f, #f7e13d)",
-            textColor: "#33AF3D"
-        },
-        {
-            image: "ban1.jpg",
-            title: "CULTURE OF GROWTH @ ",
-            para: " Strive to create some extra-ordinary product, service and culture. If these things are taken care of, the customer will trust and connect forever. Technology @development and its execution is what trigger the epochal.",
-            name: " TEAM @ PAN INDIA",
-            gradient: "linear-gradient(90deg, #fdb846, #c43f6e)",
-            textColor: "#FF6156"
-        }
-    ];
+  {
+    image: "RESIN COATED PHOTOPAPER – 260 CANVAS TEXTURE (WR).png",
+    title: "IGNITE THE FIRE WITHIN @ DigiTech",
+    para: "Passion fuels progress. When every team member breathes purpose, magic happens. With shared energy and synchronized timing, we create masterpieces—not just meet goals.",
+    name: "TEAM @ STRATEGY",
+    gradient: "linear-gradient(135deg, #FFDEE9, #B5FFFC)", // light pink to sky blue
+    textColor: "#0F172A" // dark slate blue (high contrast)
+  },
+  {
+    image: "ROSE GOLD - 100 (Matte).png",
+    title: "UNITY IS MOMENTUM @ DigiTech",
+    para: "Success begins with coming together, grows by staying together, and thrives through unwavering commitment. We don’t trade results for excuses—we build futures.",
+    name: "TEAM @ GROWTH",
+    gradient: "linear-gradient(135deg, #FDCB82, #FFA69E)", // orange-peach
+    textColor: "#2E2E2E" // dark gray (strong contrast)
+  },
+  {
+    image: "PP SA - 150 MATTE (WR).png",
+    title: "CRAFTING LEGACY THROUGH INNOVATION @ DigiTech",
+    para: "Extraordinary doesn’t happen by chance. It’s built through innovation, trust, and culture. When tech meets execution with heart, brands evolve beyond expectations.",
+    name: "TEAM @ INNOVATION",
+    gradient: "linear-gradient(135deg, #A1FFCE, #FAFFD1)", // mint to pale yellow
+    textColor: "#1C1C1C" // charcoal gray (clear visibility)
+  },
+  {
+    image: "MP FILM - 180 (Matte).png",
+    title: "BE LIMITLESS @ DigiTech",
+    para: "We don't just meet expectations—we redefine them. Our innovation isn't bound by trends but guided by purpose, performance, and future-ready thinking.",
+    name: "TEAM @ R&D",
+    gradient: "linear-gradient(135deg, #FDCB82, #FFE6FA)", // peach to light pink
+    textColor: "#1F2937" // slate gray (legible and neutral)
+  },
+  {
+    image: "PP NA – 200 MATTE.png",
+    title: "DESIGN WITH PURPOSE @ DigiTech",
+    para: "When design meets intent, the result is timeless. We turn creative ideas into powerful products that leave lasting impressions across every surface.",
+    name: "TEAM @ CREATIVE",
+    gradient: "linear-gradient(135deg, #D4FC79, #96E6A1)", // yellow-green to mint
+    textColor: "#102A43" // deep navy (excellent contrast)
+  },
+  {
+    image: "PP SA - 150 GLOSS.png",
+    title: "EVER FORWARD, EVER BRIGHT @ DigiTech",
+    para: "Driven by clarity and courage, we move ahead—bringing brightness to every brand, every banner, every breakthrough. The future is not predicted, it’s printed.",
+    name: "TEAM @ OPERATIONS",
+    gradient: "linear-gradient(135deg, #E3FDF5, #FFE6FA)", // teal-white to light pink
+    textColor: "#111827" // nearly black (clean contrast)
+  }
+];
+
+
+
+
+
 
     let products = [
         {
             id: 1,
             name: "Printable Wallpapers",
-            image: "product1.jpg",
+            image: "SELF ADHESIVE - WALL GRAIN TEXTURE.png",
             array: "PrintableWallpapers",
             category: "DECOR SERIES",
             items: [
@@ -312,7 +341,7 @@ export let ProductProvider = (props) => {
         {
             id: 2,
             name: "Leatherette",
-            image: "product2.jpg",
+            image: "TEXTURED LEATHERETTE.png",
             array: "Leatherette",
             category: "DECOR SERIES",
             items: [
@@ -354,7 +383,7 @@ export let ProductProvider = (props) => {
         {
             id: 3,
             name: "Fabrics",
-            image: "product3.jpg",
+            image: "FABRIC.png",
             array: "Fabrics",
             category: "DECOR SERIES",
 
@@ -627,7 +656,7 @@ export let ProductProvider = (props) => {
         {
             id: 4,
             name: "Canvas",
-            image: "product4.jpg",
+            image: "ARTISTIC CANVAS MATTE.png",
             array: "Canvas",
             category: "COMMERCIAL PRINTABLE MEDIAS",
             items: [
@@ -766,7 +795,7 @@ export let ProductProvider = (props) => {
         {
             id: 5,
             name: "Vinyl",
-            image: "product5.jpg",
+            image: "PVC-FREE VINYL - 150 (Matte).png",
             array: "VINYL",
             category: "CARELIT ENVOIRNMENT FRIENDLY PRINTABLE MEDIAS",
 
@@ -1248,7 +1277,7 @@ export let ProductProvider = (props) => {
         {
             id: 6,
             name: "Translites",
-            image: "product6.jpg",
+            image: "FRONT PRINT TRANSLITE SA MATTE (WR).png",
             array: "Translites",
             category: "COMMERCIAL PRINTABLE MEDIAS",
 
@@ -1355,7 +1384,7 @@ export let ProductProvider = (props) => {
         {
             id: 7,
             name: "Banner Media",
-            image: "product7.jpg",
+            image: "PP NA – 200 MATTE (WR).png",
             array: "BannerMedia",
             category: "COMMERCIAL PRINTABLE MEDIAS",
             items: [
@@ -1498,7 +1527,7 @@ export let ProductProvider = (props) => {
         {
             id: 8,
             name: "Photopapers",
-            image: "product8.jpg",
+            image: "RESIN COATED PHOTOPAPER – 260 GLOSS (WR).png",
             array: "PHOTOPAPER",
             category: "INKJET PRINTABLE MEDIAS",
             items: [
@@ -1736,7 +1765,7 @@ export let ProductProvider = (props) => {
         {
             id: 9,
             name: "Glass Films",
-            image: "product8.jpg",
+            image: "SPARKLED - 100.png",
             array: "GLASSFILM",
             category: "DECOR SERIES",
             items: [
@@ -1766,7 +1795,7 @@ export let ProductProvider = (props) => {
         {
             id: 10,
             name: "Magnetic",
-            image: "product8.jpg",
+            image: "PRINTABLE FERROUS.png",
             array: "MAGNETIC",
             category: "COMMERCIAL PRINTABLE MEDIAS",
             items: [
@@ -1802,32 +1831,32 @@ export let ProductProvider = (props) => {
         {
             id: 1,
             name: " INKJET PRINTABLE MEDIAS",
-            image: "product1.jpg"
+            image: "RESIN COATED PHOTOPAPER – 260 LUSTRE (WR).png"
         },
         {
             id: 2,
             name: " CARELIT ENVOIRNMENT FRIENDLY PRINTABLE MEDIAS",
-            image: "product2.jpg"
+            image: "MP FILM - 180 (Matte).png"
         },
         {
             id: 3,
             name: " COMMERCIAL PRINTABLE MEDIAS",
-            image: "product3.jpg"
+            image: "FRONT PRINT TRANSLITE -125 MATTE (WR).png"
         },
         {
             id: 4,
             name: " DECOR SERIES",
-            image: "product4.jpg"
+            image: "CLOTH BANNER – 120 MATTE (WR).png"
         },
 
     ]
 
-    
+
 
 
 
     return (
-        <ProductContext.Provider value={{ banners, banner, setBanner, products, product, setProduct, ProductCategory,  }}>
+        <ProductContext.Provider value={{ banners, banner, setBanner, products, product, setProduct, ProductCategory, }}>
             {props.children}
         </ProductContext.Provider>
     )

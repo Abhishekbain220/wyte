@@ -42,7 +42,7 @@ const AboutUsCom = () => {
 
         {/* Image Section */}
         <motion.img
-          src="aboutImg.jpg"
+          src="POLYESTER CANVAS - 280 (Matte).png"
           alt="About Us"
           className="w-full max-w-[600px] h-auto lg:h-[85vh] object-cover rounded-xl shadow-md"
           variants={imageVariants}
@@ -80,7 +80,7 @@ const AboutUsCom = () => {
             whileInView={!isMobile ? 'show' : undefined}
             viewport={!isMobile ? { once: true } : undefined}
           >
-            WYTE for you, Elysium always.
+            DigiTech – Delivering Digital Perfection, Always.
           </motion.h2>
 
           <motion.p
@@ -91,13 +91,15 @@ const AboutUsCom = () => {
             whileInView={!isMobile ? 'show' : undefined}
             viewport={!isMobile ? { once: true, amount: 0.3 } : undefined}
           >
-            <strong className="text-[#76bc21]">WYTE</strong> offers high-quality digital printable substrates for brands, events, and creative professionals, ensuring quality, sustainability, and excellence. We offer a wide range of products for digital printing, including Vinyls, Wall Papers, Artistic Canvas, Fabrics, Photo Papers, Translites, Leatherette, Glass films, Lamination films & over 200 more digital printing products.
+            <strong className="text-[#76bc21]">DigiTech</strong> delivers premium digital printable substrates for creative professionals, brands, and event specialists. Our portfolio spans over <strong>200 high-quality media options</strong> such as Vinyls, Wallpapers, Artistic Canvases, Fabrics, Photo Papers, Translites, Leatherettes, Glass Films, and Lamination Films.
             <br /><br />
-            Our product range is compatible with Eco-solvent, Inkjet, Laser, Latex & UV technologies. Applications include Signage, Graphic design, Photography, Fine art, Architecture graphics, Labels, Décor, Vehicle wraps, Outdoor & Indoor installations, Packaging, and much more.
+            Designed for seamless use with <strong>Eco-Solvent, Inkjet, Laser, Latex, and UV</strong> technologies, our products serve a wide array of industries—from <strong>signage, photography, fine art, and packaging</strong> to <strong>architectural graphics, décor, vehicle wraps, and installations</strong>.
             <br /><br />
-            With a strong presence Pan-India, <span className="font-semibold">WYTE</span> is known for consistent quality, competitive pricing, efficient supply chain, R&D innovation, and customer-centric values.
+            Backed by a strong national network, <strong>DigiTech</strong> is valued for its <em>consistent product performance, efficient supply chain, competitive pricing</em>, and a commitment to customer satisfaction. Our in-house R&D ensures that we stay at the forefront of innovation.
             <br /><br />
-            Trusted by brands like <span className="font-medium text-[#76bc21]">Reliance, Samsung, HUL, Bata, Blackberry, Pepsi, TimesOOH, Fybros</span>, and many more, <span className="font-semibold">WYTE</span> continues to expand into value-added products for corporates, retail, and event industries.
+            We’re proud to have a <strong>strategic co-partnership with Wyte</strong>, a trusted leader in the printable substrates domain—enhancing our reach and capabilities.
+            <br /><br />
+            Trusted by industry leaders like <span className="font-medium text-[#76bc21]">Reliance, Samsung, HUL, Bata, Blackberry, Pepsi, TimesOOH, and Fybros</span>, DigiTech continues to deliver impactful solutions to the <strong>corporate, retail, and event</strong> sectors.
           </motion.p>
         </motion.div>
       </div>

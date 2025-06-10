@@ -15,9 +15,9 @@ const Footer = () => {
           </p>
 
           <address className="not-italic space-y-2 text-sm text-gray-400">
-            <p>📍 456 Tech Park, New Industrial Area, Bhopal</p>
-            <p>📞 +91 98765 12345</p>
-            <p>✉️ support@digitechsolutions.com</p>
+            <p>📍 Godown : 117/A, Rachna Nagar, Bhopal-462023 (M.P.)</p>
+            <p>📞 Mob: (+91) 88238 81287</p>
+            <p>✉️ email : infodigitechindia@gmail.com</p>
           </address>
         </div>
 
