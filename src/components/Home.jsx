@@ -88,13 +88,15 @@ const Home = () => {
             {/* page 2 */}
             <AboutUsCom />
             {/* Page 3 */}
-            <div className='relative px-4 sm:px-8 md:px-[8vw] lg:pl-[11vw] flex flex-wrap gap-4 sm:gap-6 mt-[6vh] sm:mt-[10vh] lg:mt-[12vh] pt-[6vh] sm:pt-[8vh] bg-[#1B1E36] text-white overflow-hidden'>
+            <div className='relative px-4 sm:px-8 md:px-[8vw] lg:pl-[11vw] flex flex-wrap gap-4 sm:gap-6 mt-[6vh] sm:mt-[10vh] lg:mt-[12vh] pt-[6vh] sm:pt-[8vh] text-white overflow-hidden bg-[linear-gradient(135deg,_#E3FDF5,_#FFE6FA)]'>
+
   {/* Subtle dot grid pattern */}
   <div className="absolute inset-0 bg-[radial-gradient(circle,#2e324d_1px,transparent_1px)] [background-size:20px_20px] opacity-30 z-0" />
-  
+
   {/* Green accent circle bottom */}
   <div className="absolute bottom-[-15%] left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-[#7AC943]/10 rounded-full blur-3xl z-0" />
 
+  {/* Product List */}
   <div className="relative z-10 w-full flex flex-wrap gap-4 sm:gap-6">
     {
       product.map((p, i) => (
@@ -103,6 +105,7 @@ const Home = () => {
     }
   </div>
 </div>
+
 
 
 

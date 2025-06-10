@@ -4,13 +4,13 @@ export let ProductContext = createContext()
 export let ProductProvider = (props) => {
 
     const [banner, setBanner] = useState({
-        image: "ban2.jpg",
-        title: "CULTURE OF GROWTH @ ",
-        para: " Cultivate PASSION within and in your ecosystem. Live on that passion. Let you and team are full of that operating passion, head to toeTEAM & TIME-- - maneuvers us towards attaining long term objectives.Generate these two to draw the larger canvas.",
-        name: "PUNEET TANEJA  TEAM",
-        gradient: "linear-gradient(to right, #d63384, #6f42c1, #0dcaf0)",
-        textColor: "#34AADC"
-    });
+    image: "RESIN COATED PHOTOPAPER – 260 CANVAS TEXTURE (WR).png",
+    title: "IGNITE THE FIRE WITHIN @ DigiTech",
+    para: "Passion fuels progress. When every team member breathes purpose, magic happens. With shared energy and synchronized timing, we create masterpieces—not just meet goals.",
+    name: "TEAM @ STRATEGY",
+    gradient: "linear-gradient(135deg, #FFDEE9, #B5FFFC)", // light pink to sky blue
+    textColor: "#0F172A" // dark slate blue (high contrast)
+  });
 
     let banners = [
   {
