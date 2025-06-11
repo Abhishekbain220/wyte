@@ -10,11 +10,11 @@ import WhyChooseUs from './WhyChooseUs';
 
 const AboutUs = () => {
   return (
-   <div className='pt-20'>
-    <AboutUsCom/>
-    <OurMission />
+    <div className='pt-20 overflow-hidden'>
+      <AboutUsCom />
+      <OurMission />
       <WhyChooseUs />
-   </div>
+    </div>
   )
 }
 

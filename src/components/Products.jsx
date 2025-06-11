@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const Products = () => {
   const { products } = useContext(ProductContext);
   const [isMobile, setIsMobile] = useState(false);
-  let navigate=useNavigate()
+  let navigate = useNavigate();
 
   useEffect(() => {
     const checkScreen = () => setIsMobile(window.innerWidth < 640);
@@ -16,18 +16,9 @@ const Products = () => {
     return () => window.removeEventListener('resize', checkScreen);
   }, []);
 
-  const containerVariants = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: isMobile ? 0 : 0.12,
-      },
-    },
-  };
-
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+    hidden: { opacity: 0, scale: 0.9 },
+    show: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } },
   };
 
   return (
@@ -51,20 +42,19 @@ const Products = () => {
 
       {/* Product List */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16">
-        <motion.div
-          className="flex flex-wrap justify-center gap-5 sm:gap-6"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isMobile ? 'show' : undefined}
-          whileInView={!isMobile ? 'show' : undefined}
-          viewport={!isMobile ? { once: true, amount: 0.2 } : undefined}
-        >
+        <div className="flex flex-wrap justify-center gap-5 sm:gap-6">
           {products.map((p, i) => (
-            <motion.div  key={i} variants={itemVariants} className="w-full sm:w-auto">
+            <motion.div
+              key={i}
+              initial="hidden"
+              animate="show"
+              variants={itemVariants}
+              className="w-full sm:w-auto"
+            >
               <ProductCom id={p.id} name={p.name} image={p.image} navigation={`/${p.array}`} />
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   );

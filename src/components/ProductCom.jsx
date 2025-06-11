@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const ProductCom = ({ name, image, id, navigation }) => {
   const navigate = useNavigate();
+  const [loaded, setLoaded] = useState(false);
 
   return (
     <div
@@ -19,12 +20,11 @@ const ProductCom = ({ name, image, id, navigation }) => {
         src={image}
         alt={name}
         loading="lazy"
-        className="
-          w-full h-full object-cover 
-          transition-transform duration-500 
+        onLoad={() => setLoaded(true)}
+        className={`transition-all  w-full h-full object-cover 
+          duration-500 
           group-hover:scale-110
-          sm:group-hover:scale-110
-        "
+          sm:group-hover:scale-110 ${loaded ? "opacity-100 blur-0" : "opacity-0 blur-sm"}`}
       />
 
       {/* Overlay Gradient (only on hover for sm and up) */}
