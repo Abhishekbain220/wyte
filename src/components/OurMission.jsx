@@ -19,7 +19,7 @@ const OurMission = () => {
           </span>
         </h2>
         <p className="text-lg leading-relaxed text-justify mb-4">
-          At <span className="font-semibold text-[#76bc21]">DigiTech</span>, our mission is to revolutionize the world of printable substrates by combining <strong>eco-conscious innovation</strong> with <strong>unmatched quality</strong>. We’re driven by the need to provide <span className="underline">sustainable</span> and <span className="underline">aesthetic</span> solutions for brands, artists, and advertisers who value impact and integrity.
+          At <span className="font-semibold text-[#76bc21]">DigiTech</span>, our mission is to revolutionize the world of printable substrates by combining <strong>eco-conscious innovation</strong> with <strong>unmatched quality</strong>. We’re driven by the need to provide <span className="">sustainable</span> and <span className="">aesthetic</span> solutions for brands, artists, and advertisers who value impact and integrity.
         </p>
         <p className="text-lg leading-relaxed text-justify">
           Our mission is to be the creative force behind bold visuals—offering reliable, sustainable, and high-performance printable materials for every printing need, from signage to fine art.
