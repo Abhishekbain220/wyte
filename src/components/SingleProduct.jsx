@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { ProductContext } from '../utils/ProductContext';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, X } from 'lucide-react';
 
 const container = {
   hidden: { opacity: 0 },
@@ -26,22 +26,24 @@ const item = {
 };
 
 const SingleProduct = () => {
-  const { id,productName } = useParams();
+  const { id, productName } = useParams();
   const { products } = useContext(ProductContext);
   const [productDetails, setProductDetails] = useState(null);
 
   const imgRef = useRef(null);
   const [transformOrigin, setTransformOrigin] = useState('center center');
   const [isZoomed, setIsZoomed] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [zoomScale, setZoomScale] = useState(1);
+  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStart = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     const product = products.find((p) => String(p.array) === productName);
-
-    let productItem=product.items.find((i)=>String(i.id)=== id)
-
+    const productItem = product.items.find((i) => String(i.id) === id);
     setProductDetails(productItem);
   }, [id, products]);
-  console.log(productDetails)
 
   const handleMouseMove = (e) => {
     const bounds = imgRef.current.getBoundingClientRect();
@@ -49,6 +51,28 @@ const SingleProduct = () => {
     const y = ((e.clientY - bounds.top) / bounds.height) * 100;
     setTransformOrigin(`${x}% ${y}%`);
   };
+
+  const handleWheelZoom = (e) => {
+    e.preventDefault();
+    const newScale = Math.min(3, Math.max(1, zoomScale + e.deltaY * -0.002));
+    setZoomScale(newScale);
+  };
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    dragStart.current = { x: e.clientX - pan.x, y: e.clientY - pan.y };
+  };
+
+  const handleMouseMoveModal = (e) => {
+    if (isDragging) {
+      setPan({
+        x: e.clientX - dragStart.current.x,
+        y: e.clientY - dragStart.current.y,
+      });
+    }
+  };
+
+  const handleMouseUp = () => setIsDragging(false);
 
   if (!productDetails) return null;
 
@@ -66,20 +90,26 @@ const SingleProduct = () => {
         {/* Image Section */}
         <motion.div className="flex justify-center items-center relative" variants={item}>
           <div
-            className="overflow-hidden rounded-2xl shadow-lg relative group"
+            className="overflow-hidden rounded-2xl shadow-lg relative group cursor-zoom-in"
             onMouseEnter={() => setIsZoomed(true)}
             onMouseLeave={() => setIsZoomed(false)}
             onMouseMove={handleMouseMove}
+            onClick={() => {
+              setZoomScale(1);
+              setPan({ x: 0, y: 0 });
+              setIsModalOpen(true);
+            }}
           >
             <img
               ref={imgRef}
               src={`/${productDetails.image}`}
               alt={productDetails.name}
-              className={`w-full max-w-md transition-transform duration-300 ease-out ${
+              className={`w-full max-w-xl transition-transform duration-300 ease-out ${
                 isZoomed ? 'scale-[2.5]' : 'scale-100'
               }`}
               style={{
                 transformOrigin: transformOrigin,
+                maxHeight: '550px',
               }}
             />
           </div>
@@ -88,7 +118,9 @@ const SingleProduct = () => {
         {/* Details Section */}
         <motion.div className="space-y-8 text-white" variants={item}>
           <div>
-            <h1 className="text-4xl font-bold tracking-tight text-white mb-2">{productDetails.Heading}</h1>
+            <h1 className="text-4xl font-bold tracking-tight text-white mb-2">
+              {productDetails.Heading}
+            </h1>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base">
@@ -137,7 +169,6 @@ const SingleProduct = () => {
                 <span className="font-semibold text-[#7AC943]">Category:</span> {productDetails.Category}
               </div>
             )}
-            
           </div>
 
           {productDetails.Description && (
@@ -154,6 +185,36 @@ const SingleProduct = () => {
           </motion.div>
         </motion.div>
       </motion.div>
+
+      {/* Fullscreen Modal */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center cursor-move"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMoveModal}
+          onMouseUp={handleMouseUp}
+          onWheel={handleWheelZoom}
+        >
+          <img
+            src={`/${productDetails.image}`}
+            alt={productDetails.name}
+            style={{
+              transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoomScale})`,
+              transition: isDragging ? 'none' : 'transform 0.2s ease',
+              maxWidth: '90%',
+              maxHeight: '90%',
+            }}
+            className="select-none"
+            draggable={false}
+          />
+          <button
+            onClick={() => setIsModalOpen(false)}
+            className="absolute top-4 right-4 text-white bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-80 transition"
+          >
+            <X className="w-6 h-6" />
+          </button>
+        </div>
+      )}
     </motion.div>
   );
 };
