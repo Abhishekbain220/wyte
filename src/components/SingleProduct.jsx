@@ -196,9 +196,11 @@ const SingleProduct = () => {
           )}
 
           <motion.div variants={item}>
-            <button className="flex items-center gap-2 mt-6 px-6 py-3 bg-[#7AC943] text-white font-semibold rounded-full shadow-lg hover:scale-105 hover:bg-[#85D44A] transition duration-300">
+            <a href="tel:+918823881287">
+              <button  className="flex items-center gap-2 mt-6 px-6 py-3 bg-[#7AC943] text-white font-semibold rounded-full shadow-lg hover:scale-105 hover:bg-[#85D44A] transition duration-300">
               Contact for Details <ArrowRight className="w-4 h-4" />
             </button>
+            </a>
           </motion.div>
         </motion.div>
       </motion.div>
