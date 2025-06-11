@@ -41,9 +41,26 @@ const SingleProduct = () => {
 
   useEffect(() => {
     const product = products.find((p) => String(p.array) === productName);
-    const productItem = product.items.find((i) => String(i.id) === id);
+    const productItem = product?.items?.find((i) => String(i.id) === id);
     setProductDetails(productItem);
-  }, [id, products]);
+  }, [id, products, productName]);
+
+  // Close modal on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setIsModalOpen(false);
+      }
+    };
+
+    if (isModalOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isModalOpen]);
 
   const handleMouseMove = (e) => {
     const bounds = imgRef.current.getBoundingClientRect();

@@ -23,8 +23,6 @@ const Home = () => {
         return () => clearInterval(interval);
     }, []);
 
-    const [isLoading, setIsLoading] = useState(true);
-
 
     // Product Array and Function
 
@@ -34,72 +32,57 @@ const Home = () => {
             {/* Background gradient section (no animation) */}
             {/* Page 1 */}
             <div
-      style={{ background: banner.gradient }}
-      className="relative pb-10 pt-16 px-6 md:mt-24 md:px-16 lg:px-24 h-[115vmax] md:h-[87vh] w-full"
-    >
-      {/* Overlay */}
-      <div className="bg-black opacity-50 md:h-[73vh] md:w-[90vw] md:left-24 md:mt-0 mt-[4vh] md:top-16 absolute inset-0 z-10"></div>
+    style={{ background: banner.gradient }}
+    className="relative pb-10 pt-16 px-6 md:mt-24 md:px-16 lg:px-24 h-[115vmax] md:h-[87vh] w-full"
+>
+    {/* Overlay */}
+    <div className="bg-black opacity-50 md:h-[73vh] md:w-[90vw] md:left-24 md:mt-0 mt-[4vh] md:top-16 absolute inset-0 z-10"></div>
 
-      {/* Content with animation */}
-      <motion.div
+    {/* Content with animation */}
+    <motion.div
         key={banner.image}
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="relative z-20 flex md:mt-0 mt-[9vh] flex-col md:flex-row items-center gap-8 h-full md:w-[89vw]"
-      >
-        {/* Image with loading effect */}
-        <motion.div
-          className="relative w-[90vw] md:w-[60vw] h-52 sm:h-60 md:h-[48vh] md:ml-6 mb-6 md:mb-[8vh]"
-        >
-          {isLoading && (
-            <div className="absolute inset-0 flex items-center justify-center bg-gray-200 animate-pulse rounded-lg z-10">
-              <span className="text-gray-500 text-sm">Loading image...</span>
-            </div>
-          )}
-
-          <motion.img
+    >
+        <motion.img
             key={banner.image + "_img"}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            onLoad={() => setIsLoading(false)}
-            className={`object-cover w-full h-full rounded-lg transition-opacity duration-500 ${
-              isLoading ? 'opacity-0' : 'opacity-100'
-            }`}
+            className="h-52 sm:h-60 md:h-[48vh] w-[90vw] md:w-[60vw] object-cover rounded-lg md:ml-6 mb-6 md:mb-[8vh]"
             src={banner.image}
             alt="Banner"
-          />
-        </motion.div>
+        />
 
-        {/* Text Content */}
         <motion.div
-          key={banner.title + "_text"}
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-          className="w-full md:pt-[6vh]"
+            key={banner.title + "_text"}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            className="w-full md:pt-[6vh]"
         >
-          <h1
-            style={{ color: banner.textColor }}
-            className="text-2xl sm:text-3xl md:text-4xl font-semibold ml-0 md:ml-[4vh]"
-          >
-            {banner.title}
-          </h1>
+            <h1
+                style={{ color: banner.textColor }}
+                className="text-2xl sm:text-3xl md:text-4xl font-semibold ml-0 md:ml-[4vh]"
+            >
+                {banner.title}
+            </h1>
 
-          <p className="mt-6 md:mt-[6vh] text-white text-base sm:text-lg md:text-xl leading-relaxed md:leading-10 ml-0 md:ml-[2vh] max-w-3xl">
-            {banner.para}
-          </p>
+            <p className="mt-6 md:mt-[6vh] text-white text-base sm:text-lg md:text-xl leading-relaxed md:leading-10 ml-0 md:ml-[2vh] max-w-3xl">
+                {banner.para}
+            </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-between font-semibold text-base sm:text-lg md:text-xl mt-8 md:mt-[10vh] px-0 md:px-[6vh] text-white gap-4 sm:gap-0">
-            <img className="h-16 bg-white sm:h-20 rounded-full p-2" src="logo.png" alt="Logo" />
-            <h2 className="text-center sm:text-right sm:mr-[4vh] sm:w-auto">
-              {banner.name}
-            </h2>
-          </div>
+            <div className="flex flex-col sm:flex-row items-center justify-between font-semibold text-base sm:text-lg md:text-xl mt-8 md:mt-[10vh] px-0 md:px-[6vh] text-white gap-4 sm:gap-0">
+                <img className="h-16 bg-white sm:h-20 rounded-full p-2" src="logo.png" alt="Logo" />
+                <h2 className="text-center sm:text-right sm:mr-[4vh] sm:w-auto">
+                    {banner.name}
+                </h2>
+            </div>
         </motion.div>
-      </motion.div>
-    </div>
+    </motion.div>
+</div>
 
 
             {/* page 2 */}
