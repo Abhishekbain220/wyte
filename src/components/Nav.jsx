@@ -48,7 +48,7 @@ const Nav = () => {
 
         {/* Left Logo */}
         <div className="flex items-center">
-          <img className='h-[15vh] object-contain' src="/logo.png" alt="Main Logo" />
+          <img className='h-[15vh] object-contain' src="/logo.webp" alt="Main Logo" />
         </div>
 
         {/* Center Navigation (hidden on mobile) */}
@@ -64,7 +64,7 @@ const Nav = () => {
         <div className="flex items-center gap-4">
           <div className="hidden md:flex flex-col items-center">
             <img
-              src="/NEW-Logo-2023-1-1.png"
+              src="/NEW-Logo-2023-1-1.webp"
               alt="Co-Partner Logo"
               className="h-[7vh] w-auto object-contain drop-shadow-sm transition-transform duration-300 hover:scale-105"
             />

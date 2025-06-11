@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Left Column */}
         <div className="max-w-md space-y-6">
           <img
-            src="/logo.png"
+            src="/logo.webp"
             alt="DigiTech Logo"
             className="h-[15vh] w-full object-contain bg-white rounded-xl"
           />

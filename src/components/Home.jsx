@@ -75,7 +75,7 @@ const Home = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-between font-semibold text-base sm:text-lg md:text-xl mt-8 md:mt-[10vh] px-0 md:px-[6vh] text-white gap-4 sm:gap-0">
-                <img className="h-16 bg-white sm:h-20 rounded-full p-2" src="logo.png" alt="Logo" />
+                <img className="h-16 bg-white sm:h-20 rounded-full p-2" src="logo.webp" alt="Logo" />
                 <h2 className="text-center sm:text-right sm:mr-[4vh] sm:w-auto">
                     {banner.name}
                 </h2>
@@ -135,7 +135,7 @@ const Home = () => {
 
             {/* page 5 */}
             <div
-                style={{ backgroundImage: `url("/THICKER REVERSE TRANSLITE.png")` }}
+                style={{ backgroundImage: `url("/THICKER REVERSE TRANSLITE.webp")` }}
                 className="relative z-0 w-full h-[40vh] bg-cover bg-center bg-no-repeat
              after:content-[''] after:absolute after:inset-0 after:bg-black/50 after:z-10
              flex justify-center items-center px-4 sm:px-8 md:px-12"
