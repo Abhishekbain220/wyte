@@ -2491,7 +2491,7 @@ export let ProductProvider = (props) => {
             image: "FRONT PRINT TRANSLITE -125 MATTE (WR).webp",
             items: [
                 {
-                    id: 1,
+                    "id": 1,
                     "Heading": "PRINTABLE FERROUS",
                     "Sizes": "50",
                     "Base Substrate": "Composite Printable PP & rubber sheet",
@@ -2510,7 +2510,7 @@ export let ProductProvider = (props) => {
                     "image": "PRINTABLE FERROUS.webp"
                 },
                 {
-                    id: 1,
+                    "id": 2,
                     "Heading": "SPARKLED - 100",
                     "Sizes": "50",
                     "Base Substrate": "PVC",
@@ -2529,7 +2529,7 @@ export let ProductProvider = (props) => {
                     "image": "SPARKLED - 100.webp"
                 },
                 {
-                    "id": 15,
+                    "id": 3,
                     "Heading": "BACKLIT - 130 FR",
                     "Sizes": "40, 50, 63, 76, 100, 126",
                     "Base Substrate": "Polyester",
@@ -2548,7 +2548,7 @@ export let ProductProvider = (props) => {
                     "image": "BACKLIT - 130 FR.webp"
                 },
                 {
-                    "id": 14,
+                    "id": 4,
                     "Heading": "FRONTLIT - 200",
                     "Sizes": "40, 50, 63, 76, 100, 126",
                     "Base Substrate": "Polyester",
@@ -2567,7 +2567,7 @@ export let ProductProvider = (props) => {
                     "image": "FRONTLIT - 200.webp"
                 },
                 {
-                    "id": 7,
+                    "id": 5,
                     "Heading": "POLYESTER CANVAS - 280 (Gloss)",
                     "Sizes": "50",
                     "Base Substrate": "Polyester",
@@ -2605,7 +2605,7 @@ export let ProductProvider = (props) => {
                     "image": "POLYESTER CANVAS - 280 (Matte).webp"
                 },
                 {
-                    "id": 5,
+                    "id": 7,
                     "Heading": "ARTISTIC CANVAS - 380 (Gloss)",
                     "Sizes": "36, 50, 60",
                     "Base Substrate": "Poly Cotton",
@@ -2624,7 +2624,7 @@ export let ProductProvider = (props) => {
                     "image": "ARTISTIC CANVAS - 380 (Gloss).webp"
                 },
                 {
-                    "id": 4,
+                    "id": 8,
                     "Heading": "ARTISTIC CANVAS - 380 (Matte)",
                     "Sizes": "40, 50, 60, 80, 102, 126",
                     "Base Substrate": "Poly Cotton",
@@ -2643,7 +2643,7 @@ export let ProductProvider = (props) => {
                     "image": "ARTISTIC CANVAS - 380 (Matte).webp"
                 },
                 {
-                    "id": "12",
+                    "id": 9,
                     "Heading": "LUSTRE - 220",
                     "Sizes": "50",
                     "Base Substrate": "Paper",
@@ -2662,7 +2662,7 @@ export let ProductProvider = (props) => {
                     "image": "LUSTRE - 220.webp"
                 },
                 {
-                    "id": "11",
+                    "id": 10,
                     "Heading": "MATTE - 180",
                     "Sizes": "50",
                     "Base Substrate": "Paper",
@@ -2681,7 +2681,7 @@ export let ProductProvider = (props) => {
                     "image": "MATTE - 180.webp"
                 },
                 {
-                    "id": "10",
+                    "id": 11,
                     "Heading": "ULTRA GLOSSY - 220",
                     "Sizes": "36, 50",
                     "Base Substrate": "Paper",
@@ -2700,7 +2700,7 @@ export let ProductProvider = (props) => {
                     "image": "ULTRA GLOSSY - 220.webp"
                 },
                 {
-                    "id": 5,
+                    "id": 12,
                     "Heading": "FRONT PRINTING TRANSLITE FILM - 210",
                     "Sizes": "36, 42, 50, 60",
                     "Base Substrate": "PET",
@@ -2719,7 +2719,7 @@ export let ProductProvider = (props) => {
                     "image": "FRONT PRINTING TRANSLITE FILM - 210.webp"
                 },
                 {
-                    "id": 4,
+                    "id": 13,
                     "Heading": "FRONT PRINTING TRANSLITE FILM - 170",
                     "Sizes": "36, 42, 50, 60",
                     "Base Substrate": "PET",
@@ -2738,7 +2738,7 @@ export let ProductProvider = (props) => {
                     "image": "FRONT PRINTING TRANSLITE FILM - 170.webp"
                 },
                 {
-                    "id": 7,
+                    "id": 14,
                     "Heading": "PP - 190",
                     "Sizes": "36, 50, 60",
                     "Base Substrate": "PP",
@@ -2757,7 +2757,7 @@ export let ProductProvider = (props) => {
                     "image": "PP - 190.webp"
                 },
                 {
-                    "id": 6,
+                    "id": 15,
                     "Heading": "BOTH SIDE PRINTABLE - 260",
                     "Sizes": "36, 50",
                     "Base Substrate": "Both side PVC with PET Grey as middle layer",
@@ -2776,7 +2776,7 @@ export let ProductProvider = (props) => {
                     "image": "BOTH SIDE PRINTABLE - 260.webp"
                 },
                 {
-                    "id": 5,
+                    "id": 16,
                     "Heading": "GREY BACK - 260",
                     "Sizes": "36, 50, 60",
                     "Base Substrate": "PVC+PP Composite",
@@ -2795,7 +2795,7 @@ export let ProductProvider = (props) => {
                     "image": "GREY BACK - 260.webp"
                 },
                 {
-                    "id": 4,
+                    "id": 17,
                     "Heading": "TEXTURED - 290",
                     "Sizes": "36, 50, 60",
                     "Base Substrate": "PVC+PP Composite",
@@ -2814,7 +2814,7 @@ export let ProductProvider = (props) => {
                     "image": "TEXTURED - 290.webp"
                 },
                 {
-                    "id": 25,
+                    "id": 18,
                     "Heading": "RETRO REFLECTIVE",
                     "Sizes": "54, 124",
                     "Base Substrate": "PVC",
@@ -2833,7 +2833,7 @@ export let ProductProvider = (props) => {
                     "image": "RETRO REFLECTIVE.webp"
                 },
                 {
-                    "id": 24,
+                    "id": 19,
                     "Heading": "RETRO REFLECTIVE - SEAMLESS",
                     "Sizes": "50",
                     "Base Substrate": "PVC",
@@ -2852,7 +2852,7 @@ export let ProductProvider = (props) => {
                     "image": "RETRO REFLECTIVE - SEAMLESS.webp"
                 },
                 {
-                    "id": 23,
+                    "id": 20,
                     "Heading": "REFLECTIVE - SMOOTH",
                     "Sizes": "50",
                     "Base Substrate": "PVC Light Grey with glass particles",
@@ -2871,7 +2871,7 @@ export let ProductProvider = (props) => {
                     "image": "REFLECTIVE - SMOOTH.webp"
                 },
                 {
-                    "id": 22,
+                    "id": 21,
                     "Heading": "OPTICAL CLEAR - 120",
                     "Sizes": "50",
                     "Base Substrate": "PVC",
@@ -2890,7 +2890,7 @@ export let ProductProvider = (props) => {
                     "image": "OPTICAL CLEAR - 120.webp"
                 },
                 {
-                    "id": 21,
+                    "id": 22,
                     "Heading": "CLEAR - 100 (Matte)",
                     "Sizes": "50",
                     "Base Substrate": "PVC",
@@ -2909,7 +2909,7 @@ export let ProductProvider = (props) => {
                     "image": "CLEAR - 100 (Matte).webp"
                 },
                 {
-                    "id": 20,
+                    "id": 23,
                     "Heading": "CLEAR - 120 (Gloss)",
                     "Sizes": "42, 50, 60",
                     "Base Substrate": "PVC",
@@ -2928,7 +2928,7 @@ export let ProductProvider = (props) => {
                     "image": "CLEAR - 120 (Gloss).webp"
                 },
                 {
-                    "id": 19,
+                    "id": 24,
                     "Heading": "ONE WAY VISION - 140",
                     "Sizes": "39, 42, 50, 60",
                     "Base Substrate": "PVC",
@@ -2947,7 +2947,7 @@ export let ProductProvider = (props) => {
                     "image": "ONE WAY VISION - 140.webp"
                 },
                 {
-                    "id": 18,
+                    "id": 25,
                     "Heading": "SILVER CHROME",
                     "Sizes": "36, 50",
                     "Base Substrate": "PET",
@@ -2965,9 +2965,8 @@ export let ProductProvider = (props) => {
                     "Description": "Silver Chrome is a glossy mirror vinyl which comes with premium quality clear permanent adhesive.\n\nIdeal solution for short term promotional branding applications for retail & offices, promotional stickers for packaging etc.\n\nFormulated with Wyte proprietary, Dura Ink Receptive Layer (DIRL) for high ink absorption and adhesion.",
                     "image": "SILVER CHROME.webp"
                 },
-
                 {
-                    "id": 17,
+                    "id": 26,
                     "Heading": "PERFECTO BACKLIT - 120 (Gloss)",
                     "Sizes": "42, 50, 60",
                     "Base Substrate": "PVC",
@@ -2986,7 +2985,7 @@ export let ProductProvider = (props) => {
                     "image": "PERFECTO BACKLIT - 120 (Gloss).webp"
                 },
                 {
-                    "id": 16,
+                    "id": 27,
                     "Heading": "GREY BACK - 120 (Matte)",
                     "Sizes": "40, 50, 60",
                     "Base Substrate": "PVC",
@@ -3005,7 +3004,7 @@ export let ProductProvider = (props) => {
                     "image": "GREY BACK - 120 (Matte).webp"
                 },
                 {
-                    "id": 15,
+                    "id": 28,
                     "Heading": "GREY BACK - 120 (Gloss)",
                     "Sizes": "40, 50, 60",
                     "Base Substrate": "PVC",
@@ -3023,8 +3022,9 @@ export let ProductProvider = (props) => {
                     "Description": "Grey Back is a premium vinyl for quality day-to-day branding applications with acrylic based grey adhesive for superior adhesion. Grey adhesive is ideal for pasting applications on the colored surfaces thus prevents background to get impose on the front side.\n\nLonger PVC aging for better durability. Formulated with Wyte proprietary, Dura Ink Receptive Layer (DIRL) for high ink absorption and adhesion.",
                     "image": "GREY BACK - 120 (Gloss).webp"
                 },
+
                 {
-                    "id": 14,
+                    "id": 29,
                     "Heading": "ROSE GOLD - 100 (Matte)",
                     "Sizes": "36, 40, 42, 50, 60",
                     "Base Substrate": "PVC",
@@ -3039,11 +3039,11 @@ export let ProductProvider = (props) => {
                     "Compatible with": "Dye Inkjet Printers",
                     "Product Code": "RG1006",
                     "Category": "VINYL",
-                    "Description": "Rose Gold is an economy vinyl for general day-to-day branding applications. 120 gsm liner makes this substrate very easy to handle on machines.\n\nLonger PVC aging for better durability & makes it a perfect substrate for small to medium duration branding applications.\n\nFormulated with Wyte proprietary, Dura Ink Receptive Layer (DIRL) for high ink absorption and adhesion.",
+                    "Description": "Rose Gold is an economy vinyl for general day-to-day branding applications. 120 gsm liner makes this substrate very easy to handle on machines.\n\nLonger PVC aging forSays better durability & makes it a perfect substrate for small to medium duration branding applications.\n\nFormulated with Wyte proprietary, Dura Ink Receptive Layer (DIRL) for high ink absorption and adhesion.",
                     "image": "ROSE GOLD - 100 (Matte).webp"
                 },
                 {
-                    "id": 13,
+                    "id": 30,
                     "Heading": "ROSE GOLD - 100 (Gloss)",
                     "Sizes": "36, 40, 42, 50, 60",
                     "Base Substrate": "PVC",
@@ -3062,7 +3062,7 @@ export let ProductProvider = (props) => {
                     "image": "ROSE GOLD - 100 (Gloss).webp"
                 },
                 {
-                    "id": 12,
+                    "id": 31,
                     "Heading": "PREMIUM GOLD - 120 (Matte)",
                     "Sizes": "36, 40, 42, 50, 60",
                     "Base Substrate": "PVC",
@@ -3081,7 +3081,7 @@ export let ProductProvider = (props) => {
                     "image": "PREMIUM GOLD - 120 (Matte).webp"
                 },
                 {
-                    "id": 11,
+                    "id": 32,
                     "Heading": "PREMIUM GOLD - 120 (Gloss)",
                     "Sizes": "36, 40, 42, 50, 60",
                     "Base Substrate": "PVC",
@@ -3100,7 +3100,7 @@ export let ProductProvider = (props) => {
                     "image": "PREMIUM GOLD - 120 (Gloss).webp"
                 },
                 {
-                    "id": 10,
+                    "id": 33,
                     "Heading": "STRETCHCAL21 - METAL & EXTERIOR SIGNS",
                     "Sizes": "50",
                     "Base Substrate": "PVC Polymeric",
@@ -3119,7 +3119,7 @@ export let ProductProvider = (props) => {
                     "image": "STRETCHCAL21 - METAL & EXTERIOR SIGNS.webp"
                 },
                 {
-                    "id": 9,
+                    "id": 34,
                     "Heading": "STRETCHCAL32 - Vehicle Wrap",
                     "Sizes": "50",
                     "Base Substrate": "PVC Polymeric",
@@ -3136,7 +3136,7 @@ export let ProductProvider = (props) => {
                     "Category": "VINYL",
                     "Description": "Stretchable with Air Channeled Grey Glue for bubble free application on vehicle metal surfaces makes STRETCHCAL32 the most versatile and affordable substrate among competition. Specially formulated with flexible DURA Ink Receptive Layer (DIRL) for high ink absorption and better adhesion with compatible overlaminates.",
                     "image": "STRETCHCAL32 - Vehicle Wrap.webp"
-                },
+                }
 
             ]
         },
@@ -3146,7 +3146,7 @@ export let ProductProvider = (props) => {
             image: "CLOTH BANNER – 120 MATTE (WR).webp",
             items: [
                 {
-                    "id": 2,
+                    "id": 1,
                     "Heading": "ARTISTIC CANVAS GLOSS",
                     "Sizes": "36, 50, 60",
                     "Base Substrate": "Poly-Cotton",
@@ -3163,7 +3163,7 @@ export let ProductProvider = (props) => {
                     "image": "ARTISTIC CANVAS GLOSS.webp"
                 },
                 {
-                    "id": 1,
+                    "id": 2,
                     "Heading": "ARTISTIC CANVAS MATTE",
                     "Sizes": "40, 50, 60, 80, 124",
                     "Base Substrate": "Poly-Cotton",
@@ -3180,7 +3180,7 @@ export let ProductProvider = (props) => {
                     "image": "ARTISTIC CANVAS MATTE.webp"
                 },
                 {
-                    "id": 2,
+                    "id": 3,
                     "Heading": "FABRIC | CEILING",
                     "Sizes": "126",
                     "Base Substrate": "PVC",
@@ -3197,7 +3197,7 @@ export let ProductProvider = (props) => {
                     "image": "CEILING.webp"
                 },
                 {
-                    "id": 1,
+                    "id": 4,
                     "Heading": "WINDOW BLIND | FABRIC",
                     "Sizes": "52, 126",
                     "Base Substrate": "Polyester Opaque",
@@ -3214,7 +3214,7 @@ export let ProductProvider = (props) => {
                     "image": "FABRIC.webp"
                 },
                 {
-                    id: 2,
+                    "id": 5,
                     "Heading": "SMOOTH LEATHERETTE",
                     "Sizes": "54",
                     "Base Substrate": "PVC",
@@ -3230,7 +3230,7 @@ export let ProductProvider = (props) => {
                     "image": "SMOOTH LEATHERETTE.webp"
                 },
                 {
-                    id: 1,
+                    "id": 6,
                     "Heading": "TEXTURED LEATHERETTE",
                     "Sizes": "54",
                     "Base Substrate": "PVC",
@@ -3246,261 +3246,261 @@ export let ProductProvider = (props) => {
                     "image": "TEXTURED LEATHERETTE.webp"
                 },
                 {
-                    id: 16, // Added ID
-                    Heading: "FABRIC – WALL FABRIC",
+                    "id": 7,
+                    "Heading": "FABRIC – WALL FABRIC",
                     "Sizes (In Inches)": "52, 126",
                     "Base Substrate": "Polyester",
-                    Surface: "Matte",
-                    Weight: "220 gsm",
-                    Application: "Wall Graphics",
-                    Length: "50 mtrs.",
-                    Glue: "",
+                    "Surface": "Matte",
+                    "Weight": "220 gsm",
+                    "Application": "Wall Graphics",
+                    "Length": "50 mtrs.",
+                    "Glue": "",
                     "Compatible with": "Eco Sol / Latex / U.V. Printers",
                     "Product Code": "WP220F",
-                    Category: " DECOR SERIES",
-                    Description: "WP220F is a polyester based, light textured non-adhesive wall fabric with canvas feel. Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images. It has a white textured matte surface.",
-                    image: "FABRIC – WALL FABRIC.webp"
+                    "Category": " DECOR SERIES",
+                    "Description": "WP220F is a polyester based, light textured non-adhesive wall fabric with canvas feel. Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images. It has a white textured matte surface.",
+                    "image": "FABRIC – WALL FABRIC.webp"
                 },
                 {
-                    id: 15, // Added ID
-                    Heading: "FABRIC – SPARKLE WALL FABRIC",
+                    "id": 8,
+                    "Heading": "FABRIC – SPARKLE WALL FABRIC",
                     "Sizes (In Inches)": "50",
                     "Base Substrate": "Polyester",
-                    Surface: "Satin Sparkle",
-                    Weight: "300 gsm",
-                    Application: "Wall Graphics",
-                    Length: "50 mtrs.",
-                    Glue: "",
+                    "Surface": "Satin Sparkle",
+                    "Weight": "300 gsm",
+                    "Application": "Wall Graphics",
+                    "Length": "50 mtrs.",
+                    "Glue": "",
                     "Compatible with": "Eco Sol / Latex / U.V. Printers",
                     "Product Code": "WP300SF",
-                    Category: " DECOR SERIES",
-                    Description: "WP300SF is a polyester based, medium canvas textured, non-adhesive wallpaper with sparkles. Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images. It has a slight off-white textured satin surface with sparkles.",
-                    image: "FABRIC – SPARKLE WALL FABRIC.webp"
+                    "Category": " DECOR SERIES",
+                    "Description": "WP300SF is a polyester based, medium canvas textured, non-adhesive wallpaper with sparkles. Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images. It has a slight off-white textured satin surface with sparkles.",
+                    "image": "FABRIC – SPARKLE WALL FABRIC.webp"
                 },
                 {
-                    id: 14, // Added ID
-                    Heading: "NON ADHESIVE – HD",
+                    "id": 9,
+                    "Heading": "NON ADHESIVE – HD",
                     "Sizes (In Inches)": "36, 50, 60",
                     "Base Substrate": "Composite PP+PVC",
-                    Surface: "Textured Satin",
-                    Weight: "300 gsm",
-                    Application: "Wall Graphics",
-                    Length: "50 mtrs.",
-                    Glue: "",
+                    "Surface": "Textured Satin",
+                    "Weight": "300 gsm",
+                    "Application": "Wall Graphics",
+                    "Length": "50 mtrs.",
+                    "Glue": "",
                     "Compatible with": "Eco Sol / Latex / U.V. Printers",
                     "Product Code": "WP300HD",
-                    Category: " DECOR SERIES",
-                    Description: "WP300HD is a composition of Poly Propylene and PVC, non-adhesive textured substrate used as wall coverings and easy on pocket. It is heavy duty substrate & coated with a premium and smooth ink absorption layer for handling medium ink volume graphics. It has a white textured smooth surface.",
-                    image: "NON ADHESIVE – HD.webp"
+                    "Category": " DECOR SERIES",
+                    "Description": "WP300HD is a composition of Poly Propylene and PVC, non-adhesive textured substrate used as wall coverings and easy on pocket. It is heavy duty substrate & coated with a premium and smooth ink absorption layer for handling medium ink volume graphics. It has a white textured smooth surface.",
+                    "image": "NON ADHESIVE – HD.webp"
                 },
                 {
-                    id: 13, // Added ID
-                    Heading: "NON ADHESIVE – PVC",
+                    "id": 10,
+                    "Heading": "NON ADHESIVE – PVC",
                     "Sizes (In Inches)": "36, 50, 60",
                     "Base Substrate": "Poly Propylene",
-                    Surface: "Smooth Matte",
-                    Weight: "180 gsm",
-                    Application: "Wall Graphics",
-                    Length: "50 mtrs.",
-                    Glue: "",
+                    "Surface": "Smooth Matte",
+                    "Weight": "180 gsm",
+                    "Application": "Wall Graphics",
+                    "Length": "50 mtrs.",
+                    "Glue": "",
                     "Compatible with": "Eco Sol / Latex / U.V. Printers",
                     "Product Code": "WP180PVC",
-                    Category: " DECOR SERIES",
-                    Description: "WP180PVC is a Poly Propylene based, non-adhesive substrate used as wall coverings and easy on pocket. It is coated with a premium and smooth ink absorption layer for handling medium ink volume graphics. It has a white matte smooth surface.",
-                    image: "NON ADHESIVE – PVC.webp"
+                    "Category": " DECOR SERIES",
+                    "Description": "WP180PVC is a Poly Propylene based, non-adhesive substrate used as wall coverings and easy on pocket. It is coated with a premium and smooth ink absorption layer for handling medium ink volume graphics. It has a white matte smooth surface.",
+                    "image": "NON ADHESIVE – PVC.webp"
                 },
                 {
-                    id: 12, // Added ID
-                    Heading: "NON ADHESIVE – STROKES",
+                    "id": 11,
+                    "Heading": "NON ADHESIVE – STROKES",
                     "Sizes (In Inches)": "54",
                     "Base Substrate": "PVC",
-                    Surface: "Textured Matte",
-                    Weight: "240 gsm",
-                    Application: "Wall Graphics",
-                    Length: "30 mtrs.",
-                    Glue: "",
+                    "Surface": "Textured Matte",
+                    "Weight": "240 gsm",
+                    "Application": "Wall Graphics",
+                    "Length": "30 mtrs.",
+                    "Glue": "",
                     "Compatible with": "Eco Sol / Latex / U.V. Printers",
                     "Product Code": "WP240ST",
-                    Category: " DECOR SERIES",
-                    Description: "WP240ST is a PVC based, non-adhesive wallpaper with beautiful brush strokes texture. It has a textile back which gives superior adhesion when installed on the wall. Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images. It has a white matte surface that looks very natural & beautiful on any wall under general lights.",
-                    image: "NON ADHESIVE – STROKES.webp"
+                    "Category": " DECOR SERIES",
+                    "Description": "WP240ST is a PVC based, non-adhesive wallpaper with beautiful brush strokes texture. It has a textile back which gives superior adhesion when installed on the wall. Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images. It has a white matte surface that looks very natural & beautiful on any wall under general lights.",
+                    "image": "NON ADHESIVE – STROKES.webp"
                 },
                 {
-                    id: 11, // Added ID
-                    Heading: "METALLIC TEXTURED GOLD",
+                    "id": 12,
+                    "Heading": "METALLIC TEXTURED GOLD",
                     "Sizes (In Inches)": "42",
                     "Base Substrate": "Pulp Paper",
-                    Surface: "Textured",
-                    Weight: "240 gsm",
-                    Application: "Wall Graphics",
-                    Length: "50 mtrs.",
-                    Glue: "",
+                    "Surface": "Textured",
+                    "Weight": "240 gsm",
+                    "Application": "Wall Graphics",
+                    "Length": "50 mtrs.",
+                    "Glue": "",
                     "Compatible with": "Eco Sol / Latex / U.V. Printers",
                     "Product Code": "GMT240",
-                    Category: " DECOR SERIES",
-                    Description: "METALLIC TEXTURED GOLD is a Pulp Paper based, medium textured printable wall covering substrate in matte finish for commercial & residential applications. Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion to inks for longer durability. It has a natural grain texture which gives vintage color reproduction.",
-                    image: "METALLIC TEXTURED GOLD.webp"
+                    "Category": " DECOR SERIES",
+                    "Description": "METALLIC TEXTURED GOLD is a Pulp Paper based, medium textured printable wall covering substrate in matte finish for commercial & residential applications. Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion to inks for longer durability. It has a natural grain texture which gives vintage color reproduction.",
+                    "image": "METALLIC TEXTURED GOLD.webp"
                 },
                 {
-                    id: 10, // Added ID
-                    Heading: "CEDAR LEATHERETTE",
+                    "id": 13,
+                    "Heading": "CEDAR LEATHERETTE",
                     "Sizes (In Inches)": "42",
                     "Base Substrate": "Pulp Paper",
-                    Surface: "Textured",
-                    Weight: "240 gsm",
-                    Application: "Wall Graphics",
-                    Length: "50 mtrs.",
-                    Glue: "",
+                    "Surface": "Textured",
+                    "Weight": "240 gsm",
+                    "Application": "Wall Graphics",
+                    "Length": "50 mtrs.",
+                    "Glue": "",
                     "Compatible with": "Eco Sol / Latex / U.V. Printers",
                     "Product Code": "CL240",
-                    Category: " DECOR SERIES",
-                    Description: "CEDAR LEATHERETTE is a Pulp Paper based, medium leather finish printable wall covering substrate for commercial & residential applications. Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion to inks for longer durability. It has a nice leather effect which gives rich and natural color reproduction.",
-                    image: "CEDAR LEATHERETTE.webp"
+                    "Category": " DECOR SERIES",
+                    "Description": "CEDAR LEATHERETTE is a Pulp Paper based, medium leather finish printable wall covering substrate for commercial & residential applications. Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion to inks for longer durability. It has a nice leather effect which gives rich and natural color reproduction.",
+                    "image": "CEDAR LEATHERETTE.webp"
                 },
                 {
-                    id: 9, // Added ID
-                    Heading: "WISTERIA",
+                    "id": 14,
+                    "Heading": "WISTERIA",
                     "Sizes (In Inches)": "42,49",
                     "Base Substrate": "Non-Woven Fabric",
-                    Surface: "Textured",
-                    Thickness: "260 gsm",
-                    Application: "Wall Graphics",
-                    Length: "50 mtrs.",
-                    Glue: "",
+                    "Surface": "Textured",
+                    "Thickness": "260 gsm",
+                    "Application": "Wall Graphics",
+                    "Length": "50 mtrs.",
+                    "Glue": "",
                     "Compatible with": "Eco SOI / Latex / U.V. Printers",
                     "Product Code": "WT260",
-                    Category: " DECOR SERIES",
-                    Description: "WISTERIA is a Non-Woven Fabric based, heavy textured printable wall covering substrate for commercial & residential applications. Specially layered With heavy DURA Receptive Layer (DIRL) for high ink absorption which gives better adhesion to inks for longer durability.",
-                    image: "WISTERIA.webp"
+                    "Category": " DECOR SERIES",
+                    "Description": "WISTERIA is a Non-Woven Fabric based, heavy textured printable wall covering substrate for commercial & residential applications. Specially layered With heavy DURA Receptive Layer (DIRL) for high ink absorption which gives better adhesion to inks for longer durability.",
+                    "image": "WISTERIA.webp"
                 },
                 {
-                    id: 8, // Added ID
-                    Heading: "Non Adhesive | Non Woven – Nowo",
+                    "id": 15,
+                    "Heading": "Non Adhesive | Non Woven – Nowo",
                     "Sizes (In Inches)": "42,50,54,60,124",
                     "Base Substrate": "Non Woven Paper",
-                    Surface: "Smooth Matte",
-                    Thickness: "180 gsm",
-                    Application: "Wall Graphics",
-                    Length: "50 mtrs.",
-                    Glue: "",
+                    "Surface": "Smooth Matte",
+                    "Thickness": "180 gsm",
+                    "Application": "Wall Graphics",
+                    "Length": "50 mtrs.",
+                    "Glue": "",
                     "Compatible with": "Eco SOI / Latex / U.V. Printers",
                     "Product Code": "WPNOW0180",
-                    Category: " DECOR SERIES",
-                    Description: "WPNOW0180 is a non-woven paper based, non—adhe5ive wallpaper with smooth matte finish, It is the most favorite & widely used by architects and interior designers in both residential & commercial projects. Scuff resistant & specialty layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images. It has a slight off-white plain matte",
-                    image: "Non Woven – Nowo.webp"
+                    "Category": " DECOR SERIES",
+                    "Description": "WPNOW0180 is a non-woven paper based, non—adhe5ive wallpaper with smooth matte finish, It is the most favorite & widely used by architects and interior designers in both residential & commercial projects. Scuff resistant & specialty layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images. It has a slight off-white plain matte",
+                    "image": "Non Woven – Nowo.webp"
                 },
                 {
-                    id: 7, // Added ID
-                    Heading: "NON ADHESIVE - HELIOS 3D",
+                    "id": 16,
+                    "Heading": "NON ADHESIVE - HELIOS 3D",
                     "Sizes (In Inches)": "42",
                     "Base Substrate": "Paper",
-                    Surface: "Textured Satin",
-                    Thickness: "200 gsm",
-                    Application: "Wall Graphics",
-                    Length: "30 mtrs.",
-                    Glue: "",
+                    "Surface": "Textured Satin",
+                    "Thickness": "200 gsm",
+                    "Application": "Wall Graphics",
+                    "Length": "30 mtrs.",
+                    "Glue": "",
                     "Compatible with": "Eco SOI / Latex / U.V. Printers",
                     "Product Code": "WP2003D",
-                    Category: " DECOR SERIES",
-                    Description: "WP2003D is a paper based, tight textured non—adhesive wallpaper with virtual 3D brushed pattern. Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images. It has a slight off-white 3D satin surface which bounces off lights to give 3D appearance.",
-                    image: "NON ADHESIVE - HELIOS 3D.webp"
+                    "Category": " DECOR SERIES",
+                    "Description": "WP2003D is a paper based, tight textured non—adhesive wallpaper with virtual 3D brushed pattern. Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images. It has a slight off-white 3D satin surface which bounces off lights to give 3D appearance.",
+                    "image": "NON ADHESIVE - HELIOS 3D.webp"
                 },
                 {
-                    id: 6, // Added ID
-                    Heading: "NON ADHESIVE - AESTHETIC CANVAS",
+                    "id": 17,
+                    "Heading": "NON ADHESIVE - AESTHETIC CANVAS",
                     "Sizes (In Inches)": "42",
                     "Base Substrate": "Paper",
-                    Surface: "Textured Satin",
-                    Thickness: "200 gsm",
-                    Application: "Wall Graphics",
-                    Length: "30 mtrs.",
-                    Glue: "",
+                    "Surface": "Textured Satin",
+                    "Thickness": "200 gsm",
+                    "Application": "Wall Graphics",
+                    "Length": "30 mtrs.",
+                    "Glue": "",
                     "Compatible with": "Eco SOI / Latex / U.V. Printers",
                     "Product Code": "WP200AC",
-                    Category: " DECOR SERIES",
-                    Description: "WP200AC is a paper based, medium textured non—adhesive wallpaper With heavy Canvas like feet. It is best Suitable for abstract art designs as wall murals. Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images. It has a slight off-white textured satin surface.",
-                    image: "NON ADHESIVE - AESTHETIC CANVAS.webp"
+                    "Category": " DECOR SERIES",
+                    "Description": "WP200AC is a paper based, medium textured non—adhesive wallpaper With heavy Canvas like feet. It is best Suitable for abstract art designs as wall murals. Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images. It has a slight off-white textured satin surface.",
+                    "image": "NON ADHESIVE - AESTHETIC CANVAS.webp"
                 },
                 {
-                    id: 5, // Added ID
-                    Heading: "CART CANVAS",
+                    "id": 18,
+                    "Heading": "CART CANVAS",
                     "Sizes (In Inches)": "42",
                     "Base Substrate": "Pulp Paper",
-                    Surface: "Textured",
-                    Thickness: "240 gsm",
-                    Application: "Wall Graphics",
-                    Length: "50 mtrs.",
-                    Glue: "",
+                    "Surface": "Textured",
+                    "Thickness": "240 gsm",
+                    "Application": "Wall Graphics",
+                    "Length": "50 mtrs.",
+                    "Glue": "",
                     "Compatible with": "Eco SOI / Latex / U.V. Printers",
                     "Product Code": "CC240",
-                    Category: " DECOR SERIES",
-                    Description: "CART CANVAS is a Pulp paper based,medium textured printable wall covering substrate with micro glitter particles, is an excellent choice for commercial & residential applications. Specially layered With heavy DURA Ink Receptive Layer (DIRL) for high ink absorption Which gives better adhesion to inks for longer durability. It has a nice white shimmer effect which gives rich and shining color reproduction.",
-                    image: "CART CANVAS.webp"
+                    "Category": " DECOR SERIES",
+                    "Description": "CART CANVAS is a Pulp paper based,medium textured printable wall covering substrate with micro glitter particles, is an excellent choice for commercial & residential applications. Specially layered With heavy DURA Ink Receptive Layer (DIRL) for high ink absorption Which gives better adhesion to inks for longer durability. It has a nice white shimmer effect which gives rich and shining color reproduction.",
+                    "image": "CART CANVAS.webp"
                 },
                 {
-                    id: 4, // Added ID
-                    Heading: "NON ADHESIVE - HORIZONTAL RAYS",
+                    "id": 19,
+                    "Heading": "NON ADHESIVE - HORIZONTAL RAYS",
                     "Sizes (In Inches)": "54",
                     "Base Substrate": "Paper",
-                    Surface: "Textured Matte",
-                    Thickness: "200 gsm",
-                    Application: "Wall Graphics",
-                    Length: "50 mtrs.",
-                    Glue: "",
+                    "Surface": "Textured Matte",
+                    "Thickness": "200 gsm",
+                    "Application": "Wall Graphics",
+                    "Length": "50 mtrs.",
+                    "Glue": "",
                     "Compatible with": "Eco SOI / Latex / U.V. Printers",
                     "Product Code": "WP200HR",
-                    Category: " DECOR SERIES",
-                    Description: "WP200HR is a paper based, medium textured nori—adhesive wallpaper with matte finish. It has a unique anti—scratch coating for longer life and it is layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption spray. It has a slight off-white textured matte surface that looks beautiful on any wall under general lights.",
-                    image: "NON ADHESIVE - HORIZONTAL RAYS.webp"
+                    "Category": " DECOR SERIES",
+                    "Description": "WP200HR is a paper based, medium textured nori—adhesive wallpaper with matte finish. It has a unique anti—scratch coating for longer life and it is layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption spray. It has a slight off-white textured matte surface that looks beautiful on any wall under general lights.",
+                    "image": "NON ADHESIVE - HORIZONTAL RAYS.webp"
                 },
                 {
-                    id: 3, // Added ID
-                    Heading: "NON ADHESIVE - RODIES GLITTER",
+                    "id": 20,
+                    "Heading": "NON ADHESIVE - RODIES GLITTER",
                     "Sizes (In Inches)": "54",
                     "Base Substrate": "Paper",
-                    Surface: "Matte Glitter",
-                    Thickness: "240 gsm",
-                    Application: "Wall Graphics",
-                    Length: "45 mtrs.",
-                    Glue: "",
+                    "Surface": "Matte Glitter",
+                    "Thickness": "240 gsm",
+                    "Application": "Wall Graphics",
+                    "Length": "45 mtrs.",
+                    "Glue": "",
                     "Compatible with": "Eco SOI / Latex / U.V. Printers",
                     "Product Code": "WP240RG",
-                    Category: " DECOR SERIES",
-                    Description: "WP240RG is a paper based, medium textured non-adhesive wallpaper with glitters. It is widely used in residential & commercial projects. Mostly used in kid's Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images. It has a slight off-white glittery matte Surface that looks beautiful on any wall under general lights.",
-                    image: "NON ADHESIVE - RODIES GLITTER.webp"
+                    "Category": " DECOR SERIES",
+                    "Description": "WP240RG is a paper based, medium textured non-adhesive wallpaper with glitters. It is widely used in residential & commercial projects. Mostly used in kid's Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images. It has a slight off-white glittery matte Surface that looks beautiful on any wall under general lights.",
+                    "image": "NON ADHESIVE - RODIES GLITTER.webp"
                 },
                 {
-                    id: 2, // Added ID
-                    Heading: "SELF ADHESIVE - FABRIC WALL SOFT",
+                    "id": 21,
+                    "Heading": "SELF ADHESIVE - FABRIC WALL SOFT",
                     "Sizes (In Inches)": "50",
                     "Base Substrate": "Polyester",
-                    Surface: "Textured Matte",
-                    Thickness: "200 micron",
-                    Application: "Wall Graphics",
-                    Length: "30 mtrs.",
-                    Glue: "Water Base - Permanent",
+                    "Surface": "Textured Matte",
+                    "Thickness": "200 micron",
+                    "Application": "Wall Graphics",
+                    "Length": "30 mtrs.",
+                    "Glue": "Water Base - Permanent",
                     "Compatible with": "Eco SOI / Latex / U.V. Printers",
                     "Product Code": "WP200FSA",
-                    Category: " DECOR SERIES",
-                    Description: "WP200FSA is a 100% polyester based, medium fabric textured self-adhesive wallpaper is widely used in premium residential & commercial projects. Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images. It has a white fabric matte surface thatlooks premium which gives rich and enhanced colors.",
-                    image: "SELF ADHESIVE - FABRIC WALL SOFT.webp"
+                    "Category": " DECOR SERIES",
+                    "Description": "WP200FSA is a 100% polyester based, medium fabric textured self-adhesive wallpaper is widely used in premium residential & commercial projects. Specially layered with heavy DURA Ink Receptive Layer (DIRL) for high ink absorption which gives better adhesion for darker images. It has a white fabric matte surface thatlooks premium which gives rich and enhanced colors.",
+                    "image": "SELF ADHESIVE - FABRIC WALL SOFT.webp"
                 },
                 {
-                    id: 1, // Added ID
-                    Heading: "SELF ADHESIVE - WALL GRAIN TEXTURE",
+                    "id": 22,
+                    "Heading": "SELF ADHESIVE - WALL GRAIN TEXTURE",
                     "Sizes (In Inches)": "50",
                     "Base Substrate": "PVC",
-                    Surface: "Textured Satin",
-                    Thickness: "180 micron",
-                    Application: "Wall Graphics",
-                    Length: "30 mtrs.",
-                    Glue: "Water Base - Permanent",
+                    "Surface": "Textured Satin",
+                    "Thickness": "180 micron",
+                    "Application": "Wall Graphics",
+                    "Length": "30 mtrs.",
+                    "Glue": "Water Base - Permanent",
                     "Compatible with": "Eco SOI / Latex / U.V. Printers",
                     "Product Code": "WP180GT",
-                    Category: " DECOR SERIES",
-                    Description: "WP180GT is a PVC based and medium textured self-adhesive wallpaper is mostly resistant to grease and moisture than plain paper, and are good for most commercial & residential applications.Specially layered with heavy DURA Ink Receptive Layer(DIRL) for high ink absorption which gives better adhesion for darker images. It has a nice white satin surface that gives rich and enhanced color reproduction.",
-                    image: "SELF ADHESIVE - WALL GRAIN TEXTURE.webp"
-                },
+                    "Category": " DECOR SERIES",
+                    "Description": "WP180GT is a PVC based and medium textured self-adhesive wallpaper is mostly resistant to grease and moisture than plain paper, and are good for most commercial & residential applications.Specially layered with heavy DURA Ink Receptive Layer(DIRL) for high ink absorption which gives better adhesion for darker images. It has a nice white satin surface that gives rich and enhanced color reproduction.",
+                    "image": "SELF ADHESIVE - WALL GRAIN TEXTURE.webp"
+                }
             ]
         },
 

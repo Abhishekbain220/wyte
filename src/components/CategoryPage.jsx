@@ -72,7 +72,7 @@ const CategoryPage = () => {
                   id={p.id}
                   name={p.Heading}
                   image={p.image}
-                  navigation={`/product/${filter[0].array}/${p.id}`}
+                  navigation={`/productDetails/${filter[0].array}/${p.id}`}
                 />
               </motion.div>
             ))}

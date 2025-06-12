@@ -7,7 +7,7 @@ import ProductCom from './ProductCom'
 
 const ProductCategory = () => {
     const { Category } = useParams()
-    const { products } = useContext(ProductContext)
+    const { products,ProductCategory } = useContext(ProductContext)
 
     const [filter, setFilter] = useState([])
     const decodedCategory = decodeURIComponent(Category);
@@ -18,12 +18,9 @@ const ProductCategory = () => {
             console.log("Products:", products);
             console.log("Decoded Category:", decodedCategory);
 
-            const filteredProducts = products.filter(
-                (p) =>
-                    p.category &&
-                    String(p.category).trim().toLowerCase() ===
-                    decodedCategory.trim().toLowerCase()
-            );
+            const filteredProducts = ProductCategory.find((p)=>String(p.name) === Category)
+    
+            
 
             setFilter(filteredProducts);
         }
@@ -68,7 +65,7 @@ const ProductCategory = () => {
                     </p>
                 ) : (
                     <div className="flex flex-wrap justify-center gap-5 sm:gap-15">
-                        {filter.map((p, index) => (
+                        {filter.items.map((p, index) => (
                             <motion.div
                                 key={p.id}
                                 className="w-full sm:w-auto"
@@ -80,7 +77,7 @@ const ProductCategory = () => {
                                     ease: 'easeOut',
                                 }}
                             >
-                                <ProductCom id={p.id} name={p.name} image={`/${p.image}`} navigation={`/${p.array}`} />
+                                <ProductCom id={p.id} name={p.Heading} image={`/${p.image}`} navigation={`/product/${filter.name}/${p.id}`} />
 
                             </motion.div>
                         ))}

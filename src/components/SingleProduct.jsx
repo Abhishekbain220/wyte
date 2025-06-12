@@ -27,7 +27,7 @@ const item = {
 
 const SingleProduct = () => {
   const { id, productName } = useParams();
-  const { products } = useContext(ProductContext);
+  const { products,ProductCategory } = useContext(ProductContext);
   const [productDetails, setProductDetails] = useState(null);
 
   const imgRef = useRef(null);
@@ -40,7 +40,8 @@ const SingleProduct = () => {
   const dragStart = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    const product = products.find((p) => String(p.array) === productName);
+    const product = ProductCategory.find((p) => String(p.name) === productName);
+    console.log(product)
     const productItem = product?.items?.find((i) => String(i.id) === id);
     setProductDetails(productItem);
   }, [id, products, productName]);

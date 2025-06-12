@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 const Products = () => {
-  const { products } = useContext(ProductContext);
+  const { products,ProductCategory } = useContext(ProductContext);
   const [isMobile, setIsMobile] = useState(false);
   let navigate = useNavigate();
 
@@ -43,7 +43,7 @@ const Products = () => {
       {/* Product List */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16">
         <div className="flex flex-wrap justify-center gap-5 sm:gap-6">
-          {products.map((p, i) => (
+          {ProductCategory.map((p, i) => (
             <motion.div
               key={i}
               initial="hidden"
@@ -51,7 +51,7 @@ const Products = () => {
               variants={itemVariants}
               className="w-full sm:w-auto"
             >
-              <ProductCom id={p.id} name={p.name} image={p.image} navigation={`/${p.array}`} />
+              <ProductCom id={p.id} name={p.name} image={p.image} navigation={`/Category/${p.name}`} />
             </motion.div>
           ))}
         </div>
