@@ -1,5 +1,11 @@
 import React from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+  FaWhatsapp
+} from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
@@ -52,11 +58,23 @@ const Footer = () => {
             ))}
           </nav>
 
+          {/* Social Icons */}
           <div className="flex space-x-6 text-2xl text-white">
-            {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map((Icon, i) => (
+            {[
+              { icon: FaFacebookF, href: "#" },
+              { icon: FaTwitter, href: "#" },
+              { icon: FaInstagram, href: "#" },
+              { icon: FaLinkedinIn, href: "#" },
+              {
+                icon: FaWhatsapp,
+                href: "https://wa.me/918823881287?text=Hi%20DigiTech%2C%20I%20am%20interested%20in%20your%20services!"
+              }
+            ].map(({ icon: Icon, href }, i) => (
               <a
                 key={i}
-                href="#"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Social Link"
                 className="hover:text-[#7AC943] transition-transform duration-300 hover:scale-110"
               >
@@ -65,6 +83,7 @@ const Footer = () => {
             ))}
           </div>
 
+          {/* Contact Us Button */}
           <button
             className="group relative mt-12 px-6 py-2 text-black font-semibold rounded-md overflow-hidden 
                        bg-[#7AC943] shadow-md transition-all duration-300 z-10 hover:border hover:border-white"
@@ -81,6 +100,7 @@ const Footer = () => {
         </div>
       </div>
 
+      {/* Footer Bottom Text */}
       <div className="mt-16 border-t border-gray-600 pt-6 text-center text-gray-400 text-sm font-light">
         &copy; {new Date().getFullYear()} DigiTech Solutions. All rights reserved.
       </div>

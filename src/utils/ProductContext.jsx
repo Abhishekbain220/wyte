@@ -5,7 +5,7 @@ export let ProductProvider = (props) => {
 
     const [banner, setBanner] = useState({
         image: "RESIN COATED PHOTOPAPER – 260 CANVAS TEXTURE (WR).webp",
-        title: "IGNITE THE FIRE WITHIN @ DigiTech",
+        title: "IGNITE THE FIRE WITHIN @ DigiTech India",
         para: "Passion fuels progress. When every team member breathes purpose, magic happens. With shared energy and synchronized timing, we create masterpieces—not just meet goals.",
         name: "TEAM @ STRATEGY",
         gradient: "linear-gradient(135deg, #FFDEE9, #B5FFFC)", // light pink to sky blue
@@ -15,7 +15,7 @@ export let ProductProvider = (props) => {
     let banners = [
         {
             image: "RESIN COATED PHOTOPAPER – 260 CANVAS TEXTURE (WR).webp",
-            title: "IGNITE THE FIRE WITHIN @ DigiTech",
+            title: "IGNITE THE FIRE WITHIN @ DigiTech India",
             para: "Passion fuels progress. When every team member breathes purpose, magic happens. With shared energy and synchronized timing, we create masterpieces—not just meet goals.",
             name: "TEAM @ STRATEGY",
             gradient: "linear-gradient(135deg, #FFDEE9, #B5FFFC)", // light pink to sky blue
@@ -23,7 +23,7 @@ export let ProductProvider = (props) => {
         },
         {
             image: "ROSE GOLD - 100 (Matte).webp",
-            title: "UNITY IS MOMENTUM @ DigiTech",
+            title: "UNITY IS MOMENTUM @ DigiTech India",
             para: "Success begins with coming together, grows by staying together, and thrives through unwavering commitment. We don’t trade results for excuses—we build futures.",
             name: "TEAM @ GROWTH",
             gradient: "linear-gradient(135deg, #FDCB82, #FFA69E)", // orange-peach
@@ -31,7 +31,7 @@ export let ProductProvider = (props) => {
         },
         {
             image: "PP SA - 150 MATTE (WR).webp",
-            title: "CRAFTING LEGACY THROUGH INNOVATION @ DigiTech",
+            title: "CRAFTING LEGACY THROUGH INNOVATION @ DigiTech India",
             para: "Extraordinary doesn’t happen by chance. It’s built through innovation, trust, and culture. When tech meets execution with heart, brands evolve beyond expectations.",
             name: "TEAM @ INNOVATION",
             gradient: "linear-gradient(135deg, #A1FFCE, #FAFFD1)", // mint to pale yellow
@@ -39,7 +39,7 @@ export let ProductProvider = (props) => {
         },
         {
             image: "MP FILM - 180 (Matte).webp",
-            title: "BE LIMITLESS @ DigiTech",
+            title: "BE LIMITLESS @ DigiTech India",
             para: "We don't just meet expectations—we redefine them. Our innovation isn't bound by trends but guided by purpose, performance, and future-ready thinking.",
             name: "TEAM @ R&D",
             gradient: "linear-gradient(135deg, #FDCB82, #FFE6FA)", // peach to light pink
@@ -47,7 +47,7 @@ export let ProductProvider = (props) => {
         },
         {
             image: "PP NA – 200 MATTE.webp",
-            title: "DESIGN WITH PURPOSE @ DigiTech",
+            title: "DESIGN WITH PURPOSE @ DigiTech India",
             para: "When design meets intent, the result is timeless. We turn creative ideas into powerful products that leave lasting impressions across every surface.",
             name: "TEAM @ CREATIVE",
             gradient: "linear-gradient(135deg, #D4FC79, #96E6A1)", // yellow-green to mint
@@ -55,7 +55,7 @@ export let ProductProvider = (props) => {
         },
         {
             image: "PP SA - 150 GLOSS.webp",
-            title: "EVER FORWARD, EVER BRIGHT @ DigiTech",
+            title: "EVER FORWARD, EVER BRIGHT @ DigiTech India",
             para: "Driven by clarity and courage, we move ahead—bringing brightness to every brand, every banner, every breakthrough. The future is not predicted, it’s printed.",
             name: "TEAM @ OPERATIONS",
             gradient: "linear-gradient(135deg, #E3FDF5, #FFE6FA)", // teal-white to light pink
