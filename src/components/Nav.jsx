@@ -68,7 +68,7 @@ const Nav = () => {
               alt="Co-Partner Logo"
               className="h-[7vh] w-auto object-contain drop-shadow-sm transition-transform duration-300 hover:scale-105"
             />
-            <span className="text-xs font-semibold text-gray-500 mt-1">Co-Partner</span>
+            <span className="text-xs font-bold text-gray-500 mt-1">Media Partner</span>
           </div>
           <button onClick={toggleMenu} className="md:hidden">
             {menuOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}
