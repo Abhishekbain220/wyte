@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 const Products = () => {
-  const { products,ProductCategory } = useContext(ProductContext);
+  const { products, ProductCategory } = useContext(ProductContext);
   const [isMobile, setIsMobile] = useState(false);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const checkScreen = () => setIsMobile(window.innerWidth < 640);
@@ -15,11 +15,6 @@ const Products = () => {
     window.addEventListener('resize', checkScreen);
     return () => window.removeEventListener('resize', checkScreen);
   }, []);
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    show: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } },
-  };
 
   return (
     <div className="min-h-screen w-full pt-32 sm:pt-36 bg-gradient-to-br from-[#f1fcfc] via-[#eef7ff] to-[#eafff0]">
@@ -41,21 +36,25 @@ const Products = () => {
       </motion.div>
 
       {/* Product List */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16">
+      <motion.div
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+      >
         <div className="flex flex-wrap justify-center gap-5 sm:gap-6">
-          {ProductCategory.map((p, i) => (
-            <motion.div
-              key={i}
-              initial="hidden"
-              animate="show"
-              variants={itemVariants}
-              className="w-full sm:w-auto"
-            >
-              <ProductCom id={p.id} name={p.name} image={p.image} navigation={`/Category/${p.name}`} />
-            </motion.div>
+          {ProductCategory.map((p) => (
+            <div key={p.id} className="w-full sm:w-auto">
+              <ProductCom
+                id={p.id}
+                name={p.name}
+                image={p.image}
+                navigation={`/Category/${p.name}`}
+              />
+            </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
