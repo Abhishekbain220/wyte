@@ -55,18 +55,19 @@ const CategoryPage = () => {
             No products found in this category.
           </p>
         ) : (
-          <div className="flex flex-wrap justify-center gap-5 sm:gap-15">
-            {filter[0].items.map((p, index) => (
+          <motion.div
+            className="flex flex-wrap justify-center gap-5 sm:gap-15"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+          >
+            {filter[0].items.map((p) => (
               <motion.div
                 key={p.id}
                 className="w-full sm:w-auto"
                 initial={{ scale: 0.85, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{
-                  delay: index * 0.1,
-                  duration: 0.4,
-                  ease: 'easeOut',
-                }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
               >
                 <ProductCom
                   id={p.id}
@@ -76,7 +77,7 @@ const CategoryPage = () => {
                 />
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         )}
       </div>
     </div>
