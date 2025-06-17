@@ -116,9 +116,15 @@ const SingleProduct = () => {
         <motion.div className="flex justify-center items-center relative" variants={item}>
           <div
             className="overflow-hidden rounded-2xl shadow-lg relative group cursor-zoom-in"
-            onMouseEnter={() => setIsZoomed(true)}
-            onMouseLeave={() => setIsZoomed(false)}
-            onMouseMove={handleMouseMove}
+            onMouseEnter={() => {
+              if (window.innerWidth >= 768) setIsZoomed(true);
+            }}
+            onMouseLeave={() => {
+              if (window.innerWidth >= 768) setIsZoomed(false);
+            }}
+            onMouseMove={(e) => {
+              if (window.innerWidth >= 768) handleMouseMove(e);
+            }}
             onClick={() => {
               setZoomScale(1);
               setPan({ x: 0, y: 0 });

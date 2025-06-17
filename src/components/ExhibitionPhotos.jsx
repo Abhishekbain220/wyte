@@ -13,15 +13,30 @@ const exhibitionPhotos = [
   { url: 'https://images.unsplash.com/photo-1676563110936-9d902b6eb937?w=600&auto=format&fit=crop&q=60' },
 ];
 
+const variants = {
+  enter: (direction) => ({
+    x: direction > 0 ? 300 : -300,
+    opacity: 0,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+    zIndex: 1,
+  },
+  exit: (direction) => ({
+    x: direction < 0 ? 300 : -300,
+    opacity: 0,
+  }),
+};
+
 const ExhibitionPhotos = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [[currentIndex, direction], setCurrentIndex] = useState([0, 0]);
   const [bannerIndex, setBannerIndex] = useState(0);
-
   const [zoom, setZoom] = useState(1);
   const [pan, setPan] = useState({ x: 0, y: 0 });
-  const [isDragging, setIsDragging] = useState(false);
-  const dragStart = useRef({ x: 0, y: 0 });
+  const touchStart = useRef(null);
+  const touchEnd = useRef(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -33,36 +48,33 @@ const ExhibitionPhotos = () => {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') setIsOpen(false);
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
     };
-    const handlePopState = () => setIsOpen(false);
-
     if (isOpen) {
       window.addEventListener('keydown', handleKeyDown);
-      window.addEventListener('popstate', handlePopState);
       window.history.pushState(null, '', window.location.href);
     }
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-      window.removeEventListener('popstate', handlePopState);
-    };
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isOpen]);
 
   const openFullscreen = (index) => {
-    setCurrentIndex(index);
+    setCurrentIndex([index, 0]);
     setZoom(1);
     setPan({ x: 0, y: 0 });
     setIsOpen(true);
   };
 
   const nextImage = () => {
-    setCurrentIndex((prev) => (prev + 1) % exhibitionPhotos.length);
+    const newIndex = (currentIndex + 1) % exhibitionPhotos.length;
+    setCurrentIndex([newIndex, 1]);
     setZoom(1);
     setPan({ x: 0, y: 0 });
   };
 
   const prevImage = () => {
-    setCurrentIndex((prev) => (prev - 1 + exhibitionPhotos.length) % exhibitionPhotos.length);
+    const newIndex = (currentIndex - 1 + exhibitionPhotos.length) % exhibitionPhotos.length;
+    setCurrentIndex([newIndex, -1]);
     setZoom(1);
     setPan({ x: 0, y: 0 });
   };
@@ -73,32 +85,30 @@ const ExhibitionPhotos = () => {
     setZoom(newZoom);
   };
 
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    dragStart.current = { x: e.clientX - pan.x, y: e.clientY - pan.y };
+  const handleTouchStart = (e) => {
+    touchStart.current = e.touches[0].clientX;
   };
-
-  const handleMouseMove = (e) => {
-    if (isDragging) {
-      setPan({
-        x: e.clientX - dragStart.current.x,
-        y: e.clientY - dragStart.current.y,
-      });
-    }
+  const handleTouchMove = (e) => {
+    touchEnd.current = e.touches[0].clientX;
   };
-
-  const handleMouseUp = () => setIsDragging(false);
+  const handleTouchEnd = () => {
+    if (!touchStart.current || !touchEnd.current) return;
+    const delta = touchStart.current - touchEnd.current;
+    if (delta > 50) nextImage();
+    else if (delta < -50) prevImage();
+    touchStart.current = null;
+    touchEnd.current = null;
+  };
 
   return (
     <section className="bg-[#EDF5FA] md:mt-24 min-h-screen">
-      {/* Hero Banner */}
+      {/* Hero Section */}
       <div className="relative h-screen w-full overflow-hidden">
         <AnimatePresence>
           <motion.img
+            key={bannerIndex}
             src={exhibitionPhotos[bannerIndex].url}
-            alt="Banner"
             className="absolute inset-0 w-full h-full object-cover"
-            key={exhibitionPhotos[bannerIndex].url}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -108,7 +118,7 @@ const ExhibitionPhotos = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-[#000000cc] to-[#00000066] z-10" />
         <div className="relative z-20 flex flex-col items-center justify-center h-full px-6 text-center text-white">
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
@@ -126,7 +136,7 @@ const ExhibitionPhotos = () => {
         </div>
       </div>
 
-      {/* Grid */}
+      {/* Image Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
           {exhibitionPhotos.map((photo, idx) => (
@@ -142,8 +152,8 @@ const ExhibitionPhotos = () => {
             >
               <img
                 src={photo.url}
-                alt="Exhibition Photo"
-                className="w-full h-[60vh] object-cover transition-transform duration-300 group-hover:scale-105"
+                alt="Exhibition"
+                className="w-full h-[60vh] object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </motion.div>
           ))}
@@ -153,35 +163,47 @@ const ExhibitionPhotos = () => {
       {/* Fullscreen Viewer */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center px-4 overflow-hidden"
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center px-4"
           onWheel={handleWheel}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
-          {/* Buttons */}
+          {/* Close Button */}
           <button className="absolute top-6 right-6 text-white z-50" onClick={() => setIsOpen(false)}>
             <X size={36} />
           </button>
-          <button className="absolute left-4 sm:left-10 text-white z-50" onClick={prevImage}>
+
+          {/* Prev & Next: Hidden on mobile */}
+          <button className="absolute left-4 sm:left-10 text-white z-50 hidden sm:block" onClick={prevImage}>
             <ChevronLeft size={48} />
           </button>
-          <button className="absolute right-4 sm:right-10 text-white z-50" onClick={nextImage}>
+          <button className="absolute right-4 sm:right-10 text-white z-50 hidden sm:block" onClick={nextImage}>
             <ChevronRight size={48} />
           </button>
 
-          {/* Image with Zoom + Pan */}
-          <img
-            src={exhibitionPhotos[currentIndex].url}
-            alt="Fullscreen View"
-            className="select-none max-h-[90vh] max-w-full rounded-xl shadow-2xl object-contain"
-            style={{
-              transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})`,
-              transition: isDragging ? 'none' : 'transform 0.2s ease',
-              zIndex: 10,
-            }}
-            draggable={false}
-          />
+          {/* Fullscreen Image */}
+          <AnimatePresence initial={false} custom={direction}>
+            <motion.img
+              key={currentIndex}
+              src={exhibitionPhotos[currentIndex].url}
+              alt="Fullscreen"
+              className="select-none max-h-[90vh] max-w-full rounded-xl shadow-2xl object-contain absolute"
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { type: 'spring', stiffness: 300, damping: 30 },
+                opacity: { duration: 0.2 },
+              }}
+              style={{
+                transform: `scale(${zoom})`,
+              }}
+              draggable={false}
+            />
+          </AnimatePresence>
         </div>
       )}
     </section>
