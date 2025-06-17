@@ -27,7 +27,7 @@ const item = {
 
 const SingleProduct = () => {
   const { id, productName } = useParams();
-  const { products,ProductCategory } = useContext(ProductContext);
+  const { products, ProductCategory } = useContext(ProductContext);
   const [productDetails, setProductDetails] = useState(null);
 
   const imgRef = useRef(null);
@@ -41,25 +41,32 @@ const SingleProduct = () => {
 
   useEffect(() => {
     const product = ProductCategory.find((p) => String(p.name) === productName);
-    console.log(product)
     const productItem = product?.items?.find((i) => String(i.id) === id);
     setProductDetails(productItem);
   }, [id, products, productName]);
 
-  // Close modal on Escape key
+  // Escape key and browser back handling
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
         setIsModalOpen(false);
+        window.history.back();
       }
+    };
+
+    const handlePopState = () => {
+      setIsModalOpen(false);
     };
 
     if (isModalOpen) {
       window.addEventListener('keydown', handleKeyDown);
+      window.addEventListener('popstate', handlePopState);
+      window.history.pushState({ modalOpen: true }, '');
     }
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('popstate', handlePopState);
     };
   }, [isModalOpen]);
 
@@ -198,9 +205,9 @@ const SingleProduct = () => {
 
           <motion.div variants={item}>
             <a href="tel:+918823881287">
-              <button  className="flex items-center gap-2 mt-6 px-6 py-3 bg-[#7AC943] text-white font-semibold rounded-full shadow-lg hover:scale-105 hover:bg-[#85D44A] transition duration-300">
-              Contact for Details <ArrowRight className="w-4 h-4" />
-            </button>
+              <button className="flex items-center gap-2 mt-6 px-6 py-3 bg-[#7AC943] text-white font-semibold rounded-full shadow-lg hover:scale-105 hover:bg-[#85D44A] transition duration-300">
+                Contact for Details <ArrowRight className="w-4 h-4" />
+              </button>
             </a>
           </motion.div>
         </motion.div>
@@ -214,6 +221,12 @@ const SingleProduct = () => {
           onMouseMove={handleMouseMoveModal}
           onMouseUp={handleMouseUp}
           onWheel={handleWheelZoom}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setIsModalOpen(false);
+              window.history.back();
+            }
+          }}
         >
           <img
             src={`/${productDetails.image}`}
@@ -228,7 +241,10 @@ const SingleProduct = () => {
             draggable={false}
           />
           <button
-            onClick={() => setIsModalOpen(false)}
+            onClick={() => {
+              setIsModalOpen(false);
+              window.history.back();
+            }}
             className="absolute top-4 right-4 text-white bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-80 transition"
           >
             <X className="w-6 h-6" />

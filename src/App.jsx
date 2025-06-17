@@ -10,6 +10,7 @@ import SingleProduct from './components/SingleProduct'
 import CategoryPage from './components/CategoryPage'
 import ProductCategory from './components/ProductCategory'
 import ProductDetails from './components/ProductDetails'
+import ExhibitionPhotos from './components/ExhibitionPhotos'
 
 const App = () => {
   return (
@@ -20,10 +21,12 @@ const App = () => {
         <Route path='/' element={<Home/>}/>
         <Route path='/about-us' element={<AboutUs/>}/>
         <Route path='/products' element={<Products/>}/>
+        <Route path='/gallery' element={<ExhibitionPhotos/>}/>
         <Route path='/product/:productName/:id' element={<SingleProduct/>}/>
         <Route path='/productDetails/:productName/:id' element={<ProductDetails/>}/>
         <Route path='/:Category' element={<CategoryPage/>}/>
         <Route path='/Category/:Category' element={<ProductCategory/>}/>
+
         
       </Routes>
       <Footer/>

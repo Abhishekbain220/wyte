@@ -30,6 +30,7 @@ const Nav = () => {
     { path: '/', label: 'Home' },
     { path: '/about-us', label: 'Profile' },
     { path: '/products', label: 'Products' },
+    { path: '/gallery', label: 'Gallery' }, // ✅ NEW LINK ADDED
   ];
 
   const navLinkClasses = ({ isActive }) =>

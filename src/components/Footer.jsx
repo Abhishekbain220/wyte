@@ -39,7 +39,8 @@ const Footer = () => {
             {[
               { label: "Home", path: "/" },
               { label: "About", path: "/about-us" },
-              { label: "Products", path: "/products" }
+              { label: "Products", path: "/products" },
+              { label: "Gallery", path: "/gallery" } // Gallery added here
             ].map(({ label, path }) => (
               <NavLink
                 key={path}
