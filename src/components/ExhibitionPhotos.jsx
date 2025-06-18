@@ -34,7 +34,9 @@ const ExhibitionPhotos = () => {
   const [[currentIndex, direction], setCurrentIndex] = useState([0, 0]);
   const [bannerIndex, setBannerIndex] = useState(0);
   const [zoom, setZoom] = useState(1);
-  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const lastMouse = useRef({ x: 0, y: 0 });
   const touchStart = useRef(null);
   const touchEnd = useRef(null);
 
@@ -51,17 +53,31 @@ const ExhibitionPhotos = () => {
       if (e.key === 'ArrowRight') nextImage();
       if (e.key === 'ArrowLeft') prevImage();
     };
+
+    const handlePopState = () => setIsOpen(false);
+
     if (isOpen) {
       window.addEventListener('keydown', handleKeyDown);
-      window.history.pushState(null, '', window.location.href);
+      window.addEventListener('popstate', handlePopState);
+      window.history.pushState({ fullscreen: true }, '', window.location.href);
     }
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen]);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [isOpen, currentIndex]);
+
+  useEffect(() => {
+    if (zoom === 1) {
+      setOffset({ x: 0, y: 0 });
+    }
+  }, [zoom]);
 
   const openFullscreen = (index) => {
     setCurrentIndex([index, 0]);
     setZoom(1);
-    setPan({ x: 0, y: 0 });
+    setOffset({ x: 0, y: 0 });
     setIsOpen(true);
   };
 
@@ -69,28 +85,51 @@ const ExhibitionPhotos = () => {
     const newIndex = (currentIndex + 1) % exhibitionPhotos.length;
     setCurrentIndex([newIndex, 1]);
     setZoom(1);
-    setPan({ x: 0, y: 0 });
+    setOffset({ x: 0, y: 0 });
   };
 
   const prevImage = () => {
     const newIndex = (currentIndex - 1 + exhibitionPhotos.length) % exhibitionPhotos.length;
     setCurrentIndex([newIndex, -1]);
     setZoom(1);
-    setPan({ x: 0, y: 0 });
+    setOffset({ x: 0, y: 0 });
   };
 
   const handleWheel = (e) => {
     e.preventDefault();
-    const newZoom = Math.min(3, Math.max(1, zoom + e.deltaY * -0.002));
-    setZoom(newZoom);
+    const delta = e.deltaY * -0.002;
+    setZoom((prevZoom) => {
+      const newZoom = Math.min(3, Math.max(1, prevZoom + delta));
+      return newZoom;
+    });
+  };
+
+  const handleMouseDown = (e) => {
+    if (zoom <= 1) return;
+    setIsDragging(true);
+    lastMouse.current = { x: e.clientX, y: e.clientY };
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    const dx = e.clientX - lastMouse.current.x;
+    const dy = e.clientY - lastMouse.current.y;
+    setOffset((prev) => ({ x: prev.x + dx, y: prev.y + dy }));
+    lastMouse.current = { x: e.clientX, y: e.clientY };
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
   };
 
   const handleTouchStart = (e) => {
     touchStart.current = e.touches[0].clientX;
   };
+
   const handleTouchMove = (e) => {
     touchEnd.current = e.touches[0].clientX;
   };
+
   const handleTouchEnd = () => {
     if (!touchStart.current || !touchEnd.current) return;
     const delta = touchStart.current - touchEnd.current;
@@ -163,18 +202,18 @@ const ExhibitionPhotos = () => {
       {/* Fullscreen Viewer */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center px-4"
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center px-4 overflow-hidden"
           onWheel={handleWheel}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
         >
-          {/* Close Button */}
           <button className="absolute top-6 right-6 text-white z-50" onClick={() => setIsOpen(false)}>
             <X size={36} />
           </button>
-
-          {/* Prev & Next: Hidden on mobile */}
           <button className="absolute left-4 sm:left-10 text-white z-50 hidden sm:block" onClick={prevImage}>
             <ChevronLeft size={48} />
           </button>
@@ -182,13 +221,19 @@ const ExhibitionPhotos = () => {
             <ChevronRight size={48} />
           </button>
 
-          {/* Fullscreen Image */}
-          <AnimatePresence initial={false} custom={direction}>
+          <motion.div
+            style={{
+              transform: `scale(${zoom}) translate(${offset.x / zoom}px, ${offset.y / zoom}px)`,
+              transition: isDragging ? 'none' : 'transform 0.3s ease-out',
+              cursor: zoom > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default',
+            }}
+            className="absolute"
+          >
             <motion.img
               key={currentIndex}
               src={exhibitionPhotos[currentIndex].url}
               alt="Fullscreen"
-              className="select-none max-h-[90vh] max-w-full rounded-xl shadow-2xl object-contain absolute"
+              className="select-none max-h-[90vh] max-w-full shadow-2xl object-contain"
               custom={direction}
               variants={variants}
               initial="enter"
@@ -198,12 +243,9 @@ const ExhibitionPhotos = () => {
                 x: { type: 'spring', stiffness: 300, damping: 30 },
                 opacity: { duration: 0.2 },
               }}
-              style={{
-                transform: `scale(${zoom})`,
-              }}
               draggable={false}
             />
-          </AnimatePresence>
+          </motion.div>
         </div>
       )}
     </section>

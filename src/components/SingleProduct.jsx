@@ -45,7 +45,6 @@ const SingleProduct = () => {
     setProductDetails(productItem);
   }, [id, products, productName]);
 
-  // Escape key and browser back handling
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
@@ -70,6 +69,12 @@ const SingleProduct = () => {
     };
   }, [isModalOpen]);
 
+  useEffect(() => {
+    if (zoomScale === 1) {
+      setPan({ x: 0, y: 0 });
+    }
+  }, [zoomScale]);
+
   const handleMouseMove = (e) => {
     const bounds = imgRef.current.getBoundingClientRect();
     const x = ((e.clientX - bounds.left) / bounds.width) * 100;
@@ -84,6 +89,7 @@ const SingleProduct = () => {
   };
 
   const handleMouseDown = (e) => {
+    if (zoomScale <= 1) return;
     setIsDragging(true);
     dragStart.current = { x: e.clientX - pan.x, y: e.clientY - pan.y };
   };
@@ -112,19 +118,12 @@ const SingleProduct = () => {
         className="max-w-7xl mx-auto bg-[#1B1F3B] rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-10 p-6 md:p-12"
         variants={item}
       >
-        {/* Image Section */}
         <motion.div className="flex justify-center items-center relative" variants={item}>
           <div
             className="overflow-hidden rounded-2xl shadow-lg relative group cursor-zoom-in"
-            onMouseEnter={() => {
-              if (window.innerWidth >= 768) setIsZoomed(true);
-            }}
-            onMouseLeave={() => {
-              if (window.innerWidth >= 768) setIsZoomed(false);
-            }}
-            onMouseMove={(e) => {
-              if (window.innerWidth >= 768) handleMouseMove(e);
-            }}
+            onMouseEnter={() => window.innerWidth >= 768 && setIsZoomed(true)}
+            onMouseLeave={() => window.innerWidth >= 768 && setIsZoomed(false)}
+            onMouseMove={(e) => window.innerWidth >= 768 && handleMouseMove(e)}
             onClick={() => {
               setZoomScale(1);
               setPan({ x: 0, y: 0 });
@@ -138,15 +137,11 @@ const SingleProduct = () => {
               className={`w-full max-w-xl transition-transform duration-300 ease-out ${
                 isZoomed ? 'scale-[2.5]' : 'scale-100'
               }`}
-              style={{
-                transformOrigin: transformOrigin,
-                maxHeight: '550px',
-              }}
+              style={{ transformOrigin, maxHeight: '550px' }}
             />
           </div>
         </motion.div>
 
-        {/* Details Section */}
         <motion.div className="space-y-8 text-white" variants={item}>
           <div>
             <h1 className="text-4xl font-bold tracking-tight text-white mb-2">
@@ -155,51 +150,15 @@ const SingleProduct = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base">
-            {productDetails.Sizes && (
-              <div>
-                <span className="font-semibold text-[#7AC943]">Size (in Inches):</span> {productDetails.Sizes}
-              </div>
-            )}
-            {productDetails["Base Substrate"] && (
-              <div>
-                <span className="font-semibold text-[#7AC943]">Base Substrate:</span> {productDetails["Base Substrate"]}
-              </div>
-            )}
-            {productDetails.Thickness && (
-              <div>
-                <span className="font-semibold text-[#7AC943]">Thickness:</span> {productDetails.Thickness}
-              </div>
-            )}
-            {productDetails.Application && (
-              <div>
-                <span className="font-semibold text-[#7AC943]">Application:</span> {productDetails.Application}
-              </div>
-            )}
-            {productDetails.Length && (
-              <div>
-                <span className="font-semibold text-[#7AC943]">Length:</span> {productDetails.Length}
-              </div>
-            )}
-            {productDetails.Glue && (
-              <div>
-                <span className="font-semibold text-[#7AC943]">Glue:</span> {productDetails.Glue}
-              </div>
-            )}
-            {productDetails["Compatible with"] && (
-              <div>
-                <span className="font-semibold text-[#7AC943]">Compatible with:</span> {productDetails["Compatible with"]}
-              </div>
-            )}
-            {productDetails["Product Code"] && (
-              <div>
-                <span className="font-semibold text-[#7AC943]">Product Code:</span> {productDetails["Product Code"]}
-              </div>
-            )}
-            {productDetails.Category && (
-              <div>
-                <span className="font-semibold text-[#7AC943]">Category:</span> {productDetails.Category}
-              </div>
-            )}
+            {productDetails.Sizes && <div><span className="font-semibold text-[#7AC943]">Size (in Inches):</span> {productDetails.Sizes}</div>}
+            {productDetails["Base Substrate"] && <div><span className="font-semibold text-[#7AC943]">Base Substrate:</span> {productDetails["Base Substrate"]}</div>}
+            {productDetails.Thickness && <div><span className="font-semibold text-[#7AC943]">Thickness:</span> {productDetails.Thickness}</div>}
+            {productDetails.Application && <div><span className="font-semibold text-[#7AC943]">Application:</span> {productDetails.Application}</div>}
+            {productDetails.Length && <div><span className="font-semibold text-[#7AC943]">Length:</span> {productDetails.Length}</div>}
+            {productDetails.Glue && <div><span className="font-semibold text-[#7AC943]">Glue:</span> {productDetails.Glue}</div>}
+            {productDetails["Compatible with"] && <div><span className="font-semibold text-[#7AC943]">Compatible with:</span> {productDetails["Compatible with"]}</div>}
+            {productDetails["Product Code"] && <div><span className="font-semibold text-[#7AC943]">Product Code:</span> {productDetails["Product Code"]}</div>}
+            {productDetails.Category && <div><span className="font-semibold text-[#7AC943]">Category:</span> {productDetails.Category}</div>}
           </div>
 
           {productDetails.Description && (
@@ -219,7 +178,6 @@ const SingleProduct = () => {
         </motion.div>
       </motion.div>
 
-      {/* Fullscreen Modal */}
       {isModalOpen && (
         <div
           className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center cursor-move"
@@ -242,6 +200,8 @@ const SingleProduct = () => {
               transition: isDragging ? 'none' : 'transform 0.2s ease',
               maxWidth: '90%',
               maxHeight: '90%',
+              margin: zoomScale === 1 ? 'auto' : 'initial',
+              display: 'block'
             }}
             className="select-none"
             draggable={false}
