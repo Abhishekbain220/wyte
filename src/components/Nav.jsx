@@ -49,9 +49,12 @@ const Nav = () => {
 
         {/* Left Logo */}
         <div className="flex items-center">
-          <img className='h-[15vh] object-contain' src="/logo.webp" alt="Main Logo" />
-        </div>
-
+  <img
+    className='h-[15vh] object-contain transition-transform duration-300 hover:scale-105'
+    src="/logo.webp"
+    alt="Main Logo"
+  />
+</div>
         {/* Center Navigation (hidden on mobile) */}
         <div className='hidden md:flex justify-center gap-8 md:gap-10 lg:gap-14 uppercase font-bold tracking-wide text-sm md:text-base'>
           {navLinks.map(link => (
@@ -69,7 +72,12 @@ const Nav = () => {
               alt="Co-Partner Logo"
               className="h-[7vh] w-auto object-contain drop-shadow-sm transition-transform duration-300 hover:scale-105"
             />
-            <span className="text-xs font-bold text-gray-500 mt-1">Media Partner</span>
+            <span className="font-bold text-[black]  ">
+  Media Partner
+</span>
+
+
+
           </div>
           <button onClick={toggleMenu} className="md:hidden">
             {menuOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}

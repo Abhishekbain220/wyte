@@ -91,13 +91,14 @@ const AboutUsCom = () => {
             whileInView={!isMobile ? 'show' : undefined}
             viewport={!isMobile ? { once: true, amount: 0.3 } : undefined}
           >
-            <strong className="text-[#76bc21]">DigiTech</strong> delivers premium digital printable substrates for creative professionals, brands, and event specialists. Our portfolio spans over <strong>200 high-quality media options</strong> such as Vinyls, Wallpapers, Artistic Canvases, Fabrics, Photo Papers, Translites, Leatherettes, Glass Films, and Lamination Films.
+            <strong className="text-[#76bc21] uppercase">DigiTech DIGITAL TECHNOLOGY
+AND SOLUTIONS</strong> delivers premium digital printable substrates for creative professionals, brands, and event specialists. Our portfolio spans over <strong>200 high-quality media options</strong> such as Vinyls, Wallpapers, Artistic Canvases, Fabrics, Photo Papers, Translites, Leatherettes, Glass Films, and Lamination Films.
             <br /><br />
-            Designed for seamless use with <strong>Eco-Solvent, Inkjet, Laser, Latex, and UV</strong> technologies, our products serve a wide array of industries—from <strong>signage, photography, fine art, and packaging</strong> to <strong>architectural graphics, décor, vehicle wraps, and installations</strong>.
+            Designed for seamless use with <strong>Eco-Solvent, Inkjet, Digital, Latex, and UV</strong> technologies, our products serve a wide array of industries—from <strong>signage, photography, fine art, and packaging</strong> to <strong>architectural graphics, décor, vehicle wraps, and installations</strong>.
             <br /><br />
             Backed by a strong national network, <strong>DigiTech</strong> is valued for its <em>consistent product performance, efficient supply chain, competitive pricing</em>, and a commitment to customer satisfaction. Our in-house R&D ensures that we stay at the forefront of innovation.
             <br /><br />
-            We’re proud to have a <strong>strategic co-partnership with Wyte</strong>, a trusted leader in the printable substrates domain—enhancing our reach and capabilities.
+            We’re proud to have a <strong>strategic media partnership with Wyte</strong>, a trusted leader in the printable substrates domain—enhancing our reach and capabilities.
             <br /><br />
             Trusted by industry leaders like <span className="font-medium text-[#76bc21]">Reliance, Samsung, HUL, Bata, Blackberry, Pepsi, TimesOOH, and Fybros</span>, DigiTech continues to deliver impactful solutions to the <strong>corporate, retail, and event</strong> sectors.
           </motion.p>
