@@ -2708,7 +2708,107 @@ export let ProductProvider = (props) => {
 
                     "image": "CLOTH BANNER – 120 MATTE (WR).webp"
 
+                },
+                {
+                    "id": 24,
+                    "Heading": "LAMINATION FILMS - SPARKLE",
+                    "Sizes": "42, 50",
+                    "Base Substrate": "PVC",
+                    "Surface": "Sparkle Matte",
+                    "Thickness": "100 micron",
+                    "Application": "Glass Decoration / Over Laminate",
+                    "Adhesion": "Permanent Adhesive",
+                    "Coating": "",
+                    "Weight": "",
+                    "Length": "",
+                    "Glue": "",
+                    "Compatible with": "",
+                    "Product Code": "SPARK100",
+                    "Category": "LAMINATION FILMS",
+                    "Description": "SPARKLE LAMINATION is a matte finish over laminate with sparkles. It has 100% clear adhesive. Provides additional protection which makes prints to stay fade resistance for a longer period.",
+                    "image": "LAMINATION FILMS - SPARKLE.webp"
+                },
+                {
+                    "id": 25,
+                    "Heading": "LAMINATION FILMS - 3-D",
+                    "Sizes": "50",
+                    "Base Substrate": "PVC",
+                    "Surface": "3-D Cat Eye",
+                    "Thickness": "100 micron",
+                    "Application": "Glass Decoration / Over Laminate",
+                    "Adhesion": "Permanent Adhesive",
+                    "Coating": "",
+                    "Weight": "",
+                    "Length": "",
+                    "Glue": "",
+                    "Compatible with": "",
+                    "Product Code": "3DLAM100",
+                    "Category": "LAMINATION FILMS",
+                    "Description": "3-D LAMINATION is a 3D smooth over laminate with 100% clear adhesive in gloss finish. Provides additional protection which makes prints to stay fade resistance for a longer period.",
+                    "image": "LAMINATION - 3D 100.webp"
+                },
+                {
+                    "id": 26,
+                    "Heading": "LAMINATION FILMS - MATTE",
+                    "Sizes": "36, 40, 42, 50, 60",
+                    "Base Substrate": "PVC",
+                    "Surface": "Matte",
+                    "Thickness": "80 micron",
+                    "Application": "Over Laminate",
+                    "Adhesion": "Permanent",
+                    "Coating": "",
+                    "Weight": "",
+                    "Length": "",
+                    "Glue": "",
+                    "Compatible with": "",
+                    "Product Code": "WLAM80M",
+                    "Category": "LAMINATION FILMS",
+                    "Description": "MATTE LAMINATION is satin matte finished over laminate with 100% clear adhesive. Provides additional protection which makes prints to stay fade resistance for a longer period.",
+                    "image": "LAMINATION - MATTE 80.webp"
+                },
+                {
+                    "id": 27,
+                    "Heading": "LAMINATION FILMS - GLOSS",
+                    "Sizes": "36, 40, 42, 50, 60",
+                    "Base Substrate": "PVC",
+                    "Surface": "Gloss",
+                    "Thickness": "80 micron",
+                    "Application": "Over Laminate",
+                    "Adhesion": "Permanent",
+                    "Coating": "",
+                    "Weight": "",
+                    "Length": "",
+                    "Glue": "",
+                    "Compatible with": "",
+                    "Product Code": "WLAM80G",
+                    "Category": "LAMINATION FILMS",
+                    "Description": "GLOSS LAMINATION is gloss finished over laminate with 100% clear adhesive. Provides additional protection which makes prints to stay fade resistance for a longer period.",
+                    "image": "LAMINATION - GLOSS 80.webp"
+                },
+                {
+                    "id": 28,
+                    "Heading": "LAMINATION FILMS - MOUNTING FILM CLEAR",
+                    "Sizes": "50",
+                    "Base Substrate": "PVC",
+                    "Surface": "Clear",
+                    "Thickness": "60 micron",
+                    "Application": "Mounting Film",
+                    "Adhesion": "Both Side Adhesive",
+                    "Coating": "",
+                    "Weight": "",
+                    "Length": "",
+                    "Glue": "",
+                    "Compatible with": "",
+                    "Product Code": "MOUNT60",
+                    "Category": "LAMINATION FILMS",
+                    "Description": "MOUNTING FILM is an acrylic adhesive based, double side mounting film. Works as an adhesive layer where Self-adhesive material is not available. Acrylic based adhesive is all weather resistant and does not loose adhesion in all weather conditions.",
+                    "image": "MOUNTING - CLEAR DOUBLE SIDE 60.webp"
                 }
+
+
+
+
+
 
             ]
         },
@@ -2838,6 +2938,86 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 8,
+                    "Heading": "CARELIT Re - PVC-FREE LAM - 55 (Matte)",
+                    "Sizes": "36, 40, 42, 50, 60",
+                    "Base Substrate": "Polypropylene",
+                    "Surface": "Matte",
+                    "Thickness": "55 micron",
+                    "Application": "Frontlit",
+                    "Adhesion": "",
+                    "Coating": "",
+                    "Weight": "",
+                    "Length": "",
+                    "Glue": "",
+                    "Compatible with": "",
+                    "Product Code": "CPP4243M",
+                    "Category": "LAMINATION FILMS",
+                    "Description": "",
+                    "image": "CARELIT Re - PVC-FREE LAM - 55 (Matte).webp"
+                },
+                {
+                    "id": 9,
+                    "Heading": "SAMPLE - PVC-FREE VINYL - 150 (Matte) with PVC-FREE Matte Lamination",
+                    "Sizes": "",
+                    "Base Substrate": "",
+                    "Surface": "Matte",
+                    "Thickness": "",
+                    "Application": "",
+                    "Adhesion": "",
+                    "Coating": "",
+                    "Weight": "",
+                    "Length": "",
+                    "Glue": "Water-based glue",
+                    "Compatible with": "",
+                    "Product Code": "",
+                    "Category": "LAMINATION FILMS",
+                    "Description": "PVC Free - NO solvent release. CPP has better flatness than PVC. PET liner has better flatness than paper liner. Fewer dust from raw material. Easier releasing from PET liner than paper. Excellent laminating transparency than PVC.",
+                    "image": "PVC-FREE VINYL - 150 (Matte).webp"
+                },
+                {
+                    "id": 10,
+                    "Heading": "CARELIT Re - PVC-FREE LAM - 55 (Gloss)",
+                    "Sizes": "36, 40, 42, 50, 60",
+                    "Base Substrate": "Polypropylene",
+                    "Surface": "Gloss",
+                    "Thickness": "55 micron",
+                    "Application": "Frontlit",
+                    "Adhesion": "",
+                    "Coating": "",
+                    "Weight": "",
+                    "Length": "",
+                    "Glue": "",
+                    "Compatible with": "",
+                    "Product Code": "CPP4243G",
+                    "Category": "LAMINATION FILMS",
+                    "Description": "",
+                    "image": "CARELIT Re - PVC-FREE LAM - 55 (Gloss).webp"
+                },
+                {
+                    "id": 11,
+                    "Heading": "SAMPLE - PVC-FREE VINYL - 150 (Matte) with PVC-FREE Gloss Lamination",
+                    "Sizes": "",
+                    "Base Substrate": "",
+                    "Surface": "Matte with Gloss Lamination",
+                    "Thickness": "",
+                    "Application": "",
+                    "Adhesion": "",
+                    "Coating": "",
+                    "Weight": "",
+                    "Length": "",
+                    "Glue": "Water-based glue",
+                    "Compatible with": "",
+                    "Product Code": "",
+                    "Category": "LAMINATION FILMS",
+                    "Description": "PVC Free - NO solvent release. CPP has better flatness than PVC. PET liner has better flatness than paper liner. Fewer dust from raw material. Easier releasing from PET liner than paper. Excellent laminating transparency than PVC.",
+                    "image": "PVC-FREE VINYL - 150 (Matte).webp"
+                },
+
+
+
+
+                {
+                    "id": 12,
                     "Heading": "MP FILM - 180 (Matte)",
                     "Sizes": "50, 60, 63, 102",
                     "Base Substrate": "Polypropylene",
@@ -2854,7 +3034,7 @@ export let ProductProvider = (props) => {
                     "image": "MP FILM - 180 (Matte).webp"
                 },
                 {
-                    "id": 9,
+                    "id": 13,
                     "Heading": "OUTDOOR BACKLIT FABRIC - 180",
                     "Sizes": "40, 52, 63, 80, 100, 126",
                     "Base Substrate": "Polyester Fabric",
@@ -2871,7 +3051,7 @@ export let ProductProvider = (props) => {
                     "image": "OUTDOOR BACKLIT FABRIC - 180.webp"
                 },
                 {
-                    "id": 10,
+                    "id": 14,
                     "Heading": "COARSE BACKLIT FABRIC - 150 (Gloss)",
                     "Sizes": "40, 52, 63, 80, 100, 126",
                     "Base Substrate": "Polyester Fabric",
@@ -2888,7 +3068,7 @@ export let ProductProvider = (props) => {
                     "image": "COARSE BACKLIT FABRIC - 150 (Gloss).webp"
                 },
                 {
-                    "id": 11,
+                    "id": 15,
                     "Heading": "AQUALIT BACKLIT FABRIC - 130 (Soft)",
                     "Sizes": "40, 52, 63, 80, 100, 126",
                     "Base Substrate": "Polyester Fabric",
@@ -2905,7 +3085,7 @@ export let ProductProvider = (props) => {
                     "image": "AQUALIT BACKLIT FABRIC - 130 (Soft).webp"
                 },
                 {
-                    "id": 12,
+                    "id": 16,
                     "Heading": "AQUALIT BACKLIT - 130 (Soft)",
                     "Sizes": "40, 52, 63, 80, 100, 126",
                     "Base Substrate": "Polyester Fabric",
@@ -3540,6 +3720,26 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 33,
+                    "Heading": "GLASS FILM - FROSTED 100",
+                    "Sizes": "50",
+                    "Base Substrate": "PVC",
+                    "Surface": "Frosted",
+                    "Thickness": "100 micron",
+                    "Application": "Glass Prints",
+                    "Adhesion": "Permanent",
+                    "Coating": "",
+                    "Weight": "",
+                    "Length": "",
+                    "Glue": "",
+                    "Compatible with": "",
+                    "Product Code": "GLASS100F",
+                    "Category": "GLASS FILM",
+                    "Description": "WYTE FROSTED printable glass film is a PVC based, water resistant film with excellent adhesion. It has outstanding durability and outdoor life. Easy plotter cutting and weeding. It has high visible light transmission allowing natural daylight flow. The perfect window film which adds to a certain level of privacy. Printed Frosted Film also enhances the aesthetics of any commercial or residential space.",
+                    "image": "GLASS FILM - FROSTED 100.webp"
+                },
+
+                {
+                    "id": 34,
                     "Heading": "SPARKLED - 100",
                     "Sizes": "50",
                     "Base Substrate": "PVC",
@@ -3558,7 +3758,127 @@ export let ProductProvider = (props) => {
                     "image": "SPARKLED - 100.webp"
                 },
                 {
-                    "id": 34,
+                    "id": 35,
+                    "Heading": "LAMINATION - 3D 100",
+                    "Sizes": "50",
+                    "Base Substrate": "PVC",
+                    "Surface": "3-D Cat Eye",
+                    "Thickness": "100 micron",
+                    "Application": "Glass Decoration / Over Laminate",
+                    "Adhesion": "100% clear adhesive",
+                    "Coating": "",
+                    "Weight": "",
+                    "Length": "",
+                    "Glue": "",
+                    "Compatible with": "",
+                    "Product Code": "3DLAM100",
+                    "Category": "LAMINATION",
+                    "Description": "WYTE 3-D LAMINATION is a 3D smooth over laminate with 100% clear adhesive in gloss finish. Provides additional protection which makes prints stay fade resistant for a longer period.",
+                    "image": "LAMINATION - 3D 100.webp"
+                },
+                {
+                    "id": 36,
+                    "Heading": "LAMINATION - FLOOR 200",
+                    "Sizes": "50",
+                    "Base Substrate": "PVC",
+                    "Surface": "Matte",
+                    "Thickness": "200 micron",
+                    "Application": "Floor Graphics",
+                    "Adhesion": "Permanent",
+                    "Coating": "",
+                    "Weight": "",
+                    "Length": "",
+                    "Glue": "",
+                    "Compatible with": "",
+                    "Product Code": "FLAM200",
+                    "Category": "LAMINATION",
+                    "Description": "ANTI SKID FLOOR LAMINATION FILM is equipped with permanent pressure-sensitive adhesive. Anti slip floor laminates are an excellent advertising tool in shopping centres, supermarkets, hotels, airports etc. These heavy duty and short term anti skid floor laminating films are perfect for protecting floor graphics.",
+                    "image": "LAMINATION - FLOOR 200.webp"
+                },
+                {
+                    "id": 37,
+                    "Heading": "LAMINATION - OUTDOOR 80",
+                    "Sizes": "50",
+                    "Base Substrate": "Polymeric",
+                    "Surface": "Matte",
+                    "Thickness": "80 micron",
+                    "Application": "Over Laminate/Outdoor",
+                    "Adhesion": "Permanent",
+                    "Coating": "",
+                    "Weight": "",
+                    "Length": "",
+                    "Glue": "",
+                    "Compatible with": "",
+                    "Product Code": "SURELAM80",
+                    "Category": "LAMINATION",
+                    "Description": "SURELAM80 Transparent polymeric laminate with UV filter (cadmium-free, calendered), acrylic-based permanent adhesive and release liner. A plasticized lamination film for digitally printed images on polymeric vinyls. The lamination film protects images from scratches, UV radiation, stains, etc. Increases the durability of printed graphics. It is meant for application on flat and slightly curved surfaces.",
+                    "image": "LAMINATION - OUTDOOR 80.webp"
+                },
+                {
+                    "id": 38,
+                    "Heading": "LAMINATION - MATTE 80",
+                    "Sizes": "36, 40, 42, 50, 60",
+                    "Base Substrate": "PVC",
+                    "Surface": "Matte",
+                    "Thickness": "80 micron",
+                    "Application": "Over Laminate",
+                    "Adhesion": "Permanent",
+                    "Coating": "",
+                    "Weight": "",
+                    "Length": "",
+                    "Glue": "",
+                    "Compatible with": "",
+                    "Product Code": "WLAM80M",
+                    "Category": "LAMINATION",
+                    "Description": "WYTE MATTE LAMINATION is satin matte finished over laminate with 100% clear adhesive. Provides additional protection which makes prints to stay fade resistance for a longer period.",
+                    "image": "LAMINATION - MATTE 80.webp"
+                },
+                {
+                    "id": 39,
+                    "Heading": "LAMINATION - GLOSS 80",
+                    "Sizes": "36, 40, 42, 50, 60",
+                    "Base Substrate": "PVC",
+                    "Surface": "Gloss",
+                    "Thickness": "80 micron",
+                    "Application": "Over Laminate",
+                    "Adhesion": "Permanent",
+                    "Coating": "",
+                    "Weight": "",
+                    "Length": "",
+                    "Glue": "",
+                    "Compatible with": "",
+                    "Product Code": "WLAM80G",
+                    "Category": "LAMINATION",
+                    "Description": "WYTE GLOSS LAMINATION is an ultra clear gloss finished over laminate with 100% transparent ultra clear adhesive. Provides excellent UV protection which makes prints to stay fade resistance for a longer period. It is suitable for overall indoor & outdoor graphic protection.",
+                    "image": "LAMINATION - GLOSS 80.webp"
+                },
+                {
+                    "id": 40,
+                    "Heading": "MOUNTING - CLEAR DOUBLE SIDE 60",
+                    "Sizes": "50",
+                    "Base Substrate": "PVC",
+                    "Surface": "Clear",
+                    "Thickness": "60 micron",
+                    "Application": "Mounting Film",
+                    "Adhesion": "Both Side Adhesive",
+                    "Coating": "",
+                    "Weight": "",
+                    "Length": "",
+                    "Glue": "",
+                    "Compatible with": "",
+                    "Product Code": "MOUNT60",
+                    "Category": "MOUNTING",
+                    "Description": "WYTE MOUNTING FILM is an acrylic adhesive based, double side mounting film. Works as an adhesive layer where self-adhesive material is not available. Acrylic based adhesive is all weather resistant and does not lose adhesion in all weather conditions.",
+                    "image": "MOUNTING - CLEAR DOUBLE SIDE 60.webp"
+                },
+
+
+
+
+
+
+                {
+                    "id": 41,
                     "Heading": "PRINTABLE FERROUS",
                     "Sizes": "50",
                     "Base Substrate": "Composite Printable PP & rubber sheet",
@@ -3575,7 +3895,28 @@ export let ProductProvider = (props) => {
                     "Category": "MAGNETIC",
                     "Description": "FERROUS is a charged printable substrate for easy installation of graphic on magnetic base material (MAG-BASE). Printable Layer is a Polypropylene which is known for its smooth surface and brilliant color output. Treated with Dura Ink Receptive Layer (DIRL) for high ink absorption and scratch resistance. It is suitable for full-colour graphics for indoor & outdoor applications such as fast graphic replacement for retail and office etc.",
                     "image": "PRINTABLE FERROUS.webp"
+                },
+                {
+                    "id": 42,
+                    "Heading": "MAGNETIC - BASE (SA)",
+                    "Sizes": "50",
+                    "Base Substrate": "Charged Rubber Sheet",
+                    "Surface": "",
+                    "Thickness": "0.5mm",
+                    "Application": "Base for Magnetic Print",
+                    "Adhesion": "Permanent",
+                    "Coating": "",
+                    "Weight": "",
+                    "Length": "",
+                    "Glue": "",
+                    "Compatible with": "",
+                    "Product Code": "MAG-BASE",
+                    "Category": "MAGNETIC",
+                    "Description": "MAG-BASE is a magnetic base material substrate that provides an easy graphic replacement solution for magnetic prints (FERRO28). It has excellent adhesion properties.",
+                    "image": "MAGNETIC - BASE (SA).webp"
                 }
+
+
 
             ]
 

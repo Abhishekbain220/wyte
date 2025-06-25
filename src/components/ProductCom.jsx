@@ -44,7 +44,7 @@ const ProductCom = ({ name, image, id, navigation }) => {
         bg-[rgba(0,0,0,0.7)] 
       ">
         <h3 className="text-base sm:text-xl font-semibold">{name}</h3>
-        <p className="text-xs sm:text-base text-gray-200 mt-1">Stylish printable wallpapers.</p>
+        
         <button className="
           mt-3 px-3 py-1.5 bg-[#7AC943] text-white rounded-md 
           hover:bg-green-600 transition duration-300 text-xs sm:text-sm
