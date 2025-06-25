@@ -1838,7 +1838,7 @@ export let ProductProvider = (props) => {
 
                     "id": 1,
 
-                    "Heading": "PVC SA - MATTE (WR)",
+                    "Heading": "VINYL | PVC SA - MATTE (WR)",
 
                     "Sizes": "50",
 
@@ -1876,7 +1876,7 @@ export let ProductProvider = (props) => {
 
                     "id": 2,
 
-                    "Heading": "PP SA - 150 MATTE (WR)",
+                    "Heading": "VINYL | PP SA - 150 MATTE (WR)",
 
                     "Sizes": "24, 36, 42, 50, 60",
 
@@ -1914,7 +1914,7 @@ export let ProductProvider = (props) => {
 
                     "id": 3,
 
-                    "Heading": "PP SA - 150 MATTE",
+                    "Heading": "VINYL | PP SA - 150 MATTE",
 
                     "Sizes": "24, 36, 42, 50, 60",
 
@@ -1952,7 +1952,7 @@ export let ProductProvider = (props) => {
 
                     "id": 4,
 
-                    "Heading": "PP SA - 150 GLOSS",
+                    "Heading": "VINYL | PP SA - 150 GLOSS",
 
                     "Sizes": "36, 42, 50, 60",
 
@@ -1990,7 +1990,7 @@ export let ProductProvider = (props) => {
 
                     "id": 5,
 
-                    "Heading": "SILVER CHROME VINYL SA GLOSS",
+                    "Heading": "VINYL | SILVER CHROME VINYL SA GLOSS",
 
                     "Sizes": "36, 50",
 
@@ -2028,7 +2028,7 @@ export let ProductProvider = (props) => {
 
                     "id": 6,
 
-                    "Heading": "FRONT ADHESIVE GLASS FILM",
+                    "Heading": "VINYL | FRONT ADHESIVE GLASS FILM",
 
                     "Sizes": "36, 50",
 
@@ -2066,7 +2066,7 @@ export let ProductProvider = (props) => {
 
                     "id": 7,
 
-                    "Heading": "FRONT PRINT TRANSLITE SA MATTE (WR)",
+                    "Heading": "TRANSLITE | FRONT PRINT TRANSLITE SA MATTE (WR)",
 
                     "Sizes": "50",
 
@@ -2104,7 +2104,7 @@ export let ProductProvider = (props) => {
 
                     "id": 8,
 
-                    "Heading": "FRONT PRINT TRANSLITE -125 MATTE (WR)",
+                    "Heading": "TRANSLITE | FRONT PRINT TRANSLITE -125 MATTE (WR)",
 
                     "Sizes": "24, 36, 42, 50, 60",
 
@@ -2142,7 +2142,7 @@ export let ProductProvider = (props) => {
 
                     "id": 9,
 
-                    "Heading": "THICKER REVERSE TRANSLITE",
+                    "Heading": "TRANSLITE | THICKER REVERSE TRANSLITE",
 
                     "Sizes": "24, 36, 42, 50, 60",
 
@@ -2182,7 +2182,7 @@ export let ProductProvider = (props) => {
 
                     "id": 10,
 
-                    "Heading": "PP NA – 200 MATTE (WR)",
+                    "Heading": "BANNER | PP NA – 200 MATTE (WR)",
 
                     "Sizes": "36, 50, 60",
 
@@ -2220,7 +2220,7 @@ export let ProductProvider = (props) => {
 
                     "id": 11,
 
-                    "Heading": "PP NA – 200 MATTE",
+                    "Heading": "BANNER | PP NA – 200 MATTE",
 
                     "Sizes": "36, 42, 50, 60",
 
@@ -2258,7 +2258,7 @@ export let ProductProvider = (props) => {
 
                     "id": 12,
 
-                    "Heading": "CLEAR FILM NA – 100 (WR)",
+                    "Heading": "BANNER | CLEAR FILM NA – 100 (WR)",
 
                     "Sizes": "36",
 
@@ -2296,7 +2296,7 @@ export let ProductProvider = (props) => {
 
                     "id": 13,
 
-                    "Heading": "RESIN COATED PHOTOPAPER – 260 GLOSS (WR)",
+                    "Heading": "PHOTOPAPER | RESIN COATED PHOTOPAPER – 260 GLOSS (WR)",
 
                     "Sizes": "5, 6, 8, 12, 16, 24, 30, 36, 42, 50, 60",
 
@@ -2334,7 +2334,7 @@ export let ProductProvider = (props) => {
 
                     "id": 14,
 
-                    "Heading": "RESIN COATED PHOTOPAPER – 260 SATIN (WR)",
+                    "Heading": "PHOTOPAPER | RESIN COATED PHOTOPAPER – 260 SATIN (WR)",
 
                     "Sizes": "5, 6, 8, 12, 16, 24, 30, 36, 42, 50, 60",
 
@@ -2372,7 +2372,7 @@ export let ProductProvider = (props) => {
 
                     "id": 15,
 
-                    "Heading": "RESIN COATED PHOTOPAPER – 260 LUSTRE (WR)",
+                    "Heading": "PHOTOPAPER | RESIN COATED PHOTOPAPER – 260 LUSTRE (WR)",
 
                     "Sizes": "24, 36, 42",
 
@@ -2410,7 +2410,7 @@ export let ProductProvider = (props) => {
 
                     "id": 16,
 
-                    "Heading": "RESIN COATED PHOTOPAPER – 260 CANVAS TEXTURE (WR)",
+                    "Heading": "PHOTOPAPER | RESIN COATED PHOTOPAPER – 260 CANVAS TEXTURE (WR)",
 
                     "Sizes": "24",
 
@@ -2448,7 +2448,7 @@ export let ProductProvider = (props) => {
 
                     "id": 17,
 
-                    "Heading": "RESIN COATED PHOTOPAPER – 200 GLOSS (WR)",
+                    "Heading": "PHOTOPAPER | RESIN COATED PHOTOPAPER – 200 GLOSS (WR)",
 
                     "Sizes": "24, 36",
 
@@ -2486,7 +2486,7 @@ export let ProductProvider = (props) => {
 
                     "id": 18,
 
-                    "Heading": "PHOTOPAPER – 170 MATTE (WR)",
+                    "Heading": "PHOTOPAPER | PHOTOPAPER – 170 MATTE (WR)",
 
                     "Sizes": "24, 36, 42",
 
@@ -2524,7 +2524,7 @@ export let ProductProvider = (props) => {
 
                     "id": 19,
 
-                    "Heading": "PHOTOPAPER – 120 MATTE (WR)",
+                    "Heading": "PHOTOPAPER | PHOTOPAPER – 120 MATTE (WR)",
 
                     "Sizes": "24, 36, 42",
 
@@ -2638,7 +2638,7 @@ export let ProductProvider = (props) => {
 
                     "id": 22,
 
-                    "Heading": "ARTISTIC CANVAS – 380 MATTE (WR)",
+                    "Heading": "CANVAS | ARTISTIC CANVAS – 380 MATTE (WR)",
 
                     "Sizes": "24, 36, 42, 50, 60",
 
@@ -2676,7 +2676,7 @@ export let ProductProvider = (props) => {
 
                     "id": 23,
 
-                    "Heading": "CLOTH BANNER – 120 MATTE (WR)",
+                    "Heading": "FABRIC | CLOTH BANNER – 120 MATTE (WR)",
 
                     "Sizes": "24, 36, 42, 50, 60",
 
@@ -2726,7 +2726,7 @@ export let ProductProvider = (props) => {
                     "Product Code": "SPARK100",
                     "Category": "LAMINATION FILMS",
                     "Description": "SPARKLE LAMINATION is a matte finish over laminate with sparkles. It has 100% clear adhesive. Provides additional protection which makes prints to stay fade resistance for a longer period.",
-                    "image": "LAMINATION FILMS - SPARKLE.webp"
+                    "image": "MOUNTING - CLEAR DOUBLE SIDE 60.webp"
                 },
                 {
                     "id": 25,
@@ -2836,7 +2836,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 2,
-                    "Heading": "FRONTLIT - 200 (Matte)",
+                    "Heading": "POLYESTER FABRIC | FRONTLIT - 200 (Matte)",
                     "Sizes": "40, 52, 63, 80, 100, 126",
                     "Base Substrate": "Polyester Fabric",
                     "Surface": "Matte",
@@ -2853,7 +2853,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 3,
-                    "Heading": "BLACK BACK FRONTLIT - 220 (Gloss)",
+                    "Heading": "POLYESTER FABRIC | BLACK BACK FRONTLIT - 220 (Gloss)",
                     "Sizes": "40, 52, 63, 80, 100, 126",
                     "Base Substrate": "Polyester Fabric",
                     "Surface": "Gloss",
@@ -2870,7 +2870,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 4,
-                    "Heading": "BLACK BACK FRONTLIT - 220 (Matte)",
+                    "Heading": "POLYESTER FABRIC | BLACK BACK FRONTLIT - 220 (Matte)",
                     "Sizes": "40, 52, 63, 80, 100, 126",
                     "Base Substrate": "Polyester Fabric",
                     "Surface": "Matte",
@@ -2887,7 +2887,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 5,
-                    "Heading": "BOTH SIDE PRINTING - 360 (Matte)",
+                    "Heading": "POLYESTER FABRIC | BOTH SIDE PRINTING - 360 (Matte)",
                     "Sizes": "51, 63, 102, 126",
                     "Base Substrate": "Polyester Fabric",
                     "Surface": "Matte (Opaque)",
@@ -2904,7 +2904,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 6,
-                    "Heading": "PERFORATED FABRIC - 100",
+                    "Heading": "POLYESTER FABRIC | PERFORATED FABRIC - 100",
                     "Sizes": "60",
                     "Base Substrate": "Polyester Fabric",
                     "Surface": "Matte",
@@ -2953,7 +2953,7 @@ export let ProductProvider = (props) => {
                     "Product Code": "CPP4243M",
                     "Category": "LAMINATION FILMS",
                     "Description": "",
-                    "image": "CARELIT Re - PVC-FREE LAM - 55 (Matte).webp"
+                    "image": "LAMINATION - MATTE 80.webp"
                 },
                 {
                     "id": 9,
@@ -2991,7 +2991,7 @@ export let ProductProvider = (props) => {
                     "Product Code": "CPP4243G",
                     "Category": "LAMINATION FILMS",
                     "Description": "",
-                    "image": "CARELIT Re - PVC-FREE LAM - 55 (Gloss).webp"
+                    "image": "LAMINATION - GLOSS 80.webp"
                 },
                 {
                     "id": 11,
@@ -3035,7 +3035,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 13,
-                    "Heading": "OUTDOOR BACKLIT FABRIC - 180",
+                    "Heading": "POLYESTER FABRIC | OUTDOOR BACKLIT FABRIC - 180",
                     "Sizes": "40, 52, 63, 80, 100, 126",
                     "Base Substrate": "Polyester Fabric",
                     "Surface": "Smooth",
@@ -3052,7 +3052,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 14,
-                    "Heading": "COARSE BACKLIT FABRIC - 150 (Gloss)",
+                    "Heading": "POLYESTER FABRIC | COARSE BACKLIT FABRIC - 150 (Gloss)",
                     "Sizes": "40, 52, 63, 80, 100, 126",
                     "Base Substrate": "Polyester Fabric",
                     "Surface": "Gloss",
@@ -3069,7 +3069,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 15,
-                    "Heading": "AQUALIT BACKLIT FABRIC - 130 (Soft)",
+                    "Heading": "POLYESTER FABRIC | AQUALIT BACKLIT FABRIC - 130 (Soft)",
                     "Sizes": "40, 52, 63, 80, 100, 126",
                     "Base Substrate": "Polyester Fabric",
                     "Surface": "Smooth",
@@ -3086,7 +3086,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 16,
-                    "Heading": "AQUALIT BACKLIT - 130 (Soft)",
+                    "Heading": "POLYESTER FABRIC | AQUALIT BACKLIT - 130 (Soft)",
                     "Sizes": "40, 52, 63, 80, 100, 126",
                     "Base Substrate": "Polyester Fabric",
                     "Surface": "Smooth",
@@ -3112,7 +3112,7 @@ export let ProductProvider = (props) => {
 
                 {
                     "id": 1,
-                    "Heading": "STRETCHCAL32 - Vehicle Wrap",
+                    "Heading": "VINYL | STRETCHCAL32 - Vehicle Wrap",
                     "Sizes": "50",
                     "Base Substrate": "PVC Polymeric",
                     "Surface": "Gloss",
@@ -3131,7 +3131,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 2,
-                    "Heading": "STRETCHCAL21 - METAL & EXTERIOR SIGNS",
+                    "Heading": "VINYL | STRETCHCAL21 - METAL & EXTERIOR SIGNS",
                     "Sizes": "50",
                     "Base Substrate": "PVC Polymeric",
                     "Surface": "Gloss",
@@ -3150,7 +3150,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 3,
-                    "Heading": "PREMIUM GOLD - 120 (Gloss)",
+                    "Heading": "VINYL | PREMIUM GOLD - 120 (Gloss)",
                     "Sizes": "36, 40, 42, 50, 60",
                     "Base Substrate": "PVC",
                     "Surface": "Gloss",
@@ -3169,7 +3169,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 4,
-                    "Heading": "PREMIUM GOLD - 120 (Matte)",
+                    "Heading": "VINYL | PREMIUM GOLD - 120 (Matte)",
                     "Sizes": "36, 40, 42, 50, 60",
                     "Base Substrate": "PVC",
                     "Surface": "Matte",
@@ -3188,7 +3188,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 5,
-                    "Heading": "ROSE GOLD - 100 (Gloss)",
+                    "Heading": "VINYL | ROSE GOLD - 100 (Gloss)",
                     "Sizes": "36, 40, 42, 50, 60",
                     "Base Substrate": "PVC",
                     "Surface": "Gloss",
@@ -3207,7 +3207,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 6,
-                    "Heading": "ROSE GOLD - 100 (Matte)",
+                    "Heading": "VINYL | ROSE GOLD - 100 (Matte)",
                     "Sizes": "36, 40, 42, 50, 60",
                     "Base Substrate": "PVC",
                     "Surface": "Matte",
@@ -3226,7 +3226,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 7,
-                    "Heading": "GREY BACK - 120 (Gloss)",
+                    "Heading": "VINYL | GREY BACK - 120 (Gloss)",
                     "Sizes": "40, 50, 60",
                     "Base Substrate": "PVC",
                     "Surface": "Gloss",
@@ -3245,7 +3245,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 8,
-                    "Heading": "GREY BACK - 120 (Matte)",
+                    "Heading": "VINYL | GREY BACK - 120 (Matte)",
                     "Sizes": "40, 50, 60",
                     "Base Substrate": "PVC",
                     "Surface": "Matte",
@@ -3264,7 +3264,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 9,
-                    "Heading": "PERFECTO BACKLIT - 120 (Gloss)",
+                    "Heading": "VINYL | PERFECTO BACKLIT - 120 (Gloss)",
                     "Sizes": "42, 50, 60",
                     "Base Substrate": "PVC",
                     "Surface": "Gloss",
@@ -3283,7 +3283,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 10,
-                    "Heading": "SILVER CHROME",
+                    "Heading": "VINYL | SILVER CHROME",
                     "Sizes": "36, 50",
                     "Base Substrate": "PET",
                     "Surface": "Gloss",
@@ -3302,7 +3302,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 11,
-                    "Heading": "ONE WAY VISION - 140",
+                    "Heading": "VINYL | ONE WAY VISION - 140",
                     "Sizes": "39, 42, 50, 60",
                     "Base Substrate": "PVC",
                     "Surface": "Gloss",
@@ -3321,7 +3321,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 12,
-                    "Heading": "CLEAR - 120 (Gloss)",
+                    "Heading": "VINYL | CLEAR - 120 (Gloss)",
                     "Sizes": "42, 50, 60",
                     "Base Substrate": "PVC",
                     "Surface": "Gloss",
@@ -3340,7 +3340,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 13,
-                    "Heading": "CLEAR - 100 (Matte)",
+                    "Heading": "VINYL | CLEAR - 100 (Matte)",
                     "Sizes": "50",
                     "Base Substrate": "PVC",
                     "Surface": "Matte",
@@ -3359,7 +3359,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 14,
-                    "Heading": "OPTICAL CLEAR - 120",
+                    "Heading": "VINYL | OPTICAL CLEAR - 120",
                     "Sizes": "50",
                     "Base Substrate": "PVC",
                     "Surface": "Gloss",
@@ -3378,7 +3378,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 15,
-                    "Heading": "REFLECTIVE - SMOOTH",
+                    "Heading": "VINYL | REFLECTIVE - SMOOTH",
                     "Sizes": "50",
                     "Base Substrate": "PVC Light Grey with glass particles",
                     "Surface": "Gloss",
@@ -3397,7 +3397,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 16,
-                    "Heading": "RETRO REFLECTIVE - SEAMLESS",
+                    "Heading": "VINYL | RETRO REFLECTIVE - SEAMLESS",
                     "Sizes": "50",
                     "Base Substrate": "PVC",
                     "Surface": "Gloss",
@@ -3416,7 +3416,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 17,
-                    "Heading": "RETRO REFLECTIVE",
+                    "Heading": "FLEX | RETRO REFLECTIVE",
                     "Sizes": "54, 124",
                     "Base Substrate": "PVC",
                     "Surface": "Gloss",
@@ -3435,7 +3435,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 18,
-                    "Heading": "TEXTURED - 290",
+                    "Heading": "BANNER | TEXTURED - 290",
                     "Sizes": "36, 50, 60",
                     "Base Substrate": "PVC+PP Composite",
                     "Surface": "Matte",
@@ -3454,7 +3454,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 19,
-                    "Heading": "GREY BACK - 260",
+                    "Heading": "BANNER | GREY BACK - 260",
                     "Sizes": "36, 50, 60",
                     "Base Substrate": "PVC+PP Composite",
                     "Surface": "Matte",
@@ -3473,7 +3473,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 20,
-                    "Heading": "BOTH SIDE PRINTABLE - 260",
+                    "Heading": "BANNER | BOTH SIDE PRINTABLE - 260",
                     "Sizes": "36, 50",
                     "Base Substrate": "Both side PVC with PET Grey as middle layer",
                     "Surface": "Matte",
@@ -3492,7 +3492,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 21,
-                    "Heading": "PP - 190",
+                    "Heading": "BANNER | PP - 190",
                     "Sizes": "36, 50, 60",
                     "Base Substrate": "PP",
                     "Surface": "Matte",
@@ -3511,7 +3511,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 22,
-                    "Heading": "FRONT PRINTING TRANSLITE FILM - 170",
+                    "Heading": "TRANSLITE | FRONT PRINTING TRANSLITE FILM - 170",
                     "Sizes": "36, 42, 50, 60",
                     "Base Substrate": "PET",
                     "Surface": "Matte",
@@ -3530,7 +3530,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 23,
-                    "Heading": "FRONT PRINTING TRANSLITE FILM - 210",
+                    "Heading": "TRANSLITE | FRONT PRINTING TRANSLITE FILM - 210",
                     "Sizes": "36, 42, 50, 60",
                     "Base Substrate": "PET",
                     "Surface": "Matte",
@@ -3549,7 +3549,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 24,
-                    "Heading": "ULTRA GLOSSY - 220",
+                    "Heading": "PHOTOPAPER | ULTRA GLOSSY - 220",
                     "Sizes": "36, 50",
                     "Base Substrate": "Paper",
                     "Surface": "Gloss",
@@ -3568,7 +3568,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 25,
-                    "Heading": "MATTE - 180",
+                    "Heading": "PHOTOPAPER | MATTE - 180",
                     "Sizes": "50",
                     "Base Substrate": "Paper",
                     "Surface": "Matte",
@@ -3587,7 +3587,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 26,
-                    "Heading": "LUSTRE - 220",
+                    "Heading": "PHOTOPAPER | LUSTRE - 220",
                     "Sizes": "50",
                     "Base Substrate": "Paper",
                     "Surface": "Lustre",
@@ -3606,7 +3606,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 27,
-                    "Heading": "ARTISTIC CANVAS - 380 (Matte)",
+                    "Heading": "CANVAS | ARTISTIC CANVAS - 380 (Matte)",
                     "Sizes": "40, 50, 60, 80, 102, 126",
                     "Base Substrate": "Poly Cotton",
                     "Surface": "Matte",
@@ -3625,7 +3625,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 28,
-                    "Heading": "ARTISTIC CANVAS - 380 (Gloss)",
+                    "Heading": "CANVAS | ARTISTIC CANVAS - 380 (Gloss)",
                     "Sizes": "36, 50, 60",
                     "Base Substrate": "Poly Cotton",
                     "Surface": "Gloss",
@@ -3644,7 +3644,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 29,
-                    "Heading": "POLYESTER CANVAS - 280 (Matte)",
+                    "Heading": "CANVAS | POLYESTER CANVAS - 280 (Matte)",
                     "Sizes": "50",
                     "Base Substrate": "Polyester",
                     "Surface": "Matte",
@@ -3663,7 +3663,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 30,
-                    "Heading": "POLYESTER CANVAS - 280 (Gloss)",
+                    "Heading": "CANVAS | POLYESTER CANVAS - 280 (Gloss)",
                     "Sizes": "50",
                     "Base Substrate": "Polyester",
                     "Surface": "Gloss",
@@ -3682,7 +3682,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 31,
-                    "Heading": "FRONTLIT - 200",
+                    "Heading": "FABRIC | FRONTLIT - 200",
                     "Sizes": "40, 50, 63, 76, 100, 126",
                     "Base Substrate": "Polyester",
                     "Surface": "Matte",
@@ -3701,7 +3701,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 32,
-                    "Heading": "BACKLIT - 130 FR",
+                    "Heading": "FABRIC | BACKLIT - 130 FR",
                     "Sizes": "40, 50, 63, 76, 100, 126",
                     "Base Substrate": "Polyester",
                     "Surface": "Satin Smooth",
@@ -3735,12 +3735,12 @@ export let ProductProvider = (props) => {
                     "Product Code": "GLASS100F",
                     "Category": "GLASS FILM",
                     "Description": "WYTE FROSTED printable glass film is a PVC based, water resistant film with excellent adhesion. It has outstanding durability and outdoor life. Easy plotter cutting and weeding. It has high visible light transmission allowing natural daylight flow. The perfect window film which adds to a certain level of privacy. Printed Frosted Film also enhances the aesthetics of any commercial or residential space.",
-                    "image": "GLASS FILM - FROSTED 100.webp"
+                    "image": "MOUNTING - CLEAR DOUBLE SIDE 60.webp"
                 },
 
                 {
                     "id": 34,
-                    "Heading": "SPARKLED - 100",
+                    "Heading": "GLASS FILM | SPARKLED - 100",
                     "Sizes": "50",
                     "Base Substrate": "PVC",
                     "Surface": "Sparkled",
@@ -3879,7 +3879,7 @@ export let ProductProvider = (props) => {
 
                 {
                     "id": 41,
-                    "Heading": "PRINTABLE FERROUS",
+                    "Heading": "MAGNETIC | PRINTABLE FERROUS",
                     "Sizes": "50",
                     "Base Substrate": "Composite Printable PP & rubber sheet",
                     "Surface": "Matte",
@@ -3928,7 +3928,7 @@ export let ProductProvider = (props) => {
             items: [
                 {
                     "id": 1,
-                    "Heading": "SELF ADHESIVE - WALL GRAIN TEXTURE",
+                    "Heading": "WALL PAPER | SELF ADHESIVE - WALL GRAIN TEXTURE",
                     "Sizes (In Inches)": "50",
                     "Base Substrate": "PVC",
                     "Surface": "Textured Satin",
@@ -3944,7 +3944,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 2,
-                    "Heading": "SELF ADHESIVE - FABRIC WALL SOFT",
+                    "Heading": "WALL PAPER | SELF ADHESIVE - FABRIC WALL SOFT",
                     "Sizes (In Inches)": "50",
                     "Base Substrate": "Polyester",
                     "Surface": "Textured Matte",
@@ -3960,7 +3960,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 3,
-                    "Heading": "NON ADHESIVE - RODIES GLITTER",
+                    "Heading": "WALL PAPER | NON ADHESIVE - RODIES GLITTER",
                     "Sizes (In Inches)": "54",
                     "Base Substrate": "Paper",
                     "Surface": "Matte Glitter",
@@ -3976,7 +3976,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 4,
-                    "Heading": "NON ADHESIVE - HORIZONTAL RAYS",
+                    "Heading": "WALL PAPER | NON ADHESIVE - HORIZONTAL RAYS",
                     "Sizes (In Inches)": "54",
                     "Base Substrate": "Paper",
                     "Surface": "Textured Matte",
@@ -3992,7 +3992,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 5,
-                    "Heading": "CART CANVAS",
+                    "Heading": "WALL PAPER | CART CANVAS",
                     "Sizes (In Inches)": "42",
                     "Base Substrate": "Pulp Paper",
                     "Surface": "Textured",
@@ -4008,7 +4008,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 6,
-                    "Heading": "NON ADHESIVE - AESTHETIC CANVAS",
+                    "Heading": "WALL PAPER | NON ADHESIVE - AESTHETIC CANVAS",
                     "Sizes (In Inches)": "42",
                     "Base Substrate": "Paper",
                     "Surface": "Textured Satin",
@@ -4024,7 +4024,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 7,
-                    "Heading": "NON ADHESIVE - HELIOS 3D",
+                    "Heading": "WALL PAPER | NON ADHESIVE - HELIOS 3D",
                     "Sizes (In Inches)": "42",
                     "Base Substrate": "Paper",
                     "Surface": "Textured Satin",
@@ -4040,7 +4040,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 8,
-                    "Heading": "Non Adhesive | Non Woven – Nowo",
+                    "Heading": "WALL PAPER | Non Adhesive | Non Woven – Nowo",
                     "Sizes (In Inches)": "42,50,54,60,124",
                     "Base Substrate": "Non Woven Paper",
                     "Surface": "Smooth Matte",
@@ -4056,7 +4056,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 9,
-                    "Heading": "WISTERIA",
+                    "Heading": "WALL PAPER | WISTERIA",
                     "Sizes (In Inches)": "42,49",
                     "Base Substrate": "Non-Woven Fabric",
                     "Surface": "Textured",
@@ -4072,7 +4072,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 10,
-                    "Heading": "CEDAR LEATHERETTE",
+                    "Heading": "WALL PAPER | CEDAR LEATHERETTE",
                     "Sizes (In Inches)": "42",
                     "Base Substrate": "Pulp Paper",
                     "Surface": "Textured",
@@ -4088,7 +4088,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 11,
-                    "Heading": "METALLIC TEXTURED GOLD",
+                    "Heading": "WALL PAPER | METALLIC TEXTURED GOLD",
                     "Sizes (In Inches)": "42",
                     "Base Substrate": "Pulp Paper",
                     "Surface": "Textured",
@@ -4104,7 +4104,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 12,
-                    "Heading": "NON ADHESIVE – STROKES",
+                    "Heading": "WALL PAPER | NON ADHESIVE – STROKES",
                     "Sizes (In Inches)": "54",
                     "Base Substrate": "PVC",
                     "Surface": "Textured Matte",
@@ -4120,7 +4120,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 13,
-                    "Heading": "NON ADHESIVE – PVC",
+                    "Heading": "WALL PAPER | NON ADHESIVE – PVC",
                     "Sizes (In Inches)": "36, 50, 60",
                     "Base Substrate": "Poly Propylene",
                     "Surface": "Smooth Matte",
@@ -4136,7 +4136,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 14,
-                    "Heading": "NON ADHESIVE – HD",
+                    "Heading": "WALL PAPER | NON ADHESIVE – HD",
                     "Sizes (In Inches)": "36, 50, 60",
                     "Base Substrate": "Composite PP+PVC",
                     "Surface": "Textured Satin",
@@ -4152,7 +4152,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 15,
-                    "Heading": "FABRIC – SPARKLE WALL FABRIC",
+                    "Heading": "WALL PAPER | FABRIC – SPARKLE WALL FABRIC",
                     "Sizes (In Inches)": "50",
                     "Base Substrate": "Polyester",
                     "Surface": "Satin Sparkle",
@@ -4168,7 +4168,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 16,
-                    "Heading": "FABRIC – WALL FABRIC",
+                    "Heading": "WALL PAPER | FABRIC – WALL FABRIC",
                     "Sizes (In Inches)": "52, 126",
                     "Base Substrate": "Polyester",
                     "Surface": "Matte",
@@ -4184,7 +4184,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 17,
-                    "Heading": "TEXTURED LEATHERETTE",
+                    "Heading": "FURNISHINGS | TEXTURED LEATHERETTE",
                     "Sizes": "54",
                     "Base Substrate": "PVC",
                     "Surface": "Grained Texture Matte",
@@ -4200,7 +4200,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 18,
-                    "Heading": "SMOOTH LEATHERETTE",
+                    "Heading": "FURNISHINGS | SMOOTH LEATHERETTE",
                     "Sizes": "54",
                     "Base Substrate": "PVC",
                     "Surface": "Smooth Matte",
@@ -4250,7 +4250,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 21,
-                    "Heading": "ARTISTIC CANVAS MATTE",
+                    "Heading": "CANVAS | ARTISTIC CANVAS MATTE",
                     "Sizes": "40, 50, 60, 80, 124",
                     "Base Substrate": "Poly-Cotton",
                     "Surface": "Matte",
@@ -4267,7 +4267,7 @@ export let ProductProvider = (props) => {
                 },
                 {
                     "id": 22,
-                    "Heading": "ARTISTIC CANVAS GLOSS",
+                    "Heading": "CANVAS | ARTISTIC CANVAS GLOSS",
                     "Sizes": "36, 50, 60",
                     "Base Substrate": "Poly-Cotton",
                     "Surface": "Gloss",
