@@ -43,7 +43,7 @@ const ExhibitionPhotos = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setBannerIndex((prev) => (prev + 1) % exhibitionPhotos.length);
-    }, 4000);
+    }, 10000);
     return () => clearInterval(timer);
   }, []);
 
@@ -98,10 +98,7 @@ const ExhibitionPhotos = () => {
   const handleWheel = (e) => {
     e.preventDefault();
     const delta = e.deltaY * -0.002;
-    setZoom((prevZoom) => {
-      const newZoom = Math.min(3, Math.max(1, prevZoom + delta));
-      return newZoom;
-    });
+    setZoom((prevZoom) => Math.min(3, Math.max(1, prevZoom + delta)));
   };
 
   const handleMouseDown = (e) => {
@@ -154,6 +151,23 @@ const ExhibitionPhotos = () => {
             transition={{ duration: 1 }}
           />
         </AnimatePresence>
+
+        {/* Banner Navigation Arrows – now visible on mobile */}
+       <button
+  onClick={() => setBannerIndex((prev) => (prev - 1 + exhibitionPhotos.length) % exhibitionPhotos.length)}
+  className="absolute left-4 top-1/2 -translate-y-1/2 z-30 text-white bg-black/50 hover:bg-black/70 w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center"
+>
+  <ChevronLeft className="w-5 h-5 sm:w-8 sm:h-8" />
+</button>
+
+<button
+  onClick={() => setBannerIndex((prev) => (prev + 1) % exhibitionPhotos.length)}
+  className="absolute right-4 top-1/2 -translate-y-1/2 z-30 text-white bg-black/50 hover:bg-black/70 w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center"
+>
+  <ChevronRight className="w-5 h-5 sm:w-8 sm:h-8" />
+</button>
+
+
         <div className="absolute inset-0 bg-gradient-to-r from-[#000000cc] to-[#00000066] z-10" />
         <div className="relative z-20 flex flex-col items-center justify-center h-full px-6 text-center text-white">
           <motion.h1
@@ -214,10 +228,10 @@ const ExhibitionPhotos = () => {
           <button className="absolute top-6 right-6 text-white z-50" onClick={() => setIsOpen(false)}>
             <X size={36} />
           </button>
-          <button className="absolute left-4 sm:left-10 text-white z-50 hidden sm:block" onClick={prevImage}>
+          <button className="absolute left-4 sm:left-10 text-white z-50" onClick={prevImage}>
             <ChevronLeft size={48} />
           </button>
-          <button className="absolute right-4 sm:right-10 text-white z-50 hidden sm:block" onClick={nextImage}>
+          <button className="absolute right-4 sm:right-10 text-white z-50" onClick={nextImage}>
             <ChevronRight size={48} />
           </button>
 
