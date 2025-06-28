@@ -38,10 +38,10 @@ const Home = () => {
         {/* Prev/Next Buttons */}
 <button
   onClick={handlePrevBanner}
-  className="absolute z-30 top-1/2 left-0 md:left-12 -translate-y-1/2 px-5 py-4 hover:scale-125 transition-transform duration-300"
+  className="absolute z-30 top-90 md:top-1/2 -left-3 md:left-12 -translate-y-1/2 px-5 py-4 hover:scale-125 transition-transform duration-300"
   aria-label="Previous Slide"
 >
-  <span className="text-7xl text-[#2B2046] font-light">‹</span>
+  <span className="text-7xl text-white md:text-[#2B2046] font-light">‹</span>
 </button>
 
 
@@ -49,10 +49,10 @@ const Home = () => {
 
         <button
   onClick={handleNextBanner}
-  className="absolute z-30 top-1/2 right-5 md:-right-1 -translate-y-1/2 px-5 py-4 hover:scale-125 transition-transform duration-300"
+  className="absolute z-30 top-90 md:top-1/2 -right-4  md:-right-1 -translate-y-1/2 px-5 py-4 hover:scale-125 transition-transform duration-300"
   aria-label="Next Slide"
 >
-  <span className="text-7xl text-black font-light">›</span>
+  <span className="text-7xl text-white md:text-black font-light">›</span>
 </button>
 
 
