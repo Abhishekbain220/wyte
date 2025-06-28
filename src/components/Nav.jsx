@@ -76,11 +76,10 @@ const Nav = () => {
 
   return (
     <div className="relative">
-      {/* Header */}
       <div className={`fixed top-0 left-0 w-full bg-white z-50 shadow-md transition-transform duration-300 ease-in-out ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="w-full px-6 py-4 h-[13vh] md:px-[4vw] lg:px-[6vw] xl:px-[20vh] flex items-center justify-between">
           <img className="h-[15vh] object-contain transition-transform hover:scale-105" src="/logo.webp" alt="Logo" />
-          <div className="hidden md:flex gap-10 uppercase font-bold text-sm items-center">
+          <div className="hidden md:flex gap-10 uppercase font-bold text-base items-center">
             {navLinks.map(link =>
               !link.sub ? (
                 <NavLink key={link.path} to={link.path} className={navLinkClasses}>{link.label}</NavLink>
@@ -91,10 +90,10 @@ const Nav = () => {
                     <ChevronDown className={`w-4 h-4 transition-transform ${desktopSubOpen ? 'rotate-180' : ''}`} />
                   </button>
                   <div className={`absolute top-full mt-2 bg-white rounded shadow-lg py-2 px-4 min-w-[260px] z-50 transition-all duration-300 ${desktopSubOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
-                    <NavLink to={link.path} onClick={() => setDesktopSubOpen(false)} className="block py-2 text-[#7AC943] font-medium text-sm hover:underline">View All Products →</NavLink>
+                    <NavLink to={link.path} onClick={() => setDesktopSubOpen(false)} className="block py-2 text-[#7AC943] font-medium text-base hover:underline">View All Products →</NavLink>
                     <hr className="my-2 border-gray-200" />
                     {link.sub.map(sub => (
-                      <NavLink key={sub.path} to={sub.path} onClick={() => setDesktopSubOpen(false)} className="block py-2 text-sm text-gray-700 hover:text-[#7AC943] font-bold">{sub.label}</NavLink>
+                      <NavLink key={sub.path} to={sub.path} onClick={() => setDesktopSubOpen(false)} className="block py-2 text-base text-gray-700 hover:text-[#7AC943] font-bold">{sub.label}</NavLink>
                     ))}
                   </div>
                 </div>
@@ -110,7 +109,7 @@ const Nav = () => {
                   setSearchOpen(true);
                 }}
                 placeholder="Search products..."
-                className="px-3 py-1 text-sm border rounded-md outline-none focus:ring-2 focus:ring-[#7AC943]"
+                className="px-3 py-1 text-base border rounded-md outline-none focus:ring-2 focus:ring-[#7AC943]"
               />
               {searchOpen && filteredProducts.length > 0 && (
                 <div
@@ -120,7 +119,7 @@ const Nav = () => {
                   {filteredProducts.map((item, index) => (
                     <div
                       key={index}
-                      className="px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 cursor-pointer"
+                      className="px-4 py-2 text-base text-gray-800 hover:bg-gray-100 cursor-pointer font-semibold"
                       onClick={() => {
                         navigate(item.path);
                         setSearchQuery('');
@@ -139,7 +138,7 @@ const Nav = () => {
           <div className="flex items-center gap-4">
             <div className="hidden md:flex flex-col items-center">
               <img src="/NEW-Logo-2023-1-1.webp" alt="Partner Logo" className="h-[7vh] object-contain hover:scale-105 transition-transform" />
-              <span className="font-bold text-black">Media Partner</span>
+              <span className="font-bold text-black text-sm">Media Partner</span>
             </div>
             <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
               {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -151,7 +150,7 @@ const Nav = () => {
       {/* Mobile Menu */}
       <div className={`fixed top-[13vh] left-0 w-full h-[87vh] bg-white z-50 transform transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="px-6 py-4 overflow-y-auto h-full">
-          {/* Mobile Search on Top */}
+          {/* Mobile Search */}
           <div className="relative mb-4" ref={searchRef}>
             <input
               type="text"
@@ -161,14 +160,14 @@ const Nav = () => {
                 setSearchOpen(true);
               }}
               placeholder="Search products..."
-              className="w-full px-3 py-2 text-sm border rounded-md outline-none focus:ring-2 focus:ring-[#7AC943]"
+              className="w-full px-3 py-2 text-base border rounded-md outline-none focus:ring-2 focus:ring-[#7AC943]"
             />
             {searchOpen && filteredProducts.length > 0 && (
               <div className="bg-white rounded shadow mt-2 max-h-60 overflow-y-auto">
                 {filteredProducts.map((item, index) => (
                   <div
                     key={index}
-                    className="px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 font-bold cursor-pointer"
+                    className="px-4 py-2 text-base text-gray-800 hover:bg-gray-100 font-semibold cursor-pointer"
                     onClick={() => {
                       navigate(item.path);
                       setSearchQuery('');
@@ -184,7 +183,7 @@ const Nav = () => {
           </div>
 
           {/* Mobile Links */}
-          <nav className="flex flex-col gap-4 font-bold uppercase text-sm">
+          <nav className="flex flex-col gap-4 font-bold uppercase text-base">
             {navLinks.map(link =>
               !link.sub ? (
                 <NavLink key={link.path} to={link.path} onClick={() => setMenuOpen(false)} className="text-black hover:text-[#7AC943]">{link.label}</NavLink>
@@ -196,9 +195,9 @@ const Nav = () => {
                   </button>
                   {mobileSubOpen && (
                     <div className="ml-4 flex flex-col gap-0">
-                      <NavLink to={link.path} onClick={() => setMenuOpen(false)} className="text-[#7AC943] text-sm border-b py-2 px-2">View All Products →</NavLink>
+                      <NavLink to={link.path} onClick={() => setMenuOpen(false)} className="text-[#7AC943] text-base border-b py-2 px-2">View All Products →</NavLink>
                       {link.sub.map(sub => (
-                        <NavLink key={sub.path} to={sub.path} onClick={() => setMenuOpen(false)} className="text-gray-700 text-sm hover:text-[#7AC943] border-b py-2 px-2">{sub.label}</NavLink>
+                        <NavLink key={sub.path} to={sub.path} onClick={() => setMenuOpen(false)} className="text-gray-700 text-base hover:text-[#7AC943] border-b py-2 px-2">{sub.label}</NavLink>
                       ))}
                     </div>
                   )}
