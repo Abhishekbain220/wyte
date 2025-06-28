@@ -80,7 +80,7 @@ const Nav = () => {
       <div className={`fixed top-0 left-0 w-full bg-white z-50 shadow-md transition-transform duration-300 ease-in-out ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="w-full px-6 py-4 h-[13vh] md:px-[4vw] lg:px-[6vw] xl:px-[20vh] flex items-center justify-between">
           <img className="h-[15vh] object-contain transition-transform hover:scale-105" src="/logo.webp" alt="Logo" />
-          <div className="hidden md:flex gap-10 uppercase font-bold text-sm">
+          <div className="hidden md:flex gap-10 uppercase font-bold text-sm items-center">
             {navLinks.map(link =>
               !link.sub ? (
                 <NavLink key={link.path} to={link.path} className={navLinkClasses}>{link.label}</NavLink>
@@ -102,18 +102,31 @@ const Nav = () => {
             )}
             {/* Desktop Search */}
             <div className="relative" ref={searchRef}>
-              <input type="text" value={searchQuery} onChange={e => {
-                setSearchQuery(e.target.value);
-                setSearchOpen(true);
-              }} placeholder="Search products..." className="px-3 py-1 text-sm border rounded-md outline-none focus:ring-2 focus:ring-[#7AC943]" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={e => {
+                  setSearchQuery(e.target.value);
+                  setSearchOpen(true);
+                }}
+                placeholder="Search products..."
+                className="px-3 py-1 text-sm border rounded-md outline-none focus:ring-2 focus:ring-[#7AC943]"
+              />
               {searchOpen && filteredProducts.length > 0 && (
-                <div className="absolute z-50 bg-white mt-1 rounded shadow w-72 max-h-60 overflow-y-auto">
+                <div
+                  className="absolute z-50 bg-white mt-1 rounded shadow w-72 max-h-60 overflow-y-auto"
+                  onMouseDown={(e) => e.stopPropagation()}
+                >
                   {filteredProducts.map((item, index) => (
-                    <div key={index} className="px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 cursor-pointer" onClick={() => {
-                      navigate(item.path);
-                      setSearchQuery('');
-                      setSearchOpen(false);
-                    }}>
+                    <div
+                      key={index}
+                      className="px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 cursor-pointer"
+                      onClick={() => {
+                        navigate(item.path);
+                        setSearchQuery('');
+                        setSearchOpen(false);
+                      }}
+                    >
                       {item.label}
                     </div>
                   ))}
@@ -122,7 +135,7 @@ const Nav = () => {
             </div>
           </div>
 
-          {/* Right Logo and Menu */}
+          {/* Right Logo & Menu */}
           <div className="flex items-center gap-4">
             <div className="hidden md:flex flex-col items-center">
               <img src="/NEW-Logo-2023-1-1.webp" alt="Partner Logo" className="h-[7vh] object-contain hover:scale-105 transition-transform" />
@@ -138,6 +151,39 @@ const Nav = () => {
       {/* Mobile Menu */}
       <div className={`fixed top-[13vh] left-0 w-full h-[87vh] bg-white z-50 transform transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="px-6 py-4 overflow-y-auto h-full">
+          {/* Mobile Search on Top */}
+          <div className="relative mb-4" ref={searchRef}>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                setSearchOpen(true);
+              }}
+              placeholder="Search products..."
+              className="w-full px-3 py-2 text-sm border rounded-md outline-none focus:ring-2 focus:ring-[#7AC943]"
+            />
+            {searchOpen && filteredProducts.length > 0 && (
+              <div className="bg-white rounded shadow mt-2 max-h-60 overflow-y-auto">
+                {filteredProducts.map((item, index) => (
+                  <div
+                    key={index}
+                    className="px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 font-bold cursor-pointer"
+                    onClick={() => {
+                      navigate(item.path);
+                      setSearchQuery('');
+                      setSearchOpen(false);
+                      setMenuOpen(false);
+                    }}
+                  >
+                    {item.label}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Mobile Links */}
           <nav className="flex flex-col gap-4 font-bold uppercase text-sm">
             {navLinks.map(link =>
               !link.sub ? (
@@ -159,38 +205,6 @@ const Nav = () => {
                 </div>
               )
             )}
-
-            {/* Mobile Search */}
-            <div className="relative mt-4" ref={searchRef}>
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => {
-                  setSearchQuery(e.target.value);
-                  setSearchOpen(true);
-                }}
-                placeholder="Search products..."
-                className="w-full px-3 py-2 text-sm border rounded-md outline-none focus:ring-2 focus:ring-[#7AC943]"
-              />
-              {searchOpen && filteredProducts.length > 0 && (
-                <div className="absolute left-0 right-0 bg-white mt-1 rounded shadow z-50 max-h-60 overflow-y-auto">
-                  {filteredProducts.map((item, index) => (
-                    <div
-                      key={index}
-                      className="px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 cursor-pointer"
-                      onClick={() => {
-                        navigate(item.path);
-                        setSearchQuery('');
-                        setSearchOpen(false);
-                        setMenuOpen(false);
-                      }}
-                    >
-                      {item.label}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
           </nav>
         </div>
       </div>
