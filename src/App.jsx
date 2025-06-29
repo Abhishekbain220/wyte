@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import AboutUs from './components/AboutUs'
 import Home from './components/Home'
@@ -11,8 +11,16 @@ import CategoryPage from './components/CategoryPage'
 import ProductCategory from './components/ProductCategory'
 import ProductDetails from './components/ProductDetails'
 import ExhibitionPhotos from './components/ExhibitionPhotos'
+import { initGA, trackPage } from './utils/Analytics';
 
 const App = () => {
+  useEffect(() => {
+    initGA();
+  }, []);
+
+  useEffect(() => {
+    trackPage(location.pathname + location.search);
+  }, [location]);
   return (
     <div >
       <Nav/>

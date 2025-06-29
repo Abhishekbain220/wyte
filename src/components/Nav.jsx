@@ -119,7 +119,7 @@ const Nav = () => {
                   {filteredProducts.map((item, index) => (
                     <div
                       key={index}
-                      className="px-4 py-2 text-base text-gray-800 hover:bg-gray-100 cursor-pointer font-semibold"
+                      className="px-4 py-2 text-base text-gray-800 hover:bg-gray-100 cursor-pointer font-bold"
                       onClick={() => {
                         navigate(item.path);
                         setSearchQuery('');
@@ -167,7 +167,7 @@ const Nav = () => {
                 {filteredProducts.map((item, index) => (
                   <div
                     key={index}
-                    className="px-4 py-2 text-base text-gray-800 hover:bg-gray-100 font-semibold cursor-pointer"
+                    className="px-4 py-2 text-base text-gray-800 hover:bg-gray-100 font-bold cursor-pointer"
                     onClick={() => {
                       navigate(item.path);
                       setSearchQuery('');
