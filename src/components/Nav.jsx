@@ -45,7 +45,7 @@ const Nav = () => {
   const allProductItems = ProductCategory.flatMap((cat) =>
     cat.items.map((item) => ({
       label: item.Heading,
-      path: `/product/${encodeURIComponent(cat.name)}/${item.id}`,
+      path: `/product/${encodeURIComponent(cat.name)}/${item.Heading}`,
     }))
   );
 

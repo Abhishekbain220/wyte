@@ -68,7 +68,7 @@ const ProductCategory = () => {
                   id={p.id}
                   name={p.Heading}
                   image={`/${p.image}`}
-                  navigation={`/product/${filter.name}/${p.id}`}
+                  navigation={`/product/${filter.name}/${p.Heading}`}
                 />
               </div>
             ))}

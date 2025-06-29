@@ -41,7 +41,7 @@ const SingleProduct = () => {
 
   useEffect(() => {
     const product = ProductCategory.find((p) => String(p.name) === productName);
-    const productItem = product?.items?.find((i) => String(i.id) === id);
+    const productItem = product?.items?.find((i) => String(i.Heading) === id);
     setProductDetails(productItem);
   }, [id, products, productName]);
 
