@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Meta from '../utils/Meta';
 
 const exhibitionPhotos = [
   { url: 'https://bykerwin.com/wp-content/uploads/2024/10/IMG_9839-Large-crypt-main-wall-landscape-wordpress.jpeg' },
@@ -138,6 +139,7 @@ const ExhibitionPhotos = () => {
 
   return (
     <section className="bg-[#EDF5FA] md:mt-24 min-h-screen">
+      <Meta title="Gallery Page" description="this is a Gallery page" />
       {/* Hero Section */}
       <div className="relative h-screen w-full overflow-hidden">
         <AnimatePresence>

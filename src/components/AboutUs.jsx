@@ -6,11 +6,13 @@ import Footer from './Footer';
 import AboutUsCom from './AboutUsCom';
 import OurMission from './OurMission';
 import WhyChooseUs from './WhyChooseUs';
+import Meta from '../utils/Meta';
 
 
 const AboutUs = () => {
   return (
     <div className='pt-20 overflow-hidden'>
+      <Meta title="About Us Page" description="this is a about us page"/>
       <AboutUsCom />
       <OurMission />
       <WhyChooseUs />

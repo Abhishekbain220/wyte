@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { ProductContext } from '../utils/ProductContext';
 import { motion } from 'framer-motion';
 import { ArrowRight, X } from 'lucide-react';
+import Meta from '../utils/Meta';
 
 const container = {
   hidden: { opacity: 0 },
@@ -114,6 +115,7 @@ const SingleProduct = () => {
       initial="hidden"
       animate="show"
     >
+      <Meta title={`${productDetails.Heading}`} description={`this is a ${productDetails.Heading} page`}/>
       <motion.div
         className="max-w-7xl mx-auto bg-[#1B1F3B] rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-10 p-6 md:p-12"
         variants={item}

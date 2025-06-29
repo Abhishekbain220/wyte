@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { ProductContext } from '../utils/ProductContext'
 import { motion } from 'framer-motion'
 import ProductCom from './ProductCom'
+import Meta from '../utils/Meta'
 
 const ProductCategory = () => {
   const { Category } = useParams()
@@ -22,6 +23,7 @@ const ProductCategory = () => {
 
   return (
     <div className="min-h-screen w-full pt-32 sm:pt-36 bg-gradient-to-br from-[#f1fcfc] via-[#eef7ff] to-[#eafff0]">
+      <Meta title={Category} description={`this is a ${Category} page"`}/>
       {/* Category Heading Banner */}
       <motion.div
         className="w-full bg-gradient-to-r from-[#76bc21]/10 via-white to-[#1d1b41]/10 py-10 sm:py-14 shadow-md"

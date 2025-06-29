@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import AboutUsCom from './AboutUsCom';
 import ProductCom from './ProductCom';
 import { ProductContext } from '../utils/ProductContext';
+import Meta from '../utils/Meta';
 
 const Home = () => {
   const { banners, products, product, setProduct, ProductCategory } = useContext(ProductContext);
@@ -27,6 +28,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen overflow-hidden w-full">
+      <Meta title="Home Page" description="this is a home page"/>
       {/* Page 1 - Banner Section */}
       <div
         style={{ background: banner.gradient }}

@@ -3,6 +3,7 @@ import ProductCom from './ProductCom';
 import { ProductContext } from '../utils/ProductContext';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import Meta from '../utils/Meta';
 
 const Products = () => {
   const { products, ProductCategory } = useContext(ProductContext);
@@ -18,6 +19,7 @@ const Products = () => {
 
   return (
     <div className="min-h-screen w-full pt-32 sm:pt-36 bg-gradient-to-br from-[#f1fcfc] via-[#eef7ff] to-[#eafff0]">
+      <Meta title="Product Page" description="this is a Product page"/>
       {/* Page Heading Banner */}
       <motion.div
         className="w-full bg-gradient-to-r from-[#76bc21]/10 via-white to-[#1d1b41]/10 py-10 sm:py-14 shadow-md"
