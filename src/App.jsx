@@ -12,7 +12,6 @@ import ProductCategory from './components/ProductCategory'
 import ProductDetails from './components/ProductDetails'
 import ExhibitionPhotos from './components/ExhibitionPhotos'
 import { initGA, trackPage } from './utils/Analytics';
-import Meta from './utils/Meta'
 
 const App = () => {
   useEffect(() => {
@@ -24,7 +23,7 @@ const App = () => {
   }, [location]);
   return (
     <div >
-      <Meta name="google-site-verification" content="L9S3eDYTn8IrBq2-GntMZwujgWCPLrmsgWaAdJ53Vjo" />
+      
       <Nav/>
         <ScrollToTop/>
       <Routes>
