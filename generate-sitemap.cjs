@@ -1,19 +1,20 @@
+// generate-sitemap.cjs
+
 const fs = require('fs');
 const { SitemapStream, streamToPromise } = require('sitemap');
 const { createWriteStream } = require('fs');
 
-// Replace with your real hostname
-const sitemap = new SitemapStream({ hostname: 'https://wyte.vercel.app/' });
+const hostname = 'https://wyte.vercel.app/'; // ✅ Replace with your actual domain
 
-// 🔧 Static routes
+// 1. Static Routes
 const staticRoutes = [
   { url: '/', changefreq: 'daily', priority: 1.0 },
   { url: '/about-us', changefreq: 'monthly', priority: 0.7 },
-  { url: '/products', changefreq: 'monthly', priority: 0.7 },
-  { url: '/gallery', changefreq: 'monthly', priority: 0.7 },
+  { url: '/products', changefreq: 'weekly', priority: 0.9 },
+  { url: '/gallery', changefreq: 'monthly', priority: 0.7 }
 ];
 
-// 🔧 Dynamic product routes (replace with your actual items)
+// 2. Category Routes
 let ProductCategory = [
         {
             id: 1,
@@ -2474,6 +2475,13 @@ let ProductCategory = [
 
     ]
 
+const CategoryRoutes = ProductCategory.map(category => ({
+  url: `/Category/${encodeURIComponent(category.name)}`,
+  changefreq: 'weekly',
+  priority: 0.8
+}));
+
+// 3. Product Routes
 const productRoutes = ProductCategory.flatMap(category =>
   category.items.map(item => ({
     url: `/product/${encodeURIComponent(category.name)}/${encodeURIComponent(item.Heading)}`,
@@ -2482,17 +2490,25 @@ const productRoutes = ProductCategory.flatMap(category =>
   }))
 );
 
-const CategoryRoutes = ProductCategory.map(category => ({
-  url: `/Category/${category.name}`,
-  changefreq: 'weekly',
-  priority: 0.8
-}));
+// 4. Combine All Routes
+const allRoutes = [...staticRoutes, ...CategoryRoutes, ...productRoutes];
 
-// 📝 Combine routes and write sitemap
-sitemap.pipe(createWriteStream('./public/sitemap.xml'));
-[...staticRoutes, ...productRoutes].forEach(route => sitemap.write(route));
-sitemap.end();
+// 5. Write to sitemap.xml
+(async () => {
+  const sitemapStream = new SitemapStream({ hostname });
+  const writeStream = createWriteStream('./public/sitemap.xml');
 
-streamToPromise(sitemap).then(() => {
-  console.log('✅ Sitemap generated at /public/sitemap.xml');
-});
+  try {
+    for (const route of allRoutes) {
+      sitemapStream.write(route);
+    }
+    sitemapStream.end();
+
+    const sitemapOutput = await streamToPromise(sitemapStream);
+    writeStream.write(sitemapOutput.toString());
+
+    console.log('✅ Sitemap generated at public/sitemap.xml');
+  } catch (err) {
+    console.error('❌ Sitemap generation failed:', err);
+  }
+})();
