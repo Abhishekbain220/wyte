@@ -20,7 +20,7 @@ const Footer = () => {
         {/* Section 1: Logo & Social */}
         <div className="space-y-6">
           <img
-            src="/logo.webp"
+            src="/images/logo.webp"
             alt="DigiTech Logo"
             className="h-[15vh] w-full object-contain bg-white rounded-xl"
           />

@@ -17,7 +17,7 @@ const ProductCom = ({ name, image, id, navigation }) => {
     >
       {/* Image */}
       <img
-        src={image}
+        src={`/images/${image}`}
         alt={name}
         loading="lazy"
         onLoad={() => setLoaded(true)}

@@ -76,7 +76,7 @@ const Home = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             className="h-52 sm:h-60 md:h-[48vh] w-[90vw] md:w-[60vw] object-cover rounded-lg md:ml-6 mb-6 md:mb-[8vh]"
-            src={banner.image}
+            src={`/images/${banner.image}`}
             alt="Banner"
           />
 
@@ -99,7 +99,7 @@ const Home = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-between font-semibold text-base sm:text-lg md:text-xl mt-8 md:mt-[10vh] px-0 md:px-[6vh] text-white gap-4 sm:gap-0">
-              <img className="h-16 bg-white sm:h-20 rounded-full p-2" src="logo.webp" alt="Logo" />
+              <img className="h-16 bg-white sm:h-20 rounded-full p-2" src="/images/logo.webp" alt="Logo" />
               <h2 className="text-center sm:text-right sm:mr-[4vh] sm:w-auto">{banner.name}</h2>
             </div>
           </motion.div>

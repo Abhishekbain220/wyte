@@ -28,7 +28,7 @@ const OurMission = () => {
 
       {/* Image Section */}
       <motion.img
-        src="/ARTISTIC CANVAS GLOSS.webp"
+        src="/images/ARTISTIC CANVAS GLOSS.webp"
         alt="Our Mission"
         className="w-full max-w-md rounded-xl shadow-md"
         initial={{ opacity: 0, x: 60 }}

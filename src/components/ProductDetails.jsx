@@ -215,7 +215,7 @@ const ProductDetails = () => {
               onWheel={handleWheelZoom}
             >
               <img
-                src={`/${productDetails.image}`}
+                src={`/images/${productDetails.image}`}
                 alt={productDetails.name}
                 style={{
                   transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoomScale})`,

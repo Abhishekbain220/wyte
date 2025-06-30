@@ -42,7 +42,7 @@ const AboutUsCom = () => {
 
         {/* Image Section */}
         <motion.img
-          src="POLYESTER CANVAS - 280 (Matte).webp"
+          src="/public/images/POLYESTER CANVAS - 280 (Matte).webp"
           alt="About Us"
           className="w-full max-w-[600px] h-auto lg:h-[85vh] object-cover rounded-xl shadow-md"
           variants={imageVariants}

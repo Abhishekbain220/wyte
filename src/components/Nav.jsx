@@ -78,7 +78,7 @@ const Nav = () => {
     <div className="relative">
       <div className={`fixed top-0 left-0 w-full bg-white z-50 shadow-md transition-transform duration-300 ease-in-out ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="w-full px-6 py-4 h-[13vh] md:px-[4vw] lg:px-[6vw] xl:px-[20vh] flex items-center justify-between">
-          <img className="h-[15vh] object-contain transition-transform hover:scale-105" src="/logo.webp" alt="Logo" />
+          <img className="h-[15vh] object-contain transition-transform hover:scale-105" src="/images/logo.webp" alt="Logo" />
           <div className="hidden md:flex gap-10 uppercase font-bold text-base items-center">
             {navLinks.map(link =>
               !link.sub ? (
@@ -137,7 +137,7 @@ const Nav = () => {
           {/* Right Logo & Menu */}
           <div className="flex items-center gap-4">
             <div className="hidden md:flex flex-col items-center">
-              <img src="/NEW-Logo-2023-1-1.webp" alt="Partner Logo" className="h-[7vh] object-contain hover:scale-105 transition-transform" />
+              <img src="/images/NEW-Logo-2023-1-1.webp" alt="Partner Logo" className="h-[7vh] object-contain hover:scale-105 transition-transform" />
               <span className="font-bold text-black text-sm">Media Partner</span>
             </div>
             <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>

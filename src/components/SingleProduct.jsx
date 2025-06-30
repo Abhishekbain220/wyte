@@ -134,7 +134,7 @@ const SingleProduct = () => {
           >
             <img
               ref={imgRef}
-              src={`/${productDetails.image}`}
+              src={`/images/${productDetails.image}`}
               alt={productDetails.name}
               className={`w-full max-w-xl transition-transform duration-300 ease-out ${
                 isZoomed ? 'scale-[2.5]' : 'scale-100'
@@ -195,7 +195,7 @@ const SingleProduct = () => {
           }}
         >
           <img
-            src={`/${productDetails.image}`}
+            src={`/images/${productDetails.image}`}
             alt={productDetails.name}
             style={{
               transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoomScale})`,
