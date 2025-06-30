@@ -132,7 +132,7 @@ const Home = () => {
 
       {/* Page 4 - Quote Section */}
       <div
-        style={{ backgroundImage: `url("/THICKER REVERSE TRANSLITE.webp")` }}
+        style={{ backgroundImage: `url("/images/THICKER REVERSE TRANSLITE.webp")` }}
         className="relative z-0 w-full h-[40vh] bg-cover bg-center bg-no-repeat
          after:content-[''] after:absolute after:inset-0 after:bg-black/50 after:z-10
          flex justify-center items-center px-4 sm:px-8 md:px-12"
