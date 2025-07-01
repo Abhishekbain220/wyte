@@ -26,9 +26,20 @@ const item = {
   },
 };
 
+// ✅ Slugify function
+const slugify = (text) =>
+  text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\-]+/g, '')
+    .replace(/\-\-+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
 const SingleProduct = () => {
   const { id, productName } = useParams();
-  const { products, ProductCategory } = useContext(ProductContext);
+  const { ProductCategory } = useContext(ProductContext);
   const [productDetails, setProductDetails] = useState(null);
 
   const imgRef = useRef(null);
@@ -40,11 +51,12 @@ const SingleProduct = () => {
   const [isDragging, setIsDragging] = useState(false);
   const dragStart = useRef({ x: 0, y: 0 });
 
+  // ✅ Reverse slug lookup
   useEffect(() => {
-    const product = ProductCategory.find((p) => String(p.name) === productName);
-    const productItem = product?.items?.find((i) => String(i.Heading) === id);
+    const category = ProductCategory.find((cat) => slugify(cat.name) === productName);
+    const productItem = category?.items?.find((item) => slugify(item.Heading) === id);
     setProductDetails(productItem);
-  }, [id, products, productName]);
+  }, [id, productName, ProductCategory]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -53,10 +65,7 @@ const SingleProduct = () => {
         window.history.back();
       }
     };
-
-    const handlePopState = () => {
-      setIsModalOpen(false);
-    };
+    const handlePopState = () => setIsModalOpen(false);
 
     if (isModalOpen) {
       window.addEventListener('keydown', handleKeyDown);
@@ -115,7 +124,7 @@ const SingleProduct = () => {
       initial="hidden"
       animate="show"
     >
-      <Meta title={`${productDetails.Heading}`} description={`this is a ${productDetails.Heading} page`}/>
+      <Meta title={`${productDetails.Heading}`} description={`this is a ${productDetails.Heading} page`} />
       <motion.div
         className="max-w-7xl mx-auto bg-[#1B1F3B] rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-10 p-6 md:p-12"
         variants={item}
@@ -203,7 +212,7 @@ const SingleProduct = () => {
               maxWidth: '90%',
               maxHeight: '90%',
               margin: zoomScale === 1 ? 'auto' : 'initial',
-              display: 'block'
+              display: 'block',
             }}
             className="select-none"
             draggable={false}

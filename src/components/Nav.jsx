@@ -3,6 +3,18 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { ProductContext } from '../utils/ProductContext';
 
+// ✅ Slugify Function
+const slugify = (text) => {
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\-]+/g, '')
+    .replace(/\-\-+/g, '-')
+    .replace(/^-+|-+$/g, '');
+};
+
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showNav, setShowNav] = useState(true);
@@ -42,18 +54,27 @@ const Nav = () => {
     };
   }, [menuOpen]);
 
+  // Slugified product paths
   const allProductItems = ProductCategory.flatMap((cat) =>
     cat.items.map((item) => ({
       label: item.Heading,
-      path: `/product/${encodeURIComponent(cat.name)}/${item.Heading}`,
+      path: `/product/${slugify(cat.name)}/${slugify(item.Heading)}`,
     }))
   );
 
-  const normalize = (str) => str.toLowerCase().replace(/[\s\-|]/g, '');
+  // Tokenize the search query for partial-word match
+  const tokenize = (str) =>
+    str
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/gi, '')
+      .split(/\s+/)
+      .filter(Boolean);
 
-  const filteredProducts = allProductItems.filter((p) =>
-    normalize(p.label).includes(normalize(searchQuery))
-  );
+  const filteredProducts = allProductItems.filter((product) => {
+    const productLabel = product.label.toLowerCase();
+    const tokens = tokenize(searchQuery);
+    return tokens.some(token => productLabel.includes(token));
+  });
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -62,10 +83,10 @@ const Nav = () => {
       label: 'Products',
       path: '/products',
       sub: [
-        { path: '/Category/Inkjet Water-base Printable Substrates', label: 'Inkjet Water-base Printable Substrates' },
-        { path: '/Category/%20CARELIT%20ENVIRONMENT%20FRIENDLY%20PRINTABLE%20FABRICS', label: 'CARELIT Environment Friendly Printable Fabrics' },
-        { path: '/Category/%20COMMERCIAL%20SERIES', label: 'Commercial Series' },
-        { path: '/Category/%20DECOR%20SERIES', label: 'Decor Series' },
+        { path: '/Category/inkjet-water-base-printable-substrates', label: 'Inkjet Water-base Printable Substrates' },
+        { path: '/Category/carelit-environment-friendly-printable-fabrics', label: 'CARELIT Environment Friendly Printable Fabrics' },
+        { path: '/Category/commercial-series', label: 'Commercial Series' },
+        { path: '/Category/decor-series', label: 'Decor Series' },
       ],
     },
     { path: '/gallery', label: 'Gallery' },

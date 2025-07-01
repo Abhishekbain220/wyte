@@ -5,30 +5,42 @@ import ProductCom from './ProductCom';
 import { ProductContext } from '../utils/ProductContext';
 import Meta from '../utils/Meta';
 
+// ✅ Slugify function
+const slugify = (text) =>
+  text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\-]+/g, '')
+    .replace(/\-\-+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
 const Home = () => {
-  const { banners, products, product, setProduct, ProductCategory } = useContext(ProductContext);
+  const { banners, ProductCategory } = useContext(ProductContext);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const banner = banners[currentIndex] || {}; // ✅ safely derive banner
+  const banner = banners[currentIndex] || {};
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % banners.length);
+      setCurrentIndex((prev) => (prev + 1) % banners.length);
     }, 10000);
     return () => clearInterval(interval);
   }, [banners.length]);
 
   const handlePrevBanner = () => {
-    setCurrentIndex(prev => (prev - 1 + banners.length) % banners.length);
+    setCurrentIndex((prev) => (prev - 1 + banners.length) % banners.length);
   };
 
   const handleNextBanner = () => {
-    setCurrentIndex(prev => (prev + 1) % banners.length);
+    setCurrentIndex((prev) => (prev + 1) % banners.length);
   };
 
   return (
     <div className="min-h-screen overflow-hidden w-full">
-      <Meta title="Home Page" description="this is a home page"/>
+      <Meta title="Home Page" description="this is a home page" />
+
       {/* Page 1 - Banner Section */}
       <div
         style={{ background: banner.gradient }}
@@ -38,29 +50,21 @@ const Home = () => {
         <div className="bg-black opacity-50 md:h-[73vh] md:w-[90vw] md:left-24 md:mt-0 mt-[4vh] md:top-16 absolute inset-0 z-10"></div>
 
         {/* Prev/Next Buttons */}
-<button
-  onClick={handlePrevBanner}
-  className="absolute z-30 top-90 md:top-1/2 -left-3 md:left-12 -translate-y-1/2 px-5 py-4 hover:scale-125 transition-transform duration-300"
-  aria-label="Previous Slide"
->
-  <span className="text-7xl text-white md:text-[#2B2046] font-light">‹</span>
-</button>
-
-
-
+        <button
+          onClick={handlePrevBanner}
+          className="absolute z-30 top-90 md:top-1/2 -left-3 md:left-12 -translate-y-1/2 px-5 py-4 hover:scale-125 transition-transform duration-300"
+          aria-label="Previous Slide"
+        >
+          <span className="text-7xl text-white md:text-[#2B2046] font-light">‹</span>
+        </button>
 
         <button
-  onClick={handleNextBanner}
-  className="absolute z-30 top-90 md:top-1/2 -right-4  md:-right-1 -translate-y-1/2 px-5 py-4 hover:scale-125 transition-transform duration-300"
-  aria-label="Next Slide"
->
-  <span className="text-7xl text-white md:text-black font-light">›</span>
-</button>
-
-
-
-
-
+          onClick={handleNextBanner}
+          className="absolute z-30 top-90 md:top-1/2 -right-4 md:-right-1 -translate-y-1/2 px-5 py-4 hover:scale-125 transition-transform duration-300"
+          aria-label="Next Slide"
+        >
+          <span className="text-7xl text-white md:text-black font-light">›</span>
+        </button>
 
         {/* Animated Banner Content */}
         <motion.div
@@ -71,7 +75,7 @@ const Home = () => {
           className="relative z-20 flex md:mt-0 mt-[9vh] flex-col md:flex-row items-center gap-8 h-full md:w-[89vw]"
         >
           <motion.img
-            key={banner.image + "_img"}
+            key={banner.image + '_img'}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
@@ -81,7 +85,7 @@ const Home = () => {
           />
 
           <motion.div
-            key={banner.title + "_text"}
+            key={banner.title + '_text'}
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
@@ -109,8 +113,6 @@ const Home = () => {
       {/* Page 2 - About Us */}
       <AboutUsCom />
 
-      
-
       {/* Page 3 - Categories */}
       <div className="px-4 sm:px-8 md:px-[8vw] lg:pl-[11vw] flex flex-wrap gap-4 sm:gap-6 mt-[6vh] sm:mt-[10vh] lg:mt-[12vh] pt-[6vh] sm:pt-[8vh]">
         <motion.div
@@ -125,8 +127,15 @@ const Home = () => {
             </h1>
           </div>
         </motion.div>
+
         {ProductCategory.map((p, i) => (
-          <ProductCom key={i} id={p.id} name={p.name} image={p.image} navigation={`/Category/${p.name}`} />
+          <ProductCom
+            key={i}
+            id={p.id}
+            name={p.name}
+            image={p.image}
+            navigation={`/Category/${slugify(p.name)}`}
+          />
         ))}
       </div>
 

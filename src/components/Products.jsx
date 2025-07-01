@@ -5,8 +5,19 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import Meta from '../utils/Meta';
 
+// ✅ Slugify helper
+const slugify = (text) =>
+  text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\-]+/g, '')
+    .replace(/\-\-+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
 const Products = () => {
-  const { products, ProductCategory } = useContext(ProductContext);
+  const { ProductCategory } = useContext(ProductContext);
   const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
 
@@ -19,8 +30,9 @@ const Products = () => {
 
   return (
     <div className="min-h-screen w-full pt-32 sm:pt-36 bg-gradient-to-br from-[#f1fcfc] via-[#eef7ff] to-[#eafff0]">
-      <Meta title="Product Page" description="this is a Product page"/>
-      {/* Page Heading Banner */}
+      <Meta title="Product Page" description="Explore DigiTech's premium digital printing substrates" />
+
+      {/* Heading Banner */}
       <motion.div
         className="w-full bg-gradient-to-r from-[#76bc21]/10 via-white to-[#1d1b41]/10 py-10 sm:py-14 shadow-md"
         initial={{ opacity: 0, y: -30 }}
@@ -37,25 +49,29 @@ const Products = () => {
         </div>
       </motion.div>
 
-      {/* Product List */}
+      {/* Product Category Grid */}
       <motion.div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
-        <div className="flex flex-wrap justify-center gap-5 sm:gap-6">
-          {ProductCategory.map((p) => (
-            <div key={p.id} className="w-full sm:w-auto">
-              <ProductCom
-                id={p.id}
-                name={p.name}
-                image={p.image}
-                navigation={`/Category/${p.name}`}
-              />
-            </div>
-          ))}
-        </div>
+        {ProductCategory?.length === 0 ? (
+          <p className="text-center text-gray-500 text-lg">No product categories found.</p>
+        ) : (
+          <div className="flex flex-wrap justify-center gap-5 sm:gap-6">
+            {ProductCategory.map((p) => (
+              <div key={p.id} className="w-full sm:w-auto">
+                <ProductCom
+                  id={p.id}
+                  name={p.name}
+                  image={p.image}
+                  navigation={`/Category/${slugify(p.name)}`}
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </motion.div>
     </div>
   );
