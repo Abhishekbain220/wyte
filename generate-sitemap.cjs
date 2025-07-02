@@ -1,20 +1,20 @@
-// generate-sitemap.cjs
-
 const fs = require('fs');
 const { SitemapStream, streamToPromise } = require('sitemap');
 const { createWriteStream } = require('fs');
 
-const hostname = 'https://wyte.vercel.app/'; // ✅ Replace with your actual domain
+// ✅ Replace with your actual live domain
+const hostname = 'https://wyte.vercel.app';
 
-// 1. Static Routes
-const staticRoutes = [
-  { url: '/', changefreq: 'daily', priority: 1.0 },
-  { url: '/about-us', changefreq: 'monthly', priority: 0.7 },
-  { url: '/products', changefreq: 'weekly', priority: 0.9 },
-  { url: '/gallery', changefreq: 'monthly', priority: 0.7 }
-];
+// ✅ Slugify function to sanitize category and product names
+const slugify = (str) =>
+  str
+    .toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with dashes
+    .replace(/[^a-z0-9\-]/g, '') // Remove special characters
+    .replace(/\-+/g, '-') // Collapse multiple dashes
+    .replace(/^-+|-+$/g, ''); // Trim dashes from start/end
 
-// 2. Category Routes
+// ✅ Example ProductCategory structure (you can replace this with real import or JSON file)
 let ProductCategory = [
         {
             id: 1,
@@ -2475,25 +2475,35 @@ let ProductCategory = [
 
     ]
 
-const CategoryRoutes = ProductCategory.map(category => ({
-  url: `/Category/${encodeURIComponent(category.name)}`,
+// ✅ Static Routes
+const staticRoutes = [
+  { url: '/', changefreq: 'daily', priority: 1.0 },
+  { url: '/about-us', changefreq: 'monthly', priority: 0.7 },
+  { url: '/products', changefreq: 'weekly', priority: 0.9 },
+  { url: '/gallery', changefreq: 'monthly', priority: 0.7 },
+  { url: '/404.html', changefreq: 'monthly', priority: 0.5 }
+];
+
+// ✅ Category Routes
+const categoryRoutes = ProductCategory.map(category => ({
+  url: `/Category/${slugify(category.name)}`,
   changefreq: 'weekly',
   priority: 0.8
 }));
 
-// 3. Product Routes
+// ✅ Product Routes
 const productRoutes = ProductCategory.flatMap(category =>
   category.items.map(item => ({
-    url: `/product/${encodeURIComponent(category.name)}/${encodeURIComponent(item.Heading)}`,
+    url: `/product/${slugify(category.name)}/${slugify(item.Heading)}`,
     changefreq: 'weekly',
     priority: 0.8
   }))
 );
 
-// 4. Combine All Routes
-const allRoutes = [...staticRoutes, ...CategoryRoutes, ...productRoutes];
+// ✅ Combine All Routes
+const allRoutes = [...staticRoutes, ...categoryRoutes, ...productRoutes];
 
-// 5. Write to sitemap.xml
+// ✅ Write sitemap to ./public/sitemap.xml
 (async () => {
   const sitemapStream = new SitemapStream({ hostname });
   const writeStream = createWriteStream('./public/sitemap.xml');
@@ -2502,8 +2512,8 @@ const allRoutes = [...staticRoutes, ...CategoryRoutes, ...productRoutes];
     for (const route of allRoutes) {
       sitemapStream.write(route);
     }
-    sitemapStream.end();
 
+    sitemapStream.end();
     const sitemapOutput = await streamToPromise(sitemapStream);
     writeStream.write(sitemapOutput.toString());
 

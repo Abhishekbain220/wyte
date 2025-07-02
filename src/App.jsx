@@ -10,6 +10,7 @@ import SingleProduct from './components/SingleProduct'
 import ProductCategory from './components/ProductCategory'
 import ExhibitionPhotos from './components/ExhibitionPhotos'
 import { initGA, trackPage } from './utils/Analytics';
+import NotFound from './components/NotFound'
 
 const App = () => {
   useEffect(() => {
@@ -25,6 +26,7 @@ const App = () => {
       <Nav/>
         <ScrollToTop/>
       <Routes>
+        <Route path="*" element={<NotFound />} />
         <Route path='/' element={<Home/>}/>
         <Route path='/about-us' element={<AboutUs/>}/>
         <Route path='/products' element={<Products/>}/>
