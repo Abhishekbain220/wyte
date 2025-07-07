@@ -3,7 +3,6 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { ProductContext } from '../utils/ProductContext';
 
-// ✅ Slugify Function
 const slugify = (text) => {
   return text
     .toString()
@@ -54,15 +53,21 @@ const Nav = () => {
     };
   }, [menuOpen]);
 
-  // Slugified product paths
   const allProductItems = ProductCategory.flatMap((cat) =>
     cat.items.map((item) => ({
       label: item.Heading,
+      code: item['Product Code'] || '',
+      description: item.Description || '',
+      category: item.Category || '',
+      application: item.Application || '',
+      catName: cat.name || '',
       path: `/product/${slugify(cat.name)}/${slugify(item.Heading)}`,
     }))
   );
 
-  // Tokenize the search query for partial-word match
+  const normalize = (str) =>
+    str.toLowerCase().replace(/[^a-z0-9]/gi, '').trim();
+
   const tokenize = (str) =>
     str
       .toLowerCase()
@@ -71,10 +76,29 @@ const Nav = () => {
       .filter(Boolean);
 
   const filteredProducts = allProductItems.filter((product) => {
-    const productLabel = product.label.toLowerCase();
-    const tokens = tokenize(searchQuery);
-    return tokens.some(token => productLabel.includes(token));
+    const haystack = normalize(
+      `${product.label} ${product.code} ${product.description} ${product.category} ${product.application} ${product.catName}`
+    );
+    const query = normalize(searchQuery);
+    const tokens = tokenize(query);
+    return haystack.includes(query) || tokens.some(token => haystack.includes(token));
   });
+
+  const renderSearchResultItem = (item, onClick) => (
+    <div
+      key={item.path}
+      className="px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 cursor-pointer font-medium border-b"
+      onClick={onClick}
+    >
+      <div className="font-bold text-base">{item.label}</div>
+      {item.code && <div className="text-green-600 text-sm">Code: {item.code}</div>}
+      {item.description && (
+        <div className="text-gray-600 text-xs">
+          {item.description.slice(0, 80)}...
+        </div>
+      )}
+    </div>
+  );
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -97,9 +121,12 @@ const Nav = () => {
 
   return (
     <div className="relative">
+      {/* Top Navigation */}
       <div className={`fixed top-0 left-0 w-full bg-white z-50 shadow-md transition-transform duration-300 ease-in-out ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="w-full px-6 py-4 h-[13vh] md:px-[4vw] lg:px-[6vw] xl:px-[20vh] flex items-center justify-between">
           <img className="h-[15vh] object-contain transition-transform hover:scale-105" src="/images/logo.webp" alt="Logo" />
+          
+          {/* Desktop Menu */}
           <div className="hidden md:flex gap-10 uppercase font-bold text-base items-center">
             {navLinks.map(link =>
               !link.sub ? (
@@ -120,6 +147,7 @@ const Nav = () => {
                 </div>
               )
             )}
+
             {/* Desktop Search */}
             <div className="relative" ref={searchRef}>
               <input
@@ -132,30 +160,24 @@ const Nav = () => {
                 placeholder="Search products..."
                 className="px-3 py-1 text-base border rounded-md outline-none focus:ring-2 focus:ring-[#7AC943]"
               />
-              {searchOpen && filteredProducts.length > 0 && (
-                <div
-                  className="absolute z-50 bg-white mt-1 rounded shadow w-72 max-h-60 overflow-y-auto"
-                  onMouseDown={(e) => e.stopPropagation()}
-                >
-                  {filteredProducts.map((item, index) => (
-                    <div
-                      key={index}
-                      className="px-4 py-2 text-base text-gray-800 hover:bg-gray-100 cursor-pointer font-bold"
-                      onClick={() => {
-                        navigate(item.path);
-                        setSearchQuery('');
-                        setSearchOpen(false);
-                      }}
-                    >
-                      {item.label}
-                    </div>
-                  ))}
+              {searchOpen && (
+                <div className="absolute z-50 bg-white mt-1 rounded shadow w-80 max-h-72 overflow-y-auto" onMouseDown={(e) => e.stopPropagation()}>
+                  {filteredProducts.length > 0
+                    ? filteredProducts.map(item =>
+                        renderSearchResultItem(item, () => {
+                          navigate(item.path);
+                          setSearchQuery('');
+                          setSearchOpen(false);
+                        })
+                      )
+                    : <div className="px-4 py-2 text-gray-500 font-semibold">No product found</div>
+                  }
                 </div>
               )}
             </div>
           </div>
 
-          {/* Right Logo & Menu */}
+          {/* Right Logo + Mobile Menu */}
           <div className="flex items-center gap-4">
             <div className="hidden md:flex flex-col items-center">
               <img src="/images/NEW-Logo-2023-1-1.webp" alt="Partner Logo" className="h-[7vh] object-contain hover:scale-105 transition-transform" />
@@ -183,22 +205,19 @@ const Nav = () => {
               placeholder="Search products..."
               className="w-full px-3 py-2 text-base border rounded-md outline-none focus:ring-2 focus:ring-[#7AC943]"
             />
-            {searchOpen && filteredProducts.length > 0 && (
-              <div className="bg-white rounded shadow mt-2 max-h-60 overflow-y-auto">
-                {filteredProducts.map((item, index) => (
-                  <div
-                    key={index}
-                    className="px-4 py-2 text-base text-gray-800 hover:bg-gray-100 font-bold cursor-pointer"
-                    onClick={() => {
-                      navigate(item.path);
-                      setSearchQuery('');
-                      setSearchOpen(false);
-                      setMenuOpen(false);
-                    }}
-                  >
-                    {item.label}
-                  </div>
-                ))}
+            {searchOpen && (
+              <div className="bg-white rounded shadow mt-2 max-h-72 overflow-y-auto">
+                {filteredProducts.length > 0
+                  ? filteredProducts.map(item =>
+                      renderSearchResultItem(item, () => {
+                        navigate(item.path);
+                        setSearchQuery('');
+                        setSearchOpen(false);
+                        setMenuOpen(false);
+                      })
+                    )
+                  : <div className="px-4 py-2 text-gray-500 font-semibold">No product found</div>
+                }
               </div>
             )}
           </div>
