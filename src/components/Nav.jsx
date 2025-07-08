@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { ProductContext } from '../utils/ProductContext';
+import { ProductContext } from '../utils/ProductContext'; // Assuming this path is correct
 
 const slugify = (text) => {
   return text
@@ -24,8 +24,9 @@ const Nav = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const searchRef = useRef();
   const navigate = useNavigate();
-  const { ProductCategory } = useContext(ProductContext);
+  const { ProductCategory } = useContext(ProductContext); // Destructure ProductCategory
 
+  // Effect for hiding/showing navigation on scroll
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -36,6 +37,7 @@ const Nav = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  // Effect for closing search results when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (searchRef.current && !searchRef.current.contains(e.target)) {
@@ -46,6 +48,7 @@ const Nav = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Effect for controlling body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
     return () => {
@@ -53,6 +56,7 @@ const Nav = () => {
     };
   }, [menuOpen]);
 
+  // Flatten all product items for easy searching
   const allProductItems = ProductCategory.flatMap((cat) =>
     cat.items.map((item) => ({
       label: item.Heading,
@@ -65,25 +69,79 @@ const Nav = () => {
     }))
   );
 
+  // Helper function to normalize strings for search (lowercase, alphanumeric only)
   const normalize = (str) =>
     str.toLowerCase().replace(/[^a-z0-9]/gi, '').trim();
 
+  // Helper function to tokenize strings into words
   const tokenize = (str) =>
     str
       .toLowerCase()
-      .replace(/[^a-z0-9\s]/gi, '')
       .split(/\s+/)
-      .filter(Boolean);
+      .filter(Boolean); // Filter out empty strings from multiple spaces
 
+  // Filter products based on search query and extended keywords
   const filteredProducts = allProductItems.filter((product) => {
-    const haystack = normalize(
+    if (!searchQuery) {
+      return true; // Show all products if search query is empty
+    }
+
+    const normalizedQuery = normalize(searchQuery);
+    const queryTokens = tokenize(searchQuery);
+
+    // Create a comprehensive string of product details to search against
+    const productSearchableText = normalize(
       `${product.label} ${product.code} ${product.description} ${product.category} ${product.application} ${product.catName}`
     );
-    const query = normalize(searchQuery);
-    const tokens = tokenize(query);
-    return haystack.includes(query) || tokens.some(token => haystack.includes(token));
+
+    // 1. Prioritize exact substring match of the entire query
+    if (productSearchableText.includes(normalizedQuery)) {
+      return true;
+    }
+
+    // Define more comprehensive extended keywords/synonyms
+    // This map should contain common synonyms or related terms for your product categories
+    const extendedKeywordsMap = {
+      'premium': ['high quality', 'superior', 'luxurious', 'best', 'top-grade'],
+      'printable': ['media', 'material', 'film', 'sheet', 'inkjet', 'digital print', 'roll', 'paper'],
+      'vinyl': ['pvc', 'adhesive', 'sticker', 'wrap', 'graphic film', 'decal', 'self-adhesive'],
+      'fabric': ['textile', 'cloth', 'material', 'banner'],
+      'environment-friendly': ['eco-friendly', 'green', 'sustainable', 'recycled', 'biodegradable', 'environmentally friendly'],
+      'carelit': ['eco fabric', 'sustainable fabric', 'carelit brand'], // Specific to your brand/product line
+      'commercial': ['business', 'industrial', 'enterprise', 'large format', 'signage'],
+      'decor': ['decoration', 'interior design', 'home decor', 'art', 'wall covering', 'decorative'],
+      'inkjet': ['water-base', 'dye ink', 'pigment ink'],
+      'water-base': ['inkjet', 'aqueous'],
+      // Add more as needed based on your product data and common search terms
+    };
+
+    // 2. Check if ALL query tokens (or their extended versions) are present in the product's text
+    // This provides an "AND" like behavior for multi-word queries, meaning all concepts must match.
+    const allTokensOrExtendedMatch = queryTokens.every(queryToken => {
+      const normalizedQueryToken = normalize(queryToken);
+
+      // Check if the exact token is in the product text
+      if (productSearchableText.includes(normalizedQueryToken)) {
+        return true;
+      }
+
+      // Check if any of the extended keywords for this token are in the product text
+      const potentialMatches = extendedKeywordsMap[normalizedQueryToken];
+      if (potentialMatches) {
+        return potentialMatches.some(extKeyword => productSearchableText.includes(normalize(extKeyword)));
+      }
+
+      return false; // If neither the token nor its extended keywords match, this token fails the 'every' check
+    });
+
+    if (allTokensOrExtendedMatch) {
+      return true;
+    }
+
+    return false;
   });
 
+  // Renders a single search result item
   const renderSearchResultItem = (item, onClick) => (
     <div
       key={item.path}
@@ -94,12 +152,13 @@ const Nav = () => {
       {item.code && <div className="text-green-600 text-sm">Code: {item.code}</div>}
       {item.description && (
         <div className="text-gray-600 text-xs">
-          {item.description.slice(0, 80)}...
+          {item.description.slice(0, 80)}... {/* Truncate long descriptions */}
         </div>
       )}
     </div>
   );
 
+  // Define navigation links
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/about-us', label: 'Profile' },
@@ -116,16 +175,17 @@ const Nav = () => {
     { path: '/gallery', label: 'Gallery' },
   ];
 
+  // Tailwind CSS classes for active navigation links
   const navLinkClasses = ({ isActive }) =>
     `${isActive ? 'text-[#7AC943]' : 'text-black'} transition-all duration-300 ease-in-out relative after:block after:h-[2px] after:bg-[#7AC943] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left`;
 
   return (
     <div className="relative">
-      {/* Top Navigation */}
+      {/* Top Navigation Bar */}
       <div className={`fixed top-0 left-0 w-full bg-white z-50 shadow-md transition-transform duration-300 ease-in-out ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="w-full px-6 py-4 h-[13vh] md:px-[4vw] lg:px-[6vw] xl:px-[20vh] flex items-center justify-between">
-          <img className="h-[15vh] object-contain transition-transform hover:scale-105" src="/images/logo.webp" alt="Logo" />
-          
+          <img className="h-[15vh] object-contain transition-transform hover:scale-105" src="/images/logo.webp" alt="Company Logo" />
+
           {/* Desktop Menu */}
           <div className="hidden md:flex gap-10 uppercase font-bold text-base items-center">
             {navLinks.map(link =>
@@ -155,19 +215,20 @@ const Nav = () => {
                 value={searchQuery}
                 onChange={e => {
                   setSearchQuery(e.target.value);
-                  setSearchOpen(true);
+                  setSearchOpen(true); // Open search results when typing
                 }}
                 placeholder="Search products..."
                 className="px-3 py-1 text-base border rounded-md outline-none focus:ring-2 focus:ring-[#7AC943]"
               />
               {searchOpen && (
                 <div className="absolute z-50 bg-white mt-1 rounded shadow w-80 max-h-72 overflow-y-auto" onMouseDown={(e) => e.stopPropagation()}>
-                  {filteredProducts.length > 0
+                  {searchQuery === '' || filteredProducts.length > 0
                     ? filteredProducts.map(item =>
                         renderSearchResultItem(item, () => {
                           navigate(item.path);
                           setSearchQuery('');
                           setSearchOpen(false);
+                          setDesktopSubOpen(false); // Close dropdown if open
                         })
                       )
                     : <div className="px-4 py-2 text-gray-500 font-semibold">No product found</div>
@@ -177,7 +238,7 @@ const Nav = () => {
             </div>
           </div>
 
-          {/* Right Logo + Mobile Menu */}
+          {/* Right Logo + Mobile Menu Button */}
           <div className="flex items-center gap-4">
             <div className="hidden md:flex flex-col items-center">
               <img src="/images/NEW-Logo-2023-1-1.webp" alt="Partner Logo" className="h-[7vh] object-contain hover:scale-105 transition-transform" />
@@ -207,13 +268,13 @@ const Nav = () => {
             />
             {searchOpen && (
               <div className="bg-white rounded shadow mt-2 max-h-72 overflow-y-auto">
-                {filteredProducts.length > 0
+                {searchQuery === '' || filteredProducts.length > 0
                   ? filteredProducts.map(item =>
                       renderSearchResultItem(item, () => {
                         navigate(item.path);
                         setSearchQuery('');
                         setSearchOpen(false);
-                        setMenuOpen(false);
+                        setMenuOpen(false); // Close mobile menu after selection
                       })
                     )
                   : <div className="px-4 py-2 text-gray-500 font-semibold">No product found</div>
@@ -222,7 +283,7 @@ const Nav = () => {
             )}
           </div>
 
-          {/* Mobile Links */}
+          {/* Mobile Navigation Links */}
           <nav className="flex flex-col gap-4 font-bold uppercase text-base">
             {navLinks.map(link =>
               !link.sub ? (
