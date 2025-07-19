@@ -3,31 +3,37 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Meta from '../utils/Meta';
 
-const exhibitionPhotos = [
-  { url: 'https://bykerwin.com/wp-content/uploads/2024/10/IMG_9839-Large-crypt-main-wall-landscape-wordpress.jpeg' },
-  { url: 'https://www.discoverhongkong.com/content/dam/dhk/intl/explore/arts-entertainment/artsinhk/2025/gallery_art-basel.jpg' },
-  { url: 'https://media.assettype.com/freepressjournal/2025-06-15/vsb62k54/4pic15-swaraj-bavan.JPG' },
-  { url: 'https://d1nn9x4fgzyvn4.cloudfront.net/2025-04/SC495880_16x9.jpg' },
-  { url: 'https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?w=600&auto=format&fit=crop&q=60' },
-  { url: 'https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=600&auto=format&fit=crop&q=60' },
-  { url: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=600&auto=format&fit=crop&q=60' },
-  { url: 'https://images.unsplash.com/photo-1676563110936-9d902b6eb937?w=600&auto=format&fit=crop&q=60' },
+const exhibitionPhotoCategories = [
+  {
+    category: "Modern Art",
+    photos: [
+      { url: "https://bykerwin.com/wp-content/uploads/2024/10/IMG_9839-Large-crypt-main-wall-landscape-wordpress.jpeg" },
+      { url: "https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?w=600&auto=format&fit=crop&q=60" },
+    ],
+  },
+  {
+    category: "Global Exhibitions",
+    photos: [
+      { url: "https://www.discoverhongkong.com/content/dam/dhk/intl/explore/arts-entertainment/artsinhk/2025/gallery_art-basel.jpg" },
+      { url: "https://media.assettype.com/freepressjournal/2025-06-15/vsb62k54/4pic15-swaraj-bavan.JPG" },
+    ],
+  },
+  {
+    category: "Classic Photography",
+    photos: [
+      { url: "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=600&auto=format&fit=crop&q=60" },
+      { url: "https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=600&auto=format&fit=crop&q=60" },
+      { url: "https://images.unsplash.com/photo-1676563110936-9d902b6eb937?w=600&auto=format&fit=crop&q=60" },
+    ],
+  },
 ];
 
+const allPhotos = exhibitionPhotoCategories.flatMap((cat) => cat.photos);
+
 const variants = {
-  enter: (direction) => ({
-    x: direction > 0 ? 300 : -300,
-    opacity: 0,
-  }),
-  center: {
-    x: 0,
-    opacity: 1,
-    zIndex: 1,
-  },
-  exit: (direction) => ({
-    x: direction < 0 ? 300 : -300,
-    opacity: 0,
-  }),
+  enter: (direction) => ({ x: direction > 0 ? 300 : -300, opacity: 0 }),
+  center: { x: 0, opacity: 1, zIndex: 1 },
+  exit: (direction) => ({ x: direction < 0 ? 300 : -300, opacity: 0 }),
 };
 
 const ExhibitionPhotos = () => {
@@ -43,7 +49,7 @@ const ExhibitionPhotos = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setBannerIndex((prev) => (prev + 1) % exhibitionPhotos.length);
+      setBannerIndex((prev) => (prev + 1) % allPhotos.length);
     }, 10000);
     return () => clearInterval(timer);
   }, []);
@@ -83,14 +89,14 @@ const ExhibitionPhotos = () => {
   };
 
   const nextImage = () => {
-    const newIndex = (currentIndex + 1) % exhibitionPhotos.length;
+    const newIndex = (currentIndex + 1) % allPhotos.length;
     setCurrentIndex([newIndex, 1]);
     setZoom(1);
     setOffset({ x: 0, y: 0 });
   };
 
   const prevImage = () => {
-    const newIndex = (currentIndex - 1 + exhibitionPhotos.length) % exhibitionPhotos.length;
+    const newIndex = (currentIndex - 1 + allPhotos.length) % allPhotos.length;
     setCurrentIndex([newIndex, -1]);
     setZoom(1);
     setOffset({ x: 0, y: 0 });
@@ -139,13 +145,14 @@ const ExhibitionPhotos = () => {
 
   return (
     <section className="bg-[#EDF5FA] md:mt-24 min-h-screen">
-      <Meta title="Gallery Page" description="this is a Gallery page" />
+      <Meta title="Gallery Page" description="This is a Gallery page" />
+
       {/* Hero Section */}
       <div className="relative h-screen w-full overflow-hidden">
         <AnimatePresence>
           <motion.img
             key={bannerIndex}
-            src={exhibitionPhotos[bannerIndex].url}
+            src={allPhotos[bannerIndex].url}
             className="absolute inset-0 w-full h-full object-cover"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -154,65 +161,87 @@ const ExhibitionPhotos = () => {
           />
         </AnimatePresence>
 
-        {/* Banner Navigation Arrows – now visible on mobile */}
-       <button
-  onClick={() => setBannerIndex((prev) => (prev - 1 + exhibitionPhotos.length) % exhibitionPhotos.length)}
-  className="absolute left-4 top-1/2 -translate-y-1/2 z-30 text-white bg-black/50 hover:bg-black/70 w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center"
->
-  <ChevronLeft className="w-5 h-5 sm:w-8 sm:h-8" />
-</button>
+        {/* Arrows */}
+        <button
+          onClick={() => setBannerIndex((prev) => (prev - 1 + allPhotos.length) % allPhotos.length)}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-30 text-white bg-black/50 hover:bg-black/70 w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center"
+        >
+          <ChevronLeft className="w-5 h-5 sm:w-8 sm:h-8" />
+        </button>
+        <button
+          onClick={() => setBannerIndex((prev) => (prev + 1) % allPhotos.length)}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-30 text-white bg-black/50 hover:bg-black/70 w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center"
+        >
+          <ChevronRight className="w-5 h-5 sm:w-8 sm:h-8" />
+        </button>
 
-<button
-  onClick={() => setBannerIndex((prev) => (prev + 1) % exhibitionPhotos.length)}
-  className="absolute right-4 top-1/2 -translate-y-1/2 z-30 text-white bg-black/50 hover:bg-black/70 w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center"
->
-  <ChevronRight className="w-5 h-5 sm:w-8 sm:h-8" />
-</button>
-
-
-        <div className="absolute inset-0 bg-gradient-to-r from-[#000000cc] to-[#00000066] z-10" />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="relative z-20 flex flex-col items-center justify-center h-full px-6 text-center text-white">
-          <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
+          <motion.div
+            className="backdrop-blur-sm bg-black/40 rounded-lg px-6 py-4 max-w-2xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
           >
-            Discover Our <span className="text-[#76bc21]">Exhibitions</span>
-          </motion.h1>
-          <motion.p
-            className="mt-4 text-lg sm:text-xl text-gray-200 max-w-2xl"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-          >
-            A visual journey through iconic moments, captivating artistry, and timeless gallery experiences.
-          </motion.p>
+            <motion.h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white">
+              Discover Our <span className="text-[#76bc21]">Exhibitions</span>
+            </motion.h1>
+            <p className="mt-3 text-base sm:text-xl text-gray-100 tracking-wide">
+              A visual journey through iconic moments, captivating artistry, and timeless gallery experiences.
+            </p>
+          </motion.div>
         </div>
       </div>
 
-      {/* Image Grid */}
+      {/* Categorized Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
-          {exhibitionPhotos.map((photo, idx) => (
-            <motion.div
-              key={idx}
-              className="relative overflow-hidden rounded-2xl shadow-xl cursor-pointer group bg-white"
-              onClick={() => openFullscreen(idx)}
-              whileHover={{ scale: 1.02 }}
-              initial={{ opacity: 0, y: 30 }}
+        {exhibitionPhotoCategories.map((section, sectionIdx) => (
+          <div key={sectionIdx} className="mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6 tracking-wide relative z-10"
             >
-              <img
-                src={photo.url}
-                alt="Exhibition"
-                className="w-full h-[60vh] object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-            </motion.div>
-          ))}
-        </div>
+              {section.category}
+              <span className="block h-1 w-16 bg-gradient-to-r from-[#76bc21] to-[#a4e455] mt-2 rounded-full"></span>
+            </motion.h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
+              {section.photos.map((photo, idx) => {
+                const globalIndex = exhibitionPhotoCategories
+                  .slice(0, sectionIdx)
+                  .reduce((acc, cat) => acc + cat.photos.length, 0) + idx;
+
+                return (
+                  <motion.div
+                    key={globalIndex}
+                    className="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer bg-white/20 backdrop-blur-lg"
+                    onClick={() => openFullscreen(globalIndex)}
+                    whileHover={{ scale: 1.03 }}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <img
+                      src={photo.url}
+                      alt="Exhibition"
+                      className="w-full h-[60vh] object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                      <div className="text-white text-lg font-semibold bg-white/10 px-4 py-2 rounded-lg backdrop-blur">
+                        View Photo
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* Fullscreen Viewer */}
@@ -247,7 +276,7 @@ const ExhibitionPhotos = () => {
           >
             <motion.img
               key={currentIndex}
-              src={exhibitionPhotos[currentIndex].url}
+              src={allPhotos[currentIndex].url}
               alt="Fullscreen"
               className="select-none max-h-[90vh] max-w-full shadow-2xl object-contain"
               custom={direction}

@@ -4284,6 +4284,345 @@ export let ProductProvider = (props) => {
                 }
             ]
         },
+        {
+            id: 5,
+            name: "Consumables - Ink/Solvent",
+            image: "imported-mild-solvant-konica-inks-low-smell.webp",
+            items: [
+
+                {
+
+                    "id": 1,
+
+                    "Heading": "imported mild solvant konica inks low smell",
+
+                    "Sizes": "",
+
+                    "Base Substrate": "",
+
+                    "Surface": "",
+
+                    "Weight": "",
+
+                    "Thickness": "",
+
+                    "Application": "",
+
+                    "Adhesion": "",
+
+                    "Coating": "",
+
+                    "Length": "",
+
+                    "Glue": "",
+
+                    "Compatible with": "",
+
+                    "Product Code": "",
+
+                    "Category": "",
+
+                    "Description": "",
+
+                    "image": "imported-mild-solvant-konica-inks-low-smell.webp"
+
+                },
+                {
+
+                    "id": 2,
+
+                    "Heading": "imported premium konica inks high density",
+
+                    "Sizes": "",
+
+                    "Base Substrate": "",
+
+                    "Surface": "",
+
+                    "Weight": "",
+
+                    "Thickness": "",
+
+                    "Application": "",
+
+                    "Adhesion": "",
+
+                    "Coating": "",
+
+                    "Length": "",
+
+                    "Glue": "",
+
+                    "Compatible with": "",
+
+                    "Product Code": "",
+
+                    "Category": "",
+
+                    "Description": "",
+
+                    "image": "imported-mild-solvant-konica-inks-low-smell.webp"
+
+                },
+                {
+
+                    "id": 3,
+
+                    "Heading": "IMPORTED ALLWIN LOW SMELL INKS",
+
+                    "Sizes": "",
+
+                    "Base Substrate": "",
+
+                    "Surface": "",
+
+                    "Weight": "",
+
+                    "Thickness": "",
+
+                    "Application": "",
+
+                    "Adhesion": "",
+
+                    "Coating": "",
+
+                    "Length": "",
+
+                    "Glue": "",
+
+                    "Compatible with": "",
+
+                    "Product Code": "",
+
+                    "Category": "",
+
+                    "Description": "",
+
+                    "image": "IMPORTED-ALLWIN-LOW-SMELL-INKS.webp"
+
+                },
+                {
+
+                    "id": 4,
+
+                    "Heading": "imported Ricohkonica uv inks",
+
+                    "Sizes": "",
+
+                    "Base Substrate": "",
+
+                    "Surface": "",
+
+                    "Weight": "",
+
+                    "Thickness": "",
+
+                    "Application": "",
+
+                    "Adhesion": "",
+
+                    "Coating": "",
+
+                    "Length": "",
+
+                    "Glue": "",
+
+                    "Compatible with": "",
+
+                    "Product Code": "",
+
+                    "Category": "",
+
+                    "Description": "",
+
+                    "image": "imported-Ricohkonica-uv-inks.webp"
+
+                },
+                {
+
+                    "id": 5,
+
+                    "Heading": "Imported Universal inks use for konica/starfire and sikko 6pl and above",
+
+                    "Sizes": "",
+
+                    "Base Substrate": "",
+
+                    "Surface": "",
+
+                    "Weight": "",
+
+                    "Thickness": "",
+
+                    "Application": "",
+
+                    "Adhesion": "",
+
+                    "Coating": "",
+
+                    "Length": "",
+
+                    "Glue": "",
+
+                    "Compatible with": "",
+
+                    "Product Code": "",
+
+                    "Category": "",
+
+                    "Description": "",
+
+                    "image": "Imported-Universal-inks-use-for-konicastarfire-and-sikko-6pl-and-above.webp"
+
+                },{
+
+                    "id": 6,
+
+                    "Heading": "imported allwin inks low smell",
+
+                    "Sizes": "",
+
+                    "Base Substrate": "",
+
+                    "Surface": "",
+
+                    "Weight": "",
+
+                    "Thickness": "",
+
+                    "Application": "",
+
+                    "Adhesion": "",
+
+                    "Coating": "",
+
+                    "Length": "",
+
+                    "Glue": "",
+
+                    "Compatible with": "",
+
+                    "Product Code": "",
+
+                    "Category": "",
+
+                    "Description": "",
+
+                    "image": "imported-allwin-inks-low-smell.webp"
+
+                },{
+
+                    "id": 7,
+
+                    "Heading": "imported galaxy eco inks use for dx5, xp600, tx800 and i3200",
+
+                    "Sizes": "",
+
+                    "Base Substrate": "",
+
+                    "Surface": "",
+
+                    "Weight": "",
+
+                    "Thickness": "",
+
+                    "Application": "",
+
+                    "Adhesion": "",
+
+                    "Coating": "",
+
+                    "Length": "",
+
+                    "Glue": "",
+
+                    "Compatible with": "",
+
+                    "Product Code": "",
+
+                    "Category": "",
+
+                    "Description": "",
+
+                    "image": "imported-galaxy-eco-inks-use-for-dx5,-xp600,-tx800-and-i3200.webp"
+
+                },{
+
+                    "id": 8,
+
+                    "Heading": "hard blue solvant",
+
+                    "Sizes": "",
+
+                    "Base Substrate": "",
+
+                    "Surface": "",
+
+                    "Weight": "",
+
+                    "Thickness": "",
+
+                    "Application": "",
+
+                    "Adhesion": "",
+
+                    "Coating": "",
+
+                    "Length": "",
+
+                    "Glue": "",
+
+                    "Compatible with": "",
+
+                    "Product Code": "",
+
+                    "Category": "",
+
+                    "Description": "",
+
+                    "image": "hard-blue-solvant.webp"
+
+                },{
+
+                    "id": 9,
+
+                    "Heading": "imported high quality eco and regular solvant",
+
+                    "Sizes": "",
+
+                    "Base Substrate": "",
+
+                    "Surface": "",
+
+                    "Weight": "",
+
+                    "Thickness": "",
+
+                    "Application": "",
+
+                    "Adhesion": "",
+
+                    "Coating": "",
+
+                    "Length": "",
+
+                    "Glue": "",
+
+                    "Compatible with": "",
+
+                    "Product Code": "",
+
+                    "Category": "",
+
+                    "Description": "",
+
+                    "image": "imported-high-quality-eco-and-regular-solvant.webp"
+
+                },
+
+
+            ]
+        }
 
     ]
 

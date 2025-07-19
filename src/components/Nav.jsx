@@ -170,6 +170,7 @@ const Nav = () => {
         { path: '/Category/carelit-environment-friendly-printable-fabrics', label: 'CARELIT Environment Friendly Printable Fabrics' },
         { path: '/Category/commercial-series', label: 'Commercial Series' },
         { path: '/Category/decor-series', label: 'Decor Series' },
+        { path: '/Category/consumables-inksolvent', label: 'Consumables - Ink/Solvent' },
       ],
     },
     { path: '/gallery', label: 'Gallery' },

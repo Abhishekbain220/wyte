@@ -11,6 +11,7 @@ import ProductCategory from './components/ProductCategory'
 import ExhibitionPhotos from './components/ExhibitionPhotos'
 import { initGA, trackPage } from './utils/Analytics';
 import NotFound from './components/NotFound'
+import FloatingButtons from './components/FloatingButtons'
 
 const App = () => {
   useEffect(() => {
@@ -25,6 +26,7 @@ const App = () => {
       
       <Nav/>
         <ScrollToTop/>
+        <FloatingButtons/>
       <Routes>
         <Route path="*" element={<NotFound />} />
         <Route path='/' element={<Home/>}/>
