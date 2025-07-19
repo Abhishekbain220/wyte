@@ -7,25 +7,120 @@ const exhibitionPhotoCategories = [
   {
     category: "Modern Art",
     photos: [
-      { url: "https://bykerwin.com/wp-content/uploads/2024/10/IMG_9839-Large-crypt-main-wall-landscape-wordpress.jpeg" },
-      { url: "https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?w=600&auto=format&fit=crop&q=60" },
+      { url: "/images/pic1_1.webp" },
+      { url: "/images/pic1_2.webp" },
+      { url: "/images/pic1_3.webp" },
+      { url: "/images/pic1_4.webp" },
+      { url: "/images/pic1_5.webp" },
+      { url: "/images/pic1_6.webp" },
     ],
   },
   {
     category: "Global Exhibitions",
     photos: [
-      { url: "https://www.discoverhongkong.com/content/dam/dhk/intl/explore/arts-entertainment/artsinhk/2025/gallery_art-basel.jpg" },
-      { url: "https://media.assettype.com/freepressjournal/2025-06-15/vsb62k54/4pic15-swaraj-bavan.JPG" },
+      { url: "/images/pic2_1.webp" },
+      { url: "/images/pic2_2.webp" },
+      { url: "/images/pic2_3.webp" },
+      { url: "/images/pic2_4.webp" },
+      
     ],
   },
   {
     category: "Classic Photography",
     photos: [
-      { url: "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=600&auto=format&fit=crop&q=60" },
-      { url: "https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=600&auto=format&fit=crop&q=60" },
-      { url: "https://images.unsplash.com/photo-1676563110936-9d902b6eb937?w=600&auto=format&fit=crop&q=60" },
+      { url: "/images/pic3_1.webp" },
+      { url: "/images/pic3_2.webp" },
+      { url: "/images/pic3_3.webp" },
+      { url: "/images/pic3_4.webp" },
+      
     ],
   },
+  {
+    category: "Pic-4",
+    photos: [
+      { url: "/images/pic4_1.webp" },
+      { url: "/images/pic4_2.webp" },
+      { url: "/images/pic4_3.webp" },
+      { url: "/images/pic4_4.webp" },
+      { url: "/images/pic4_5.webp" },
+      
+    ],
+  },
+  {
+    category: "Pic-5",
+    photos: [
+      { url: "/images/pic5_1.webp" },
+      { url: "/images/pic5_2.webp" },
+      { url: "/images/pic5_3.webp" },
+      { url: "/images/pic5_4.webp" },
+      { url: "/images/pic5_5.webp" },
+      { url: "/images/pic5_6.webp" },
+      { url: "/images/pic5_7.webp" },
+      { url: "/images/pic5_8.webp" },
+      { url: "/images/pic5_9.webp" },
+      { url: "/images/pic5_10.webp" },
+      { url: "/images/pic5_11.webp" },
+      { url: "/images/pic5_12.webp" },
+      { url: "/images/pic5_13.webp" },
+      { url: "/images/pic5_14.webp" },
+      { url: "/images/pic5_15.webp" },
+      { url: "/images/pic5_16.webp" },
+      { url: "/images/pic5_17.webp" },
+      { url: "/images/pic5_18.webp" },
+      { url: "/images/pic5_19.webp" },
+      
+    ],
+  },
+  {
+    category: "Pic-6",
+    photos: [
+      { url: "/images/pic6_1.webp" },
+      { url: "/images/pic6_2.webp" },
+      { url: "/images/pic6_3.webp" },
+      { url: "/images/pic6_4.webp" },
+      { url: "/images/pic6_5.webp" },
+      
+    ],
+  },
+  {
+    category: "Pic-7",
+    photos: [
+      { url: "/images/pic7_1.webp" },
+      { url: "/images/pic7_2.webp" },
+      { url: "/images/pic7_3.webp" },
+      { url: "/images/pic7_4.webp" },
+      { url: "/images/pic7_5.webp" },
+      
+    ],
+  },
+  {
+    category: "Pic-8",
+    photos: [
+      { url: "/images/pic8_1.webp" },
+      { url: "/images/pic8_2.webp" },
+      { url: "/images/pic8_3.webp" },
+      { url: "/images/pic8_4.webp" },
+      { url: "/images/pic8_5.webp" },
+      { url: "/images/pic8_6.webp" },
+      
+    ],
+  },
+  {
+    category: "Pic-9",
+    photos: [
+      { url: "/images/pic9_1.webp" },
+      { url: "/images/pic9_2.webp" },
+      { url: "/images/pic9_3.webp" },
+      { url: "/images/pic9_4.webp" },
+      { url: "/images/pic9_5.webp" },
+      { url: "/images/pic9_6.webp" },
+      { url: "/images/pic9_7.webp" },
+      { url: "/images/pic9_8.webp" },
+      { url: "/images/pic9_9.webp" },
+      
+    ],
+  },
+
 ];
 
 const allPhotos = exhibitionPhotoCategories.flatMap((cat) => cat.photos);
