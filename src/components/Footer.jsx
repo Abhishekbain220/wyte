@@ -6,7 +6,7 @@ import {
   FaLinkedinIn,
   FaWhatsapp
 } from 'react-icons/fa';
-import { MapPin, PhoneCall, Mail } from 'lucide-react';
+import { MapPin, PhoneCall, Phone, Mail } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -28,25 +28,26 @@ const Footer = () => {
             DigiTech delivers innovative digital solutions to help businesses grow and evolve in the ever-changing tech landscape.
           </p>
           <div>
-            <div className="flex mt-10 space-x-4 text-3xl">
+            <div className="flex mt-10 space-x-4 text-xl">
               {[
-                { icon: FaFacebookF, href: "#" },
-                { icon: FaTwitter, href: "#" },
-                { icon: FaInstagram, href: "#" },
-                { icon: FaLinkedinIn, href: "#" },
+                { icon: FaFacebookF, href: "https://www.facebook.com/profile.php?id=100092562676204", color: "text-[#1877F2]" },
+                { icon: FaTwitter, href: "#", color: "text-[#1DA1F2]" },
+                { icon: FaInstagram, href: "#", color: "text-[#E1306C]" },
+                { icon: FaLinkedinIn, href: "#", color: "text-[#0077B5]" },
                 {
                   icon: FaWhatsapp,
-                  href: "https://wa.me/918823881287?text=Hi%20DigiTech%2C%20I%20am%20interested%20in%20your%20services!"
+                  href: "https://wa.me/918823881287?text=Hi%20DigiTech%2C%20I%20am%20interested%20in%20your%20services!",
+                  color: "text-[#25D366]"
                 }
-              ].map(({ icon: Icon, href }, idx) => (
+              ].map(({ icon: Icon, href, color }, idx) => (
                 <a
                   key={idx}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#7AC943] transition-transform hover:scale-110"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white hover:scale-110 transition-transform"
                 >
-                  <Icon />
+                  <Icon className={`${color}`} />
                 </a>
               ))}
             </div>
@@ -67,9 +68,7 @@ const Footer = () => {
                 key={path}
                 to={path}
                 className={({ isActive }) =>
-                  `transition-colors duration-300 ${
-                    isActive ? "text-[#7AC943]" : "text-gray-300"
-                  } hover:text-[#7AC943]`
+                  `transition-colors duration-300 ${isActive ? "text-[#7AC943]" : "text-gray-300"} hover:text-[#7AC943]`
                 }
               >
                 {label}
@@ -116,7 +115,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 hover:text-[#7AC943] transition"
                   >
-                    <FaWhatsapp className="text-[#7AC943]" size={18} />
+                    <FaWhatsapp className="text-[#25D366]" size={18} />
                     Chat on WhatsApp
                   </a>
                 </motion.div>
@@ -140,6 +139,12 @@ const Footer = () => {
               </a>
             </div>
             <div className="flex items-center gap-3">
+              <Phone className="text-[#7AC943]" />
+              <a href="tel:+917554948956" className="text-blue-400 hover:underline">
+                (+91) 755 494 8956
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
               <Mail className="text-[#7AC943]" />
               <a
                 href="https://mail.google.com/mail/?view=cm&to=infodigitechindia@gmail.com"
@@ -155,7 +160,7 @@ const Footer = () => {
           <div className="rounded overflow-hidden shadow-lg mt-4">
             <iframe
               title="DigiTech Location"
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3541.937245070231!2d77.43370537532046!3d23.2413310790211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjPCsDE0JzI4LjgiTiA3N8KwMjYnMTAuNiJF!5e1!3m2!1sen!2sin!4v1750792003706!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d550.6395201726131!2d77.43615388935633!3d23.240966131906823!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c43801fb3b4cd%3A0xce03dba8876f7a54!2sBest%20Stay%20Boys%20Hostel%20(%20Rachna%20Nagar%20)!5e1!3m2!1sen!2sin!4v1753088022487!5m2!1sen!2sin"
               width="100%"
               height="200"
               style={{ border: 0 }}

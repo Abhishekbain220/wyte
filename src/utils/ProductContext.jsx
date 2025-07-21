@@ -4294,7 +4294,7 @@ export let ProductProvider = (props) => {
 
                     "id": 1,
 
-                    "Heading": "imported mild solvant konica inks low smell",
+                    "Heading": "Imported Mild Solvent 512i/1024i/Starfire Inks Low Smell",
 
                     "Sizes": "",
 
@@ -4331,7 +4331,7 @@ export let ProductProvider = (props) => {
 
                     "id": 2,
 
-                    "Heading": "imported premium konica inks high density",
+                    "Heading": "Imported Premium 512i/1024i/Starfire Inks High Density",
 
                     "Sizes": "",
 
@@ -4368,7 +4368,7 @@ export let ProductProvider = (props) => {
 
                     "id": 3,
 
-                    "Heading": "IMPORTED ALLWIN LOW SMELL INKS",
+                    "Heading": "IMPORTED ALLWIN LOW SMELL INKS 512i/1024i/Starfire",
 
                     "Sizes": "",
 
@@ -4405,7 +4405,7 @@ export let ProductProvider = (props) => {
 
                     "id": 4,
 
-                    "Heading": "imported Ricohkonica uv inks",
+                    "Heading": "Imported Ricoh/Konica UV Inks",
 
                     "Sizes": "",
 
@@ -4442,7 +4442,7 @@ export let ProductProvider = (props) => {
 
                     "id": 5,
 
-                    "Heading": "Imported Universal inks use for konica/starfire and sikko 6pl and above",
+                    "Heading": "Imported Universal Inks use for konica/starfire and sikko 6pl and above",
 
                     "Sizes": "",
 
@@ -4478,7 +4478,7 @@ export let ProductProvider = (props) => {
 
                     "id": 6,
 
-                    "Heading": "imported allwin inks low smell",
+                    "Heading": "Imported Allwin Inks Low Smell",
 
                     "Sizes": "",
 
@@ -4514,7 +4514,7 @@ export let ProductProvider = (props) => {
 
                     "id": 7,
 
-                    "Heading": "imported galaxy eco inks use for dx5, xp600, tx800 and i3200",
+                    "Heading": "Imported Galaxy Eco Inks use for dx5, xp600, tx800 and i3200",
 
                     "Sizes": "",
 
@@ -4550,7 +4550,7 @@ export let ProductProvider = (props) => {
 
                     "id": 8,
 
-                    "Heading": "hard blue solvant",
+                    "Heading": "Hard Blue Solvent",
 
                     "Sizes": "",
 
@@ -4586,7 +4586,7 @@ export let ProductProvider = (props) => {
 
                     "id": 9,
 
-                    "Heading": "imported high quality eco and regular solvant",
+                    "Heading": "Imported High Quality Eco and Regular Solvent",
 
                     "Sizes": "",
 

@@ -163,7 +163,7 @@ const Nav = () => {
     { path: '/', label: 'Home' },
     { path: '/about-us', label: 'Profile' },
     {
-      label: 'Products',
+      label: 'PRODUCTS',
       path: '/products',
       sub: [
         { path: '/Category/inkjet-water-base-printable-substrates', label: 'Inkjet Water-base Printable Substrates' },
@@ -243,7 +243,7 @@ const Nav = () => {
           <div className="flex items-center gap-4">
             <div className="hidden md:flex flex-col items-center">
               <img src="/images/NEW-Logo-2023-1-1.webp" alt="Partner Logo" className="h-[7vh] object-contain hover:scale-105 transition-transform" />
-              <span className="font-bold text-black text-sm">Media Partner</span>
+              <span className="font-bold text-red-700 text-sm">Media Partner</span>
             </div>
             <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
               {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

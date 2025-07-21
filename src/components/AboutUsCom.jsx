@@ -98,7 +98,7 @@ AND SOLUTIONS</strong> delivers premium digital printable substrates for creativ
             <br /><br />
             Backed by a strong national network, <strong>DigiTech</strong> is valued for its <em>consistent product performance, efficient supply chain, competitive pricing</em>, and a commitment to customer satisfaction. Our in-house R&D ensures that we stay at the forefront of innovation.
             <br /><br />
-            We’re proud to have a <strong>strategic media partnership with Wyte</strong>, a trusted leader in the printable substrates domain—enhancing our reach and capabilities.
+            We’re proud to have a <strong>strategic media partnership with Wyte Print</strong>, a trusted leader in the printable substrates domain—enhancing our reach and capabilities.
             <br /><br />
             Trusted by industry leaders like <span className="font-medium text-[#76bc21]">Reliance, Samsung, HUL, Bata, Blackberry, Pepsi, TimesOOH, and Fybros</span>, DigiTech continues to deliver impactful solutions to the <strong>corporate, retail, and event</strong> sectors.
           </motion.p>

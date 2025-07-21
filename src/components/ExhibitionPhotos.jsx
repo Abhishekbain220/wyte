@@ -5,7 +5,7 @@ import Meta from '../utils/Meta';
 
 const exhibitionPhotoCategories = [
   {
-    category: "Modern Art",
+    category: "Awards and Recognitions",
     photos: [
       { url: "/images/pic1_1.webp" },
       { url: "/images/pic1_2.webp" },
@@ -16,110 +16,77 @@ const exhibitionPhotoCategories = [
     ],
   },
   {
-    category: "Global Exhibitions",
+    category: "Exhibitions",
     photos: [
       { url: "/images/pic2_1.webp" },
       { url: "/images/pic2_2.webp" },
-      { url: "/images/pic2_3.webp" },
-      { url: "/images/pic2_4.webp" },
-      
+      { url: "/images/pic5_2.webp" },
+      { url: "/images/pic5_6.webp" },
+      { url: "/images/pic5_14.webp" },
+      { url: "/images/pic5_12.webp" },
+      { url: "/images/pic5_19.webp" },
+      { url: "/images/pic9_4.webp" },
+      { url: "/images/pic9_5.webp" },
+      { url: "/images/pic9_6.webp" },
+
+
+
+
+
+
+
     ],
   },
   {
-    category: "Classic Photography",
+    category: "Product Applications",
     photos: [
       { url: "/images/pic3_1.webp" },
       { url: "/images/pic3_2.webp" },
       { url: "/images/pic3_3.webp" },
       { url: "/images/pic3_4.webp" },
-      
-    ],
-  },
-  {
-    category: "Pic-4",
-    photos: [
       { url: "/images/pic4_1.webp" },
       { url: "/images/pic4_2.webp" },
       { url: "/images/pic4_3.webp" },
       { url: "/images/pic4_4.webp" },
       { url: "/images/pic4_5.webp" },
-      
+      { url: "/images/pic9_2.webp" },
+      { url: "/images/pic9_3.webp" },
+
+
     ],
   },
   {
-    category: "Pic-5",
+    category: "Participations",
     photos: [
-      { url: "/images/pic5_1.webp" },
-      { url: "/images/pic5_2.webp" },
-      { url: "/images/pic5_3.webp" },
-      { url: "/images/pic5_4.webp" },
-      { url: "/images/pic5_5.webp" },
-      { url: "/images/pic5_6.webp" },
-      { url: "/images/pic5_7.webp" },
-      { url: "/images/pic5_8.webp" },
-      { url: "/images/pic5_9.webp" },
-      { url: "/images/pic5_10.webp" },
-      { url: "/images/pic5_11.webp" },
-      { url: "/images/pic5_12.webp" },
-      { url: "/images/pic5_13.webp" },
-      { url: "/images/pic5_14.webp" },
-      { url: "/images/pic5_15.webp" },
-      { url: "/images/pic5_16.webp" },
-      { url: "/images/pic5_17.webp" },
-      { url: "/images/pic5_18.webp" },
-      { url: "/images/pic5_19.webp" },
-      
-    ],
-  },
-  {
-    category: "Pic-6",
-    photos: [
-      { url: "/images/pic6_1.webp" },
       { url: "/images/pic6_2.webp" },
       { url: "/images/pic6_3.webp" },
       { url: "/images/pic6_4.webp" },
-      { url: "/images/pic6_5.webp" },
-      
-    ],
-  },
-  {
-    category: "Pic-7",
-    photos: [
       { url: "/images/pic7_1.webp" },
       { url: "/images/pic7_2.webp" },
       { url: "/images/pic7_3.webp" },
       { url: "/images/pic7_4.webp" },
-      { url: "/images/pic7_5.webp" },
-      
-    ],
-  },
-  {
-    category: "Pic-8",
-    photos: [
       { url: "/images/pic8_1.webp" },
-      { url: "/images/pic8_2.webp" },
       { url: "/images/pic8_3.webp" },
       { url: "/images/pic8_4.webp" },
       { url: "/images/pic8_5.webp" },
       { url: "/images/pic8_6.webp" },
-      
+
     ],
   },
   {
-    category: "Pic-9",
+    category: "Happy Feelings",
     photos: [
+
+      { url: "/images/pic2_3.webp" },
+      { url: "/images/pic2_4.webp" },
       { url: "/images/pic9_1.webp" },
-      { url: "/images/pic9_2.webp" },
-      { url: "/images/pic9_3.webp" },
-      { url: "/images/pic9_4.webp" },
-      { url: "/images/pic9_5.webp" },
-      { url: "/images/pic9_6.webp" },
-      { url: "/images/pic9_7.webp" },
-      { url: "/images/pic9_8.webp" },
       { url: "/images/pic9_9.webp" },
-      
+
+
+
     ],
   },
+  
 
 ];
 
